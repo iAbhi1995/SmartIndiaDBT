@@ -18,11 +18,12 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
+import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
 
     Button btnSignOut;
-    SessionManager session;
+    SharedPrefs session;
     private SignInButton signInButton;
     private GoogleApiClient mGoogleApiClient;
     private int RC_SIGN_IN = 001;
@@ -36,7 +37,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        session = new SessionManager(LoginActivity.this);
+        session = new SharedPrefs(LoginActivity.this);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -65,7 +66,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.btn_sign_out:
                 signOut();
                 break;
-            // ...
         }
 
     }
