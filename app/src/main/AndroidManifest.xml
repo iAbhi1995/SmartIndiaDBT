@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.smartindia.hackathon.biotechnology">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,6 +18,10 @@
         <activity
             android:name=".Professor.View.Professors"
             android:label="@string/title_activity_professors"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".home.Home_page"
+            android:label="@string/title_activity_home_page"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
