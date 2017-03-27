@@ -6,31 +6,7 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1287e7e8-afb5-40c2-83e8-72563962e8e9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/constraint_layout_1_0_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/constraint_layout_solver_1_0_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/professor/presenter/ProfessorPresenter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/professor/presenter/ProfessorPresenterImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/professor/view/ProfessorAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/professor/view/ProfessorFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/professor/view/ProfessorView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/button_filter.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_professor.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/Internship/view/InternshipView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/Internship/view/InternshipView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/professor/model/data/ProfessorCityData.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/professor/model/data/ProfessorCityData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/professor/model/data/ProfessorCollegeData.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/professor/model/data/ProfessorCollegeData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/professor/model/data/ProfessorData.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/professor/model/data/ProfessorData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/professor/model/data/ProfessorTopicData.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/professor/model/data/ProfessorTopicData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/request/view/RequestFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/request/view/RequestFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_internship.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_internship.xml" />
-    </list>
+    <list default="true" id="1287e7e8-afb5-40c2-83e8-72563962e8e9" name="Default" comment="" />
     <ignored path="biotechnology.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
