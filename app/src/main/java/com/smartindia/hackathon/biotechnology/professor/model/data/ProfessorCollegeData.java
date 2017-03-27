@@ -7,6 +7,7 @@ package com.smartindia.hackathon.biotechnology.professor.model.data;
 public class ProfessorCollegeData {
 
     private String college;
+private String collegeId;
 
     public String getCollege() {
         return college;
@@ -16,8 +17,17 @@ public class ProfessorCollegeData {
         this.college = college;
     }
 
-    public ProfessorCollegeData(String college) {
+    public String getCollegeId() {
+        return collegeId;
+    }
+
+    public void setCollegeId(String collegeId) {
+        this.collegeId = collegeId;
+    }
+
+    public ProfessorCollegeData(String college, String collegeId) {
 
         this.college = college;
+        this.collegeId = collegeId;
     }
 }

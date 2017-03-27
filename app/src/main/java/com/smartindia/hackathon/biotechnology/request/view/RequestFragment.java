@@ -94,9 +94,9 @@ public class RequestFragment extends Fragment implements  RequestView{
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_request, container, false);
 
-        sharedPrefs = new SharedPrefs();//doubt
+        sharedPrefs = new SharedPrefs(getContext());
 
-        //access_token=sharedPrefs.                    //doubt
+        access_token=sharedPrefs.getAccessToken();
 
         requestPresenter=new RequestPresenterImpl(new RetrofitRequestProvider(),this);
         requestAdapter=new RequestAdapter(getContext(),this); //doubt

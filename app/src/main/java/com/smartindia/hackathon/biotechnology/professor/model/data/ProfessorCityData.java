@@ -6,6 +6,7 @@ package com.smartindia.hackathon.biotechnology.professor.model.data;
 
 public class ProfessorCityData {
     private String city;
+    private String cityId;
 
     public String getCity() {
         return city;
@@ -15,8 +16,17 @@ public class ProfessorCityData {
         this.city = city;
     }
 
-    public ProfessorCityData(String city) {
+    public String getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(String cityId) {
+        this.cityId = cityId;
+    }
+
+    public ProfessorCityData(String city, String cityId) {
 
         this.city = city;
+        this.cityId = cityId;
     }
 }
