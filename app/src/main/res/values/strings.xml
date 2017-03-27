@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BioTechnology</string>
+    <string name="title_activity_professors">Professors</string>
 </resources>
