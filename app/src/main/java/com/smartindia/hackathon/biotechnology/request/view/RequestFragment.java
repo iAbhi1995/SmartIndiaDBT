@@ -142,7 +142,7 @@ public class RequestFragment extends Fragment implements  RequestView{
     @Override
     public void dataReceive(List<RequestDataDetails> requestDataDetailsList) {
         requestAdapter.setData(requestDataDetailsList);
-        requestAdapter..notifyDataSetChanged();  //doubt
+        requestAdapter.notifyDataSetChanged();  //doubt
     }
 
     @Override
