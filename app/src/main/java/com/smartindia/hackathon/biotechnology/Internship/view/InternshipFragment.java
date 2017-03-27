@@ -112,8 +112,8 @@ public class InternshipFragment extends Fragment implements InternshipView{
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(internshipRecyclerAdapter);
 
-        spinner = (Spinner)view.findViewById(R.id.spinner);//note in xml give id spinner
-        button_submit= (Button) view.findViewById(R.id.button_submit);//note to check id in xml is button_submit or not
+        spinner = (Spinner)view.findViewById(R.id.sandbox);//note in xml give id spinner
+        button_submit= (Button) view.findViewById(R.id.intent_data_id);//note to check id in xml is button_submit or not
       //  prefs=sharedPrefs.//used further as per need
         return(view);
     }
