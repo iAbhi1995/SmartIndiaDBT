@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.smartindia.hackathon.biotechnology.LoginActivity">
+    tools:context="com.smartindia.hackathon.biotechnology.login.view.LoginActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -22,13 +22,33 @@
 
     </android.support.design.widget.AppBarLayout>
 
-
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_button"
+    <ProgressBar
+        android:id="@+id/prgrsbr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true"/>
 
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Student Login" />
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>
     <Button
         android:id="@+id/btn_sign_out"
         android:layout_width="wrap_content"
@@ -38,5 +58,85 @@
         android:text="Sign Out"
         android:visibility="gone" />
 
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:id="@+id/PrfsrCrdVw"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/btn_sign_out"
+        android:layout_toRightOf="@+id/btn_sign_out">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="26dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="18dp"
+                android:gravity="center_horizontal"
+                android:paddingEnd="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/emailID"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:hint="Type Intitute Email Id.."
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textCursorDrawable="@color/black" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="18dp"
+                android:gravity="center_horizontal"
+                android:paddingEnd="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:hint="Type your password.."
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textCursorDrawable="@color/black" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/professor_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sign_in_button"
+                android:layout_toEndOf="@+id/sign_in_button"
+                android:layout_toRightOf="@+id/sign_in_button"
+                android:layout_weight="0.17"
+                android:text="Professor Login"
+                android:onClick="ProfessorLogin"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
 </RelativeLayout>

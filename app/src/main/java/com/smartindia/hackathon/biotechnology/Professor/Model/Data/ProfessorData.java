@@ -1,4 +1,6 @@
-package com.smartindia.hackathon.biotechnology.professor.model.data;
+package com.smartindia.hackathon.biotechnology.Professor.model.data;
+
+import com.smartindia.hackathon.biotechnology.Professor.Model.Data.ProfessorCityData;
 
 import java.util.List;
 

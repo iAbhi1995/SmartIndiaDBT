@@ -1,6 +1,4 @@
-package com.smartindia.hackathon.biotechnology.professor;
-
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
+package com.smartindia.hackathon.biotechnology.Professor;
 
 /**
  * Created by aman on 27/3/17.

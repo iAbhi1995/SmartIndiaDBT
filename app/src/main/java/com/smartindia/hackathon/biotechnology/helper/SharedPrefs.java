@@ -17,6 +17,7 @@ public class SharedPrefs {
     private static final String PREF_NAME_LOGIN = "Login";
     private static final String KEY_ACCESS_TOKEN = "access_token";
     private static final String KEY_IS_LOGGEDIN = "isLoggedIn";
+    private static final String USER_TYPE = "user_type";
 
     private static String TAG = "Shared Preference";
 
