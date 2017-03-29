@@ -1,7 +1,8 @@
-package com.smartindia.hackathon.biotechnology.professor.view;
+package com.smartindia.hackathon.biotechnology.Professor.View;
 
 import com.smartindia.hackathon.biotechnology.Internship.model.data.InternshipData;
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
+import com.smartindia.hackathon.biotechnology.Professor.Model.Data.ProfessorData;
+
 
 /**
  * Created by aman on 27/3/17.

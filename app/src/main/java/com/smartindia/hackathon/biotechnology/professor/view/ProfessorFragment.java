@@ -1,4 +1,4 @@
-package com.smartindia.hackathon.biotechnology.professor.view;
+package com.smartindia.hackathon.biotechnology.Professor.View;
 
 import android.content.Context;
 import android.net.Uri;
@@ -22,16 +22,15 @@ import com.smartindia.hackathon.biotechnology.Internship.model.data.InternshipTo
 import com.smartindia.hackathon.biotechnology.Internship.presenter.InternshipPresenter;
 import com.smartindia.hackathon.biotechnology.Internship.presenter.InternshipPresenterImpl;
 import com.smartindia.hackathon.biotechnology.Internship.view.InternshipRecyclerAdapter;
+import com.smartindia.hackathon.biotechnology.Professor.Model.Data.ProfessorCityData;
+import com.smartindia.hackathon.biotechnology.Professor.Model.Data.ProfessorCollegeData;
+import com.smartindia.hackathon.biotechnology.Professor.Model.Data.ProfessorData;
+import com.smartindia.hackathon.biotechnology.Professor.Model.Data.ProfessorTopicData;
+import com.smartindia.hackathon.biotechnology.Professor.Model.MockProfessorProvider;
+import com.smartindia.hackathon.biotechnology.Professor.Presenter.ProfessorPresenter;
+import com.smartindia.hackathon.biotechnology.Professor.Presenter.ProfessorPresenterImpl;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
-import com.smartindia.hackathon.biotechnology.professor.model.MockProfessorProvider;
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorCityData;
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorCollegeData;
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorTopicData;
-import com.smartindia.hackathon.biotechnology.professor.model.RetrofitProfessorProvider;
-import com.smartindia.hackathon.biotechnology.professor.presenter.ProfessorPresenter;
-import com.smartindia.hackathon.biotechnology.professor.presenter.ProfessorPresenterImpl;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.smartindia.hackathon.biotechnology.professor.model.data;
+package com.smartindia.hackathon.biotechnology.Professor.Model.Data;
 
 import android.widget.ImageView;
 import android.widget.TextView;

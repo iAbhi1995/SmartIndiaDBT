@@ -1,4 +1,4 @@
-package com.smartindia.hackathon.biotechnology.professor.view;
+package com.smartindia.hackathon.biotechnology.Professor.View;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -16,7 +16,7 @@ import com.smartindia.hackathon.biotechnology.Internship.view.InternshipView;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.image_loader.GlideImageLoader;
 import com.smartindia.hackathon.biotechnology.helper.image_loader.ImageLoader;
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorItemData;
+import com.smartindia.hackathon.biotechnology.Professor.Model.Data.ProfessorItemData;
 
 import java.util.ArrayList;
 import java.util.List;

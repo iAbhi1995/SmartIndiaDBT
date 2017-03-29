@@ -1,12 +1,12 @@
-package com.smartindia.hackathon.biotechnology.professor.presenter;
+package com.smartindia.hackathon.biotechnology.Professor.Presenter;
 
 import android.util.Log;
 
-import com.smartindia.hackathon.biotechnology.professor.ProfessorCallBack;
-import com.smartindia.hackathon.biotechnology.professor.model.ProfessorProvider;
+import com.smartindia.hackathon.biotechnology.Professor.ProfessorCallBack;
+import com.smartindia.hackathon.biotechnology.Professor.Model.ProfessorProvider;
 
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
-import com.smartindia.hackathon.biotechnology.professor.view.ProfessorView;
+import com.smartindia.hackathon.biotechnology.Professor.Model.Data.ProfessorData;
+import com.smartindia.hackathon.biotechnology.Professor.View.ProfessorView;
 
 /**
  * Created by aman on 27/3/17.

@@ -1,4 +1,6 @@
-package com.smartindia.hackathon.biotechnology.professor.model.data;
+package com.smartindia.hackathon.biotechnology.Professor.Model.Data;
+
+import com.smartindia.hackathon.biotechnology.Professor.Model.Data.ProfessorCityData;
 
 import java.util.List;
 
@@ -10,9 +12,9 @@ public class ProfessorData {
     private boolean success;
     private String message;
     List<ProfessorCityData> professorCityDataList;
-    List<ProfessorCollegeData> professorCollegeDataList;
-    List<ProfessorTopicData> professorTopicDataList;
-    List<ProfessorItemData> professorItemDataList;
+    List<com.smartindia.hackathon.biotechnology.Professor.Model.Data.ProfessorCollegeData> professorCollegeDataList;
+    List<com.smartindia.hackathon.biotechnology.Professor.Model.Data.ProfessorTopicData> professorTopicDataList;
+    List<com.smartindia.hackathon.biotechnology.Professor.Model.Data.ProfessorItemData> professorItemDataList;
 
     public ProfessorData(boolean success, String message, List<ProfessorCityData> professorCityDataList,
                          List<ProfessorCollegeData> professorCollegeDataList,

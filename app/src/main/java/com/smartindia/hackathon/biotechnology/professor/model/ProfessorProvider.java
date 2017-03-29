@@ -1,6 +1,6 @@
-package com.smartindia.hackathon.biotechnology.professor.model;
+package com.smartindia.hackathon.biotechnology.Professor.Model;
 
-import com.smartindia.hackathon.biotechnology.professor.ProfessorCallBack;
+import com.smartindia.hackathon.biotechnology.Professor.ProfessorCallBack;
 
 /**
  * Created by aman on 28/3/17.

@@ -1,12 +1,12 @@
-package com.smartindia.hackathon.biotechnology.professor.model;
+package com.smartindia.hackathon.biotechnology.Professor.Model;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.smartindia.hackathon.biotechnology.helper.Urls;
-import com.smartindia.hackathon.biotechnology.professor.ProfessorCallBack;
-import com.smartindia.hackathon.biotechnology.professor.api.ProfessorApi;
-import com.smartindia.hackathon.biotechnology.professor.model.ProfessorProvider;
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
+import com.smartindia.hackathon.biotechnology.Professor.ProfessorCallBack;
+import com.smartindia.hackathon.biotechnology.Professor.API.ProfessorApi;
+import com.smartindia.hackathon.biotechnology.Professor.Model.ProfessorProvider;
+import com.smartindia.hackathon.biotechnology.Professor.Model.Data.ProfessorData;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

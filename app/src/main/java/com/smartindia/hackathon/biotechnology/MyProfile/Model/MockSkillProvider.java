@@ -29,7 +29,7 @@ public class MockSkillProvider implements SkillsProvider{
         List<String> skills=new ArrayList<>();
         skills.add("Genetics");
         skills.add("Molecular evolution");
-        SkillsData skillsData = new SkillsData(skills, );
+        SkillsData skillsData = new SkillsData(skills,true);
         return  skillsData;
     }
 }

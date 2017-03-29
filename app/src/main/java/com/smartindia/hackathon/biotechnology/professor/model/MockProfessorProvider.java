@@ -1,14 +1,14 @@
-package com.smartindia.hackathon.biotechnology.professor.model;
+package com.smartindia.hackathon.biotechnology.Professor.Model;
 
 import android.os.Handler;
 import android.util.Log;
 
-import com.smartindia.hackathon.biotechnology.professor.ProfessorCallBack;
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorCityData;
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorCollegeData;
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorItemData;
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorTopicData;
+import com.smartindia.hackathon.biotechnology.Professor.ProfessorCallBack;
+import com.smartindia.hackathon.biotechnology.Professor.Model.Data.ProfessorCityData;
+import com.smartindia.hackathon.biotechnology.Professor.Model.Data.ProfessorCollegeData;
+import com.smartindia.hackathon.biotechnology.Professor.Model.Data.ProfessorData;
+import com.smartindia.hackathon.biotechnology.Professor.Model.Data.ProfessorItemData;
+import com.smartindia.hackathon.biotechnology.Professor.Model.Data.ProfessorTopicData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.List;
  * Created by aman on 28/3/17.
  */
 
-public class MockProfessorProvider implements ProfessorProvider {
+public class MockProfessorProvider implements com.smartindia.hackathon.biotechnology.Professor.Model.ProfessorProvider {
 
     public String city;
     @Override
