@@ -9,7 +9,7 @@ import com.smartindia.hackathon.biotechnology.professor.ProfessorCallBack;
 public interface ProfessorPresenter {
 
 
-    void requestProfessor(String token, String type);
+    void requestProfessor(String token, String type,String city,String topic);
 
 
 

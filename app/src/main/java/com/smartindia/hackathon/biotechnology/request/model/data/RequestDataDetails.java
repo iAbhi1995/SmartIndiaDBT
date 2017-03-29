@@ -5,46 +5,58 @@ package com.smartindia.hackathon.biotechnology.request.model.data;
  */
 
 public class RequestDataDetails {
-    private String name;
-    private String status;
-    private String note;
+    private String skillName;
+    private String companyName;
+    private String appliedOn;
+    private String appliedStatus;
+    private String comment;
 
-    public String getName() {
-        return name;
+    public String getSkillName() {
+        return skillName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSkillName(String skillName) {
+        this.skillName = skillName;
     }
 
-    public String getStatus() {
-        return status;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
-    public String getNote() {
-        return note;
+    public String getAppliedOn() {
+        return appliedOn;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setAppliedOn(String appliedOn) {
+        this.appliedOn = appliedOn;
     }
 
-    public RequestDataDetails(String status, String note, String name) {
-
-        this.status = status;
-        this.note = note;
-        this.name = name;
+    public String getAppliedStatus() {
+        return appliedStatus;
     }
 
+    public void setAppliedStatus(String appliedStatus) {
+        this.appliedStatus = appliedStatus;
+    }
 
+    public String getComment() {
+        return comment;
+    }
 
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 
+    public RequestDataDetails(String skillName, String companyName, String appliedOn, String appliedStatus, String comment) {
 
-
-
-
+        this.skillName = skillName;
+        this.companyName = companyName;
+        this.appliedOn = appliedOn;
+        this.appliedStatus = appliedStatus;
+        this.comment = comment;
+    }
 }

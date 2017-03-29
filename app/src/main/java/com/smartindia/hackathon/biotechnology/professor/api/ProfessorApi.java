@@ -8,12 +8,25 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
+
+
 /**
- * Created by aman on 27/3/17.
+ * Created by aman on 28/3/17.
  */
 
 public interface ProfessorApi {
 
-    @GET(Urls.REQUEST_PROFESSOR)
-    Call<ProfessorData> getProfessor(@Query("access_token") String token, @Query("type") String type);
-}
+
+
+
+
+
+        @GET(Urls.REQUEST_PROFESSOR)
+        Call<ProfessorData> getProfessor(@Query("access_token") String token, @Query("type") String type,@Query("city") String city,@Query("topic")String topic);
+    }
+
+
+
+
+
+

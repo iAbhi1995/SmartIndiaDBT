@@ -6,25 +6,32 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.smartindia.hackathon.biotechnology.Internship.model.RetrofitInternshipProvider;
 import com.smartindia.hackathon.biotechnology.Internship.model.data.InternshipTopicData;
 import com.smartindia.hackathon.biotechnology.Internship.presenter.InternshipPresenter;
+import com.smartindia.hackathon.biotechnology.Internship.presenter.InternshipPresenterImpl;
 import com.smartindia.hackathon.biotechnology.Internship.view.InternshipRecyclerAdapter;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
+import com.smartindia.hackathon.biotechnology.professor.model.MockProfessorProvider;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorCityData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorCollegeData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorTopicData;
+import com.smartindia.hackathon.biotechnology.professor.model.RetrofitProfessorProvider;
 import com.smartindia.hackathon.biotechnology.professor.presenter.ProfessorPresenter;
+import com.smartindia.hackathon.biotechnology.professor.presenter.ProfessorPresenterImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +54,10 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
     private String mParam1;
     private String mParam2;
 
-    Spinner spinner;
+    Spinner spinner1;
+    Spinner spinner2;
+    Spinner spinner3;
+
     Button button_submit;
     private SharedPrefs sharedPrefs;
 
@@ -56,10 +66,11 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
     private ProfessorCollegeData professorCollegeData;
     private ProfessorTopicData professorTopicData;
     private ProfessorPresenter professorPresenter;
-    private String college_id,city_id,topic_id;
+    private String college_id,city_id,topic_id,access_token,type;
     private LinearLayoutManager linearLayoutManager;
     private ProfessorAdapter professorAdapter;
     private RecyclerView recyclerView;
+    private ProgressBar progressBar;
 
     private OnFragmentInteractionListener mListener;
 
@@ -99,18 +110,48 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
 
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_professor, container, false);
+        View view=inflater.inflate(R.layout.fragment_internship, container, false);
 
         sharedPrefs = new SharedPrefs(getContext());
-
-
+        professorPresenter=new ProfessorPresenterImpl(new MockProfessorProvider(),this);
+        professorAdapter = new ProfessorAdapter(getContext(),this);
+        recyclerView=(RecyclerView)view.findViewById(R.id.recycler_filter);
         linearLayoutManager= new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(professorAdapter);
+        spinner1 = (Spinner)view.findViewById(R.id.spinner_city);
+        spinner2= (Spinner)view.findViewById(R.id.spinner_college);
+        spinner3 = (Spinner)view.findViewById(R.id.spinner_topic);
+        progressBar=(ProgressBar)view.findViewById(R.id.professor_bar);
+        button_submit= (Button) view.findViewById(R.id.button_submit);
+        access_token=sharedPrefs.getAccessToken();
+        type= sharedPrefs.getKeyTypeAnalogus();              ;//type kese lu
+//        professorPresenter=new ProfessorPresenterImpl(new RetrofitProfessorProvider(),this);
+        Log.d("professorActivity","1");
+        professorPresenter.requestProfessor(access_token,type,"z","z");
+        Log.d("professorActivity","2");
 
-        spinner = (Spinner)view.findViewById(R.id.spinner);//note in xml give id spinner
+        button_submit.setOnClickListener(
+                new Button.OnClickListener(){                       /*Interface*/
+                    public void onClick(View v){                                               /*Call Baack Method*/
+
+                        submit();
+
+
+                    }
+
+                }
+        );
 
         return(view);
+
+    }
+
+    public void submit() {
+        Log.d("prof","10");
+        professorPresenter.requestProfessor(access_token,type,city_id,topic_id);
+
+
 
     }
 
@@ -143,10 +184,10 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
                 android.R.layout.simple_spinner_item, city_name_ar);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        spinner1.setAdapter(adapter);
 
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int t, long l) {
 
@@ -169,9 +210,9 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
                 new ArrayList<ProfessorCollegeData>(professorData.getProfessorCollegeDataList());
         ArrayAdapter<String> adapter;
         int n= professorCollegeDataList.size();
+        int i=0;
         final String college_id_ar[]=new String[n];
         String college_name_ar[]=new String[n];
-        int i=0;
         while(i < n)
         {
             professorCollegeData= professorCollegeDataList.get(i);
@@ -184,10 +225,10 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
                 android.R.layout.simple_spinner_item, college_name_ar);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        spinner2.setAdapter(adapter);
 
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int t, long l) {
 
@@ -200,12 +241,6 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
 
             }
         });
-
-
-
-
-
-
 
     }
 
@@ -231,10 +266,10 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
                 android.R.layout.simple_spinner_item, topic_name_ar);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        spinner3.setAdapter(adapter);
 
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int t, long l) {
 
@@ -258,6 +293,24 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
         professorAdapter.setData(professorData.getProfessorItemDataList());
         professorAdapter.notifyDataSetChanged();
 
+    }
+
+    @Override
+    public void showProgressBar(boolean show) {
+        if(show)
+        {
+            progressBar.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            progressBar.setVisibility(View.INVISIBLE);
+
+        }
+    }
+
+    @Override
+    public void showMessage(String error) {
+        Toast.makeText(getContext(),error,Toast.LENGTH_SHORT).show();
     }
 
     // TODO: Rename method, update argument and hook method into UI event

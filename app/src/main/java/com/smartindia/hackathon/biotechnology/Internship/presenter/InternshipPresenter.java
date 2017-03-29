@@ -10,6 +10,6 @@ public interface InternshipPresenter  {
 
 
 
-    void requestInternship(String token);
+    void requestInternship(String token,String city,String topic);
 
 }

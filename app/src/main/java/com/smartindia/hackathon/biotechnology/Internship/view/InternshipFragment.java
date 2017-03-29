@@ -16,11 +16,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.smartindia.hackathon.biotechnology.Internship.model.RetrofitInternshipProvider;
 import com.smartindia.hackathon.biotechnology.Internship.model.data.InternshipCityData;
 import com.smartindia.hackathon.biotechnology.Internship.model.data.InternshipCollegeData;
 import com.smartindia.hackathon.biotechnology.Internship.model.data.InternshipData;
 import com.smartindia.hackathon.biotechnology.Internship.model.data.InternshipTopicData;
 import com.smartindia.hackathon.biotechnology.Internship.presenter.InternshipPresenter;
+import com.smartindia.hackathon.biotechnology.Internship.presenter.InternshipPresenterImpl;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
 
@@ -51,13 +53,13 @@ public class InternshipFragment extends Fragment implements InternshipView{
 
 
 
-    private SharedPrefs prefs;
+
     private InternshipCollegeData internshipCollegeData;
     private InternshipCityData internshipCityData;
     private InternshipTopicData internshipTopicData;
     private SharedPrefs sharedPrefs;
     private InternshipPresenter internshipPresenter;
-    private String college_id,city_id,topic_id;
+    private String college_id,city_id,topic_id,access_token;
     private LinearLayoutManager linearLayoutManager;
     private InternshipRecyclerAdapter internshipRecyclerAdapter;
     private RecyclerView recyclerView;
@@ -112,11 +114,42 @@ public class InternshipFragment extends Fragment implements InternshipView{
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(internshipRecyclerAdapter);
 
-        spinner = (Spinner)view.findViewById(R.id.spinner);//note in xml give id spinner
-        button_submit= (Button) view.findViewById(R.id.button_submit);//note to check id in xml is button_submit or not
-      //  prefs=sharedPrefs.//used further as per need
+        spinner = (Spinner)view.findViewById(R.id.sandbox);//note in xml give id spinner
+        button_submit= (Button) view.findViewById(R.id.intent_data_id);//note to check id in xml is button_submit or not
+      access_token=sharedPrefs.getAccessToken();
+        internshipPresenter=new InternshipPresenterImpl(new RetrofitInternshipProvider(),this);
+        internshipPresenter.requestInternship(access_token,"z","z");
+
+        button_submit.setOnClickListener(
+                new Button.OnClickListener(){                       /*Interface*/
+                    public void onClick(View v){                                               /*Call Baack Method*/
+
+                        submit();
+
+
+                    }
+
+                }
+        );
+
         return(view);
     }
+
+    public void submit() {
+
+        internshipPresenter.requestInternship(access_token,city_id,topic_id);
+
+
+
+    }
+
+
+
+
+
+
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -258,6 +291,10 @@ public class InternshipFragment extends Fragment implements InternshipView{
         });
 
     }
+
+
+
+
 
     @Override
     public void check(InternshipData internshipData) {

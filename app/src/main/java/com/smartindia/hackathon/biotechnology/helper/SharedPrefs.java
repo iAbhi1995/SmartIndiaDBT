@@ -6,8 +6,9 @@ package com.smartindia.hackathon.biotechnology.helper;
 
 
 import android.content.Context;
-        import android.content.SharedPreferences;
-        import android.util.Log;
+import android.content.SharedPreferences;
+import android.util.Log;
+
 public class SharedPrefs {
 
 
@@ -15,8 +16,8 @@ public class SharedPrefs {
     private static final String PREF_NAME = "welcome";
     private static final String PREF_NAME_LOGIN = "Login";
     private static final String KEY_ACCESS_TOKEN = "access_token";
-
-
+    private static final String KEY_IS_LOGGEDIN = "isLoggedIn";
+    private static final String KEY_TYPE_ANALOGUS= "typeAnalogus";
     private static String TAG = "Shared Preference";
 
     // Shared Preferences
@@ -35,7 +36,6 @@ public class SharedPrefs {
 
 
     public String getAccessToken() {
-
         return pref.getString(KEY_ACCESS_TOKEN, null);
     }
 
@@ -44,8 +44,24 @@ public class SharedPrefs {
         editor.commit();
     }
 
+    public void setLogin(boolean isLoggedIn) {
+        editor.putBoolean(KEY_IS_LOGGEDIN, isLoggedIn);
+        // commit changes
+        editor.commit();
+        Log.d(TAG, "User login session modified!");
+    }
+
+    public String getKeyTypeAnalogus() {
+        return pref.getString(KEY_TYPE_ANALOGUS,null);
+    }
+
+    public void setKeyTypeAnalogus(String typeAnalogus) {
+        editor.putString(KEY_TYPE_ANALOGUS,typeAnalogus);
+        editor.commit();
+    }
 
 
-
-
+    public boolean isLoggedIn() {
+        return pref.getBoolean(KEY_IS_LOGGEDIN, false);
+    }
 }

@@ -1,8 +1,10 @@
 package com.smartindia.hackathon.biotechnology.professor.presenter;
 
+import android.util.Log;
+
 import com.smartindia.hackathon.biotechnology.professor.ProfessorCallBack;
 import com.smartindia.hackathon.biotechnology.professor.model.ProfessorProvider;
-import com.smartindia.hackathon.biotechnology.professor.model.RetrofitProfessorProvider;
+
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
 import com.smartindia.hackathon.biotechnology.professor.view.ProfessorView;
 
@@ -21,16 +23,22 @@ public class ProfessorPresenterImpl implements ProfessorPresenter {
     }
 
     @Override
-    public void requestProfessor(String token, String type) {
-        professorProvider.requestProfessor(token, type, new ProfessorCallBack() {
+    public void requestProfessor(String token, String type,String city,String topic) {
+        professorView.showProgressBar(true);
+        professorProvider.requestProfessor(token, type,city,topic, new ProfessorCallBack() {
             @Override
             public void onSuccess(ProfessorData professorData) {
                 if(professorData.isSuccess())
                 {
+                    Log.d("professorActivity",professorData.isSuccess()+"");
+                    Log.d("professorActivity","2");
                     professorView.check(professorData);
+                    professorView.showProgressBar(false);
+
                 }
                 else
                 {
+                    professorView.showProgressBar(false);
                     professorView.showError(professorData.getMessage());
                 }
             }
@@ -39,7 +47,7 @@ public class ProfessorPresenterImpl implements ProfessorPresenter {
             public void onFailure() {
 
                 professorView.showError("UNABLE TO CONNECT");
-
+                professorView.showProgressBar(false);
 
 
             }

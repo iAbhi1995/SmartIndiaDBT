@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.smartindia.hackathon.biotechnology.helper.Urls;
 import com.smartindia.hackathon.biotechnology.professor.ProfessorCallBack;
 import com.smartindia.hackathon.biotechnology.professor.api.ProfessorApi;
+import com.smartindia.hackathon.biotechnology.professor.model.ProfessorProvider;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
 
 import okhttp3.OkHttpClient;
@@ -20,6 +21,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class RetrofitProfessorProvider implements ProfessorProvider {
+
     public ProfessorApi professorApi;
 
     public RetrofitProfessorProvider() {
@@ -39,15 +41,15 @@ public class RetrofitProfessorProvider implements ProfessorProvider {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
-        professorApi=retrofit.create(ProfessorApi.class);
+        professorApi = retrofit.create(ProfessorApi.class);
 
     }
 
 
     @Override
-    public void requestProfessor(String token, String type, final ProfessorCallBack professorCallBack) {
+    public void requestProfessor(String token, String type,String city,String topic, final ProfessorCallBack professorCallBack) {
 
-        Call<ProfessorData>call=professorApi.getProfessor(token,type);
+        Call<ProfessorData> call = professorApi.getProfessor(token, type,city,topic);
         call.enqueue(new Callback<ProfessorData>() {
             @Override
             public void onResponse(Call<ProfessorData> call, Response<ProfessorData> response) {
@@ -65,10 +67,6 @@ public class RetrofitProfessorProvider implements ProfessorProvider {
 
             }
         });
-
-
-
-
 
 
     }
