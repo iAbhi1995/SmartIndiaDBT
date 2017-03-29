@@ -3,6 +3,9 @@ package com.smartindia.hackathon.biotechnology.home;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.smartindia.hackathon.biotechnology.R;
+import com.smartindia.hackathon.biotechnology.professor.view.ProfessorFragment;
 
 public class Home_page extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -42,6 +46,7 @@ public class Home_page extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     @Override
@@ -83,6 +88,8 @@ public class Home_page extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
+            setFragment(new ProfessorFragment(),"professor");
+
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
@@ -100,4 +107,26 @@ public class Home_page extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public void setFragment(Fragment fragment, String title) {
+        if (fragment != null) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.home_layout, fragment);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+            getSupportActionBar().setTitle(title);
+        }
+    }
+
+
+
+
+
+
+
+
 }
+
+
+

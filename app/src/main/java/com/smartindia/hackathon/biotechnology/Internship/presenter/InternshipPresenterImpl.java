@@ -21,8 +21,8 @@ private InternshipProvider internshipProvider;
     }
 
     @Override
-    public void requestInternship(String token) {
-        internshipProvider.requestInternship(token, new InternshipCallBack() {
+    public void requestInternship(String token,String city,String topic) {
+        internshipProvider.requestInternship(token,city,topic, new InternshipCallBack() {
             @Override
             public void onSuccess(InternshipData internshipData) {
                 if(internshipData.isSuccess())

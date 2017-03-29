@@ -48,7 +48,7 @@
                 android:text="Applied On:" />
 
             <TextView
-                android:id="@+id/internship_location"
+                android:id="@+id/internship_applied"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
@@ -69,7 +69,7 @@
                 android:text="Application Status:" />
 
             <TextView
-                android:id="@+id/internship_startDate"
+                android:id="@+id/internship_status"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
