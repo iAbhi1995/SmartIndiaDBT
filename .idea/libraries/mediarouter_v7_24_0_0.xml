@@ -1,8 +1,5 @@
 <component name="libraryTable">
   <library name="mediarouter-v7-24.0.0">
-    <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.android/build-cache/f7005ccd00da7989d3f461a8b2e0cf0fb55017c2/output/annotations.zip!/" />
-    </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$USER_HOME$/.android/build-cache/bcb591bf1ff0bdf5f17aed73c2a96379ec41dc0f/output/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.android/build-cache/bcb591bf1ff0bdf5f17aed73c2a96379ec41dc0f/output/res" />

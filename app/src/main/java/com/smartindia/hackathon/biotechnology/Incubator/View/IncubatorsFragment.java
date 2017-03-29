@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,8 +25,7 @@ public class IncubatorsFragment extends Fragment implements IncubatorsInterface 
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    TextView incubator_name,incubator_thrustArea,incubator_state,incubator_city,incubator_address,incubator_website,incubator_person
-            ,incubator_contact;
+    TextView incubator_name,incubator_thrustArea,incubator_state,incubator_city,incubator_address,incubator_website,incubator_person,incubator_contact;
     ProgressBar ProgressBar;
 
     private String mParam1;
@@ -66,7 +64,7 @@ public class IncubatorsFragment extends Fragment implements IncubatorsInterface 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_incubators_fragmnt, container, false);
+        View view = inflater.inflate(R.layout.fragment_incubators, container, false);
         initialize();
 
         incubator_name=(TextView)getView().findViewById(R.id.incubator_name);

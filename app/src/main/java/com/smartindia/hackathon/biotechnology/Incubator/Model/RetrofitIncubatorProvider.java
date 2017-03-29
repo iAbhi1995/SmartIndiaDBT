@@ -45,7 +45,7 @@ public class RetrofitIncubatorProvider implements IncubatorProvider{
 
     @Override
     public void getIncubators(String type,String id, final OnIncubatorsReceived onIncubatorReceived) {
-        Call<IncubatorData> call=incubatorApi.getIncubators("","");
+        Call<IncubatorData> call=incubatorApi.getIncubators(type,id);
         call.enqueue(new Callback<IncubatorData>() {
             @Override
             public void onResponse(Call<IncubatorData> call, Response<IncubatorData> response) {

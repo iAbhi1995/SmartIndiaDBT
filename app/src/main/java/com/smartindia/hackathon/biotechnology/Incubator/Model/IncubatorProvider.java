@@ -7,8 +7,5 @@ import com.smartindia.hackathon.biotechnology.Incubator.View.OnIncubatorsReceive
  */
 
 public interface IncubatorProvider {
-
         void getIncubators(String type,String id, OnIncubatorsReceived OnIncubatorReceived);
-
-
 }

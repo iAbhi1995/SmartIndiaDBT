@@ -20,14 +20,18 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Professor.View.Professors"
             android:label="@string/title_activity_professors"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".home.Home_page"
             android:label="@string/title_activity_home_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SurveyUpload.View.Survey_Upload"
+            android:label="@string/title_activity_survey__upload"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
