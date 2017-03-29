@@ -61,15 +61,15 @@ public class RetrofitSurveyUploadProvider implements SurveyUploadProvider
         RequestBody survey_question3 = RequestBody.create(MediaType.parse("text/plain"), survey_questio3);
         RequestBody survey_question4 = RequestBody.create(MediaType.parse("text/plain"), survey_questio4);
 
-        Call<OnSurveyUploadCallBack> onSurveyUploadCallBackCall = surveyApi.upload(survey_title,survey_scale,survey_description,survey_question1,survey_question2,survey_question3,survey_question4,fileToUpload);
-        onSurveyUploadCallBackCall.enqueue(new Callback<OnSurveyUploadCallBack>() {
+        Call<SureveyUploadData> sureveyUploadDataCall = surveyApi.upload(survey_title,survey_scale,survey_description,survey_question1,survey_question2,survey_question3,survey_question4,fileToUpload);
+        sureveyUploadDataCall.enqueue(new Callback<SureveyUploadData>() {
             @Override
-            public void onResponse(Call<OnSurveyUploadCallBack> call, Response<OnSurveyUploadCallBack> response) {
-
+            public void onResponse(Call<SureveyUploadData> call, Response<SureveyUploadData> response) {
+                        onSurveyUploadCallBack.onSuccess(response.body());
             }
 
             @Override
-            public void onFailure(Call<OnSurveyUploadCallBack> call, Throwable t) {
+            public void onFailure(Call<SureveyUploadData> call, Throwable t) {
                 t.printStackTrace();
             }
         });
