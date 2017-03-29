@@ -8,7 +8,7 @@ import com.smartindia.hackathon.biotechnology.Internship.InternshipCallBack;
 
 public interface InternshipProvider {
 
-    void requestInternship(String token, InternshipCallBack internshipCallBack);
+    void requestInternship(String token,String city,String topic, InternshipCallBack internshipCallBack);
 
 
 

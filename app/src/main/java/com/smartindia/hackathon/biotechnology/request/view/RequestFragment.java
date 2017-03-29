@@ -93,17 +93,19 @@ public class RequestFragment extends Fragment implements  RequestView{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_request, container, false);
+progressBar=(ProgressBar)view.findViewById(R.id.progressBar) ;
+        recyclerView=(RecyclerView)view.findViewById(R.id.recycler_filter);
+        sharedPrefs = new SharedPrefs(getContext());
 
-        sharedPrefs = new SharedPrefs(getContext());//doubt
-
-        //access_token=sharedPrefs.                    //doubt
+        access_token=sharedPrefs.getAccessToken();
 
         requestPresenter=new RequestPresenterImpl(new RetrofitRequestProvider(),this);
-//        requestAdapter=new RequestAdapter(getContext(),this); //doubt
+        requestAdapter=new RequestAdapter(getContext(),this);
 
-//        linearLayoutManager= new LinearLayoutManager(getContext());
-//        recyclerView.setLayoutManager(linearLayoutManager);
-//        recyclerView.setAdapter(requestAdapter);
+        linearLayoutManager= new LinearLayoutManager(getContext());
+
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(requestAdapter);
         requestPresenter.requestAppStatus(access_token);
 
         ((Home_page)getActivity()).getSupportActionBar().hide();
@@ -140,8 +142,8 @@ public class RequestFragment extends Fragment implements  RequestView{
 
     @Override
     public void dataReceive(List<RequestDataDetails> requestDataDetailsList) {
-//        requestAdapter.setData(requestDataDetailsList);
-//        requestAdapter.notifyDataSetChanged();  //doubt
+        requestAdapter.setData(requestDataDetailsList);
+        requestAdapter.notifyDataSetChanged();  //doubt
     }
 
     @Override

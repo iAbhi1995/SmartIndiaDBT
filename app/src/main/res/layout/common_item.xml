@@ -8,14 +8,20 @@
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:layout_height="99dp">
-
+<RelativeLayout
+    android:layout_width="100dp"
+    android:layout_height="100dp">
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_bar"/>
             <com.smartindia.hackathon.biotechnology.Utils.RoundedImageView
                 android:id="@+id/attractn_img"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
                 android:paddingTop="5dp" />
-
+</RelativeLayout>
             <LinearLayout
                android:paddingLeft="2dp"
                 android:layout_width="match_parent"

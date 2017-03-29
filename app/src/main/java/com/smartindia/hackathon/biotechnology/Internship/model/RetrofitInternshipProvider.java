@@ -47,9 +47,9 @@ private InternshipApi internshipApi;
 
 
     @Override
-    public void requestInternship(String token, final InternshipCallBack internshipCallBack) {
+    public void requestInternship(String token,String city,String topic, final InternshipCallBack internshipCallBack) {
 
-        Call<InternshipData> call=internshipApi.getInternship(token);
+        Call<InternshipData> call=internshipApi.getInternship(token,city,topic);
         call.enqueue(new Callback<InternshipData>() {
             @Override
             public void onResponse(Call<InternshipData> call, Response<InternshipData> response) {

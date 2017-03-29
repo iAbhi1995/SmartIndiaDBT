@@ -14,7 +14,7 @@ public interface InternshipView {
 
 
     void showError(String message);
-   // void showDialog();    //it will be used after wards after consulting from aman bhai
+   // void showDialog();   //it will be used after wards after consulting from aman bhai
     //List-Spinners
 
     void showSpinnerCity(InternshipData internshipData);

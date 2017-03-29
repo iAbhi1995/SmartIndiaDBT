@@ -17,6 +17,7 @@ public class SharedPrefs {
     private static final String PREF_NAME_LOGIN = "Login";
     private static final String KEY_ACCESS_TOKEN = "access_token";
     private static final String KEY_IS_LOGGEDIN = "isLoggedIn";
+    private static final String KEY_TYPE_ANALOGUS= "typeAnalogus";
     private static final String USER_TYPE = "user_type";
 
     private static String TAG = "Shared Preference";
@@ -51,6 +52,16 @@ public class SharedPrefs {
         editor.commit();
         Log.d(TAG, "User login session modified!");
     }
+
+    public String getKeyTypeAnalogus() {
+        return pref.getString(KEY_TYPE_ANALOGUS,null);
+    }
+
+    public void setKeyTypeAnalogus(String typeAnalogus) {
+        editor.putString(KEY_TYPE_ANALOGUS,typeAnalogus);
+        editor.commit();
+    }
+
 
     public boolean isLoggedIn() {
         return pref.getBoolean(KEY_IS_LOGGEDIN, false);
