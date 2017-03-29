@@ -1,21 +1,12 @@
 <component name="libraryTable">
   <library name="circularimageview-1.1">
     <CLASSES>
-<<<<<<< HEAD
-      <root url="file://$USER_HOME$/.android/build-cache/92549fb60bff519bc418e3d7ca728caa23c07fba/output/res" />
-      <root url="jar://$USER_HOME$/.android/build-cache/92549fb60bff519bc418e3d7ca728caa23c07fba/output/jars/classes.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES>
-      <root url="jar://$USER_HOME$/caches/modules-2/files-2.1/com.pkmmte.view/circularimageview/1.1/1be65c7d12d228a2f1aa58cff53f1417db476753/circularimageview-1.1-sources.jar!/" />
-=======
-      <root url="jar://$USER_HOME$/.android/build-cache/c907804d4a714e72c91ef5a18f38de238abe03e3/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/c907804d4a714e72c91ef5a18f38de238abe03e3/output/res" />
+      <root url="file://$USER_HOME$/.android/build-cache/e4cd38269ecd559ef050cbe010c004005008b741/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/e4cd38269ecd559ef050cbe010c004005008b741/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.pkmmte.view/circularimageview/1.1/1be65c7d12d228a2f1aa58cff53f1417db476753/circularimageview-1.1-sources.jar!/" />
->>>>>>> 2b6afb4edeeafacb429e81f480592b9a0df75195
     </SOURCES>
   </library>
 </component>

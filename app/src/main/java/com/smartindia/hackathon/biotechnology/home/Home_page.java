@@ -17,8 +17,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.smartindia.hackathon.biotechnology.R;
-import com.smartindia.hackathon.biotechnology.professor.view.ProfessorFragment;
-
 public class Home_page extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -88,8 +86,6 @@ public class Home_page extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            setFragment(new ProfessorFragment(),"professor");
-
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 

@@ -1,5 +1,7 @@
 package com.smartindia.hackathon.biotechnology.SurveyUpload.API;
 
+import com.smartindia.hackathon.biotechnology.SurveyUpload.View.OnSurveyUploadCallBack;
+
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
@@ -15,7 +17,7 @@ import retrofit2.http.Part;
 public interface SurveyApi {
         @Multipart
         @POST("upload")
-        Call<ResponseBody> upload(
+        Call<OnSurveyUploadCallBack> upload(
                 @Part("survey_title") RequestBody survey_title,
                 @Part("description") RequestBody description,
                 @Part("survey_scale") RequestBody survey_scale,

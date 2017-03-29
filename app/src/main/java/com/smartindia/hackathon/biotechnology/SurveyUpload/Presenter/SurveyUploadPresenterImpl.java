@@ -1,8 +1,5 @@
 package com.smartindia.hackathon.biotechnology.SurveyUpload.Presenter;
 
-import android.net.Uri;
-import android.util.Log;
-
 import com.smartindia.hackathon.biotechnology.SurveyUpload.Model.Data.SureveyUploadData;
 import com.smartindia.hackathon.biotechnology.SurveyUpload.Model.RetrofitSurveyUploadProvider;
 import com.smartindia.hackathon.biotechnology.SurveyUpload.Model.SurveyUploadProvider;
@@ -27,7 +24,7 @@ public class SurveyUploadPresenterImpl implements SurveyUploadPresenter {
 
 
     @Override
-    public void requestUpload(Uri uri,String survey_title, String survey_scale, String survey_description, String survey_question1,
+    public void requestUpload(String uri,String survey_title, String survey_scale, String survey_description, String survey_question1,
                               String survey_question2, String survey_question3, String survey_question4)
     {
 

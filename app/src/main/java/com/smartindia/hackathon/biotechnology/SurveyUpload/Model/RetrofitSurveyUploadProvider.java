@@ -1,14 +1,24 @@
 package com.smartindia.hackathon.biotechnology.SurveyUpload.Model;
-
-import android.net.Uri;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.smartindia.hackathon.biotechnology.SurveyUpload.API.SurveyApi;
+import com.smartindia.hackathon.biotechnology.SurveyUpload.Model.Data.SureveyUploadData;
+import com.smartindia.hackathon.biotechnology.SurveyUpload.View.OnSurveyUploadCallBack;
 import com.smartindia.hackathon.biotechnology.helper.Urls;
 
+import java.io.File;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
+import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
 import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -19,7 +29,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitSurveyUploadProvider implements SurveyUploadProvider
 {
     private SurveyApi surveyApi;
-
     public RetrofitSurveyUploadProvider(){
 
             Gson gson = new GsonBuilder()
@@ -36,44 +45,32 @@ public class RetrofitSurveyUploadProvider implements SurveyUploadProvider
                     .build();
             surveyApi = retrofit.create(SurveyApi.class);
     }
-    private void uploadFile(Uri fileUri) {
-        // create upload service client
-        FileUploadService service =
-                ServiceGenerator.createService(FileUploadService.class);
 
-        // https://github.com/iPaulPro/aFileChooser/blob/master/aFileChooser/src/com/ipaulpro/afilechooser/utils/FileUtils.java
-        // use the FileUtils to get the actual file by uri
-        File file = FileUtils.getFile(this, fileUri);
+    public void requestUpload(String uri, String survey_titl, String survey_scal, String survey_descriptio, String survey_questio1, String
+            survey_questio2, String survey_questio3, String survey_questio4, final OnSurveyUploadCallBack onSurveyUploadCallBack)
+    {
+        File file = new File(uri);
 
-        // create RequestBody instance from file
-        RequestBody requestFile =
-                RequestBody.create(
-                        MediaType.parse(getContentResolver().getType(fileUri)),
-                        file
-                );
+        RequestBody requestBody = RequestBody.create(MediaType.parse("application/pdf"), file);
+        MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("file", file.getName(), requestBody);
+        RequestBody survey_title = RequestBody.create(MediaType.parse("text/plain"), survey_titl);
+        RequestBody survey_scale = RequestBody.create(MediaType.parse("text/plain"), survey_scal);
+        RequestBody survey_description = RequestBody.create(MediaType.parse("text/plain"),survey_descriptio);
+        RequestBody survey_question1 = RequestBody.create(MediaType.parse("text/plain"), survey_questio1);
+        RequestBody survey_question2 = RequestBody.create(MediaType.parse("text/plain"), survey_questio2);
+        RequestBody survey_question3 = RequestBody.create(MediaType.parse("text/plain"), survey_questio3);
+        RequestBody survey_question4 = RequestBody.create(MediaType.parse("text/plain"), survey_questio4);
 
-        // MultipartBody.Part is used to send also the actual file name
-        MultipartBody.Part body =
-                MultipartBody.Part.createFormData("picture", file.getName(), requestFile);
-
-        // add another part within the multipart request
-        String descriptionString = "hello, this is description speaking";
-        RequestBody description =
-                RequestBody.create(
-                        okhttp3.MultipartBody.FORM, descriptionString);
-
-        // finally, execute the request
-        Call<ResponseBody> call = service.upload(description, body);
-        call.enqueue(new Callback<ResponseBody>() {
+        Call<OnSurveyUploadCallBack> onSurveyUploadCallBackCall = surveyApi.upload(survey_title,survey_scale,survey_description,survey_question1,survey_question2,survey_question3,survey_question4,fileToUpload);
+        onSurveyUploadCallBackCall.enqueue(new Callback<OnSurveyUploadCallBack>() {
             @Override
-            public void onResponse(Call<ResponseBody> call,
-                                   Response<ResponseBody> response) {
-                Log.v("Upload", "success");
+            public void onResponse(Call<OnSurveyUploadCallBack> call, Response<OnSurveyUploadCallBack> response) {
+
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Log.e("Upload error:", t.getMessage());
+            public void onFailure(Call<OnSurveyUploadCallBack> call, Throwable t) {
+                t.printStackTrace();
             }
         });
     }
