@@ -2,6 +2,7 @@ package com.smartindia.hackathon.biotechnology.SurveyUpload.API;
 
 import com.smartindia.hackathon.biotechnology.SurveyUpload.Model.Data.SureveyUploadData;
 import com.smartindia.hackathon.biotechnology.SurveyUpload.View.OnSurveyUploadCallBack;
+import com.smartindia.hackathon.biotechnology.helper.Urls;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -17,15 +18,17 @@ import retrofit2.http.Part;
 
 public interface SurveyApi {
         @Multipart
-        @POST("upload")
+        @POST(Urls.SURVEY_UPLOAD)
         Call<SureveyUploadData> upload(
-                @Part("survey_title") RequestBody survey_title,
+                @Part("access_token") RequestBody access_token,
+                @Part("type") RequestBody type,
+                @Part("title") RequestBody survey_title,
                 @Part("description") RequestBody description,
-                @Part("survey_scale") RequestBody survey_scale,
-                @Part("survey_question1") RequestBody survey_question1,
-                @Part("survey_question2") RequestBody survey_question2,
-                @Part("survey_question3") RequestBody survey_question3,
-                @Part("survey_question4") RequestBody survey_question4,
+                @Part("field") RequestBody survey_scale,
+                @Part("ques1") RequestBody survey_question1,
+                @Part("ques2") RequestBody survey_question2,
+                @Part("ques3") RequestBody survey_question3,
+                @Part("ques4") RequestBody survey_question4,
                 @Part MultipartBody.Part file
         );
 }

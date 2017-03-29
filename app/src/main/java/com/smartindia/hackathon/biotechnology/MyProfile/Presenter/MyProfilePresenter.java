@@ -5,11 +5,6 @@ package com.smartindia.hackathon.biotechnology.MyProfile.Presenter;
  */
 
 public interface MyProfilePresenter {
-
-    void requestSkills();
-
-    void requestMyProfile(String uid,
-                          String name, String college,
-                          String place, String emailId, String phoneNo);
+    void requestUpload(String file_image,String file_pdf,String user_institution,String user_skills,String user_place,String user_currentyear,String user_qualification,String user_experience);
 
 }

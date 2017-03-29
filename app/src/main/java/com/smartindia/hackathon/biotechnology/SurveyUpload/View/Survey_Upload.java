@@ -23,31 +23,27 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.smartindia.hackathon.biotechnology.R;
+import com.smartindia.hackathon.biotechnology.SurveyUpload.Model.Data.MockSurveyUploadProvider;
 import com.smartindia.hackathon.biotechnology.SurveyUpload.Model.RetrofitSurveyUploadProvider;
 import com.smartindia.hackathon.biotechnology.SurveyUpload.Presenter.SurveyUploadPresenter;
 import com.smartindia.hackathon.biotechnology.SurveyUpload.Presenter.SurveyUploadPresenterImpl;
 import com.smartindia.hackathon.biotechnology.helper.FilePath;
+import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
 
 import java.io.IOException;
 
 public class Survey_Upload extends AppCompatActivity implements  SurveyUploadView ,View.OnClickListener{
 
     private ProgressBar progressbar;
-    private RetrofitSurveyUploadProvider retrofitSurveyUploadProvider;
     private SurveyUploadPresenter surveyUploadPresenter;
     private Button buttonChoose;
     private Button buttonUpload;
+    private SharedPrefs sharedPrefs;
     private EditText editText;
     private Uri filePath;
     private int PICK_FILE_REQUEST = 1;
     private static final int STORAGE_PERMISSION_CODE = 123;
-    String survey_title;
-    String survey_description;
-    String survey_scale;
-    String survey_question1;
-    String survey_question2;
-    String survey_question3;
-    String survey_question4;
+    public EditText survey_title,survey_description,survey_scale,survey_question1,survey_question2,survey_question3,survey_question4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +52,7 @@ public class Survey_Upload extends AppCompatActivity implements  SurveyUploadVie
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        sharedPrefs=new SharedPrefs(this);
         requestStoragePermission();
 
         //Initializing views
@@ -65,24 +62,6 @@ public class Survey_Upload extends AppCompatActivity implements  SurveyUploadVie
 
         buttonChoose.setOnClickListener(this);
         buttonUpload.setOnClickListener(this);
-
-        EditText survey_titl,survey_descriptio,survey_scal,survey_questio1,survey_questio2,survey_questio3,survey_questio4;
-
-        survey_titl=(EditText) findViewById(R.id.survey_title);
-        survey_scal=(EditText) findViewById(R.id.survey_scale);
-        survey_descriptio=(EditText) findViewById(R.id.survey_description);
-        survey_questio1=(EditText) findViewById(R.id.survey_question1);
-        survey_questio2=(EditText) findViewById(R.id.survey_question2);
-        survey_questio3=(EditText) findViewById(R.id.survey_question3);
-        survey_questio4=(EditText) findViewById(R.id.survey_question4);
-
-        String survey_title = survey_titl.toString();
-        String survey_description = survey_descriptio.toString();
-        String survey_scale = survey_scal.toString();
-        String survey_question1 = survey_questio1.toString();
-        String survey_question2 = survey_questio2.toString();
-        String survey_question3 = survey_questio3.toString();
-        String survey_question4 = survey_questio4.toString();
 
         surveyUploadPresenter = new SurveyUploadPresenterImpl(this,
                 new RetrofitSurveyUploadProvider());
@@ -106,7 +85,6 @@ public class Survey_Upload extends AppCompatActivity implements  SurveyUploadVie
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_FILE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             filePath = data.getData();
-            Log.d("Ayush",filePath.toString());
         }
     }
 
@@ -168,6 +146,20 @@ public class Survey_Upload extends AppCompatActivity implements  SurveyUploadVie
     {
         FilePath FilePath = new FilePath();
         String path = FilePath.getPath(getApplicationContext(),filePath);
-       surveyUploadPresenter.requestUpload(path,survey_title,survey_scale,survey_description,survey_question1,survey_question2,survey_question3,survey_question4);
+        progressbar = (ProgressBar)findViewById(R.id.progressbar);
+        survey_title=(EditText) findViewById(R.id.survey_title);
+        survey_scale=(EditText) findViewById(R.id.survey_scale);
+        survey_description=(EditText) findViewById(R.id.survey_description);
+        survey_question1=(EditText) findViewById(R.id.survey_question1);
+        survey_question2=(EditText) findViewById(R.id.survey_question2);
+        survey_question3=(EditText) findViewById(R.id.survey_question3);
+        survey_question4=(EditText) findViewById(R.id.survey_question4);
+
+
+        Log.d("Ayush1", "yahan");
+        Log.d("Ayush1", survey_question1.getText().toString());
+
+
+        surveyUploadPresenter.requestUpload(sharedPrefs.getAccessToken(),sharedPrefs.getKeyType(),path,survey_title.getText().toString(),survey_scale.getText().toString(),survey_description.getText().toString(),survey_question1.getText().toString(),survey_question2.getText().toString(),survey_question3.getText().toString(),survey_question4.getText().toString());
     }
 }

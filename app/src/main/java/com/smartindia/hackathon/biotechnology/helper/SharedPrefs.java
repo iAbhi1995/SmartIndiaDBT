@@ -14,6 +14,7 @@ public class SharedPrefs {
 
 
     private static final String PREF_NAME = "welcome";
+    private static final String KEY_TYPE = "1";
     private static final String PREF_NAME_LOGIN = "Login";
     private static final String KEY_ACCESS_TOKEN = "access_token";
     private static final String KEY_IS_LOGGEDIN = "isLoggedIn";
@@ -38,11 +39,19 @@ public class SharedPrefs {
 
 
     public String getAccessToken() {
-        return pref.getString(KEY_ACCESS_TOKEN, null);
+        return pref.getString(KEY_ACCESS_TOKEN,"00");
     }
 
     public void setAccessToken(String accessToken) {
         editor.putString(KEY_ACCESS_TOKEN, accessToken);
+        editor.commit();
+    }
+    public String getKeyType() {
+        return pref.getString(KEY_TYPE, null);
+    }
+
+    public void setKeyType(String keyType) {
+        editor.putString(KEY_TYPE, keyType);
         editor.commit();
     }
 

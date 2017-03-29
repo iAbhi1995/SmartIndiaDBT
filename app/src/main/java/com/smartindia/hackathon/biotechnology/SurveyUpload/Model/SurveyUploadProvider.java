@@ -9,6 +9,6 @@ import com.smartindia.hackathon.biotechnology.SurveyUpload.View.OnSurveyUploadCa
  */
 
 public interface SurveyUploadProvider {
-    void requestUpload(String uri, String survey_title, String survey_scale, String survey_description, String survey_question1, String
+    void requestUpload(String access_token,String type,String uri, String survey_title, String survey_scale, String survey_description, String survey_question1, String
             survey_question2,String survey_question3, String survey_question4, OnSurveyUploadCallBack onSurveyUploadCallBack);
 }

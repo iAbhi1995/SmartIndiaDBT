@@ -4,10 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.smartindia.hackathon.biotechnology.MyProfile.Api.MyProfileApi;
 import com.smartindia.hackathon.biotechnology.MyProfile.Model.Data.MyProfileData;
-import com.smartindia.hackathon.biotechnology.MyProfile.Model.Data.PDFuploadResponse;
-import com.smartindia.hackathon.biotechnology.MyProfile.Model.Data.SkillsData;
-import com.smartindia.hackathon.biotechnology.MyProfile.MyProfileCallback;
-import com.smartindia.hackathon.biotechnology.MyProfile.SkillsCallback;
+import com.smartindia.hackathon.biotechnology.MyProfile.view.MyProfileCallback;
 import com.smartindia.hackathon.biotechnology.helper.Urls;
 
 import java.io.File;
@@ -23,38 +20,44 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-class RetrofitProfileProvider implements MyProfileProvider, SkillsProvider {
+public class RetrofitProfileProvider implements MyProfileProvider{
 
-    private Retrofit retrofit;
     private MyProfileApi myProfileApi;
-
-    public RetrofitProfileProvider(String uid) {
-
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
-
+    public RetrofitProfileProvider(){
 
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
-        retrofit = new Retrofit.Builder()
-                .baseUrl(Urls.Base_Url)
-                .addConverterFactory(GsonConverterFactory.create(gson))
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Urls.BASE_URL)
                 .client(client)
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
+        myProfileApi = retrofit.create(MyProfileApi.class);
     }
 
-    @Override
-    public void requestMyProfile(String uid,
-                                 String name, String college,
-                                 String place, String emailId, String phoneNo, final MyProfileCallback myProfileCallback) {
-        MyProfileApi myProfileApi = retrofit.create(MyProfileApi.class);
-        Call<MyProfileData> call = myProfileApi.requestMyProfile(uid,
-                name, college,
-                place, emailId, phoneNo);
-        call.enqueue(new Callback<MyProfileData>() {
+    public void requestUpload(String file_imag, String file_pd, String user_institutio, String user_skill, String user_plac, String user_currentyea, String user_qualificatio, String user_experienc, final MyProfileCallback myProfileCallback)
+    {
+        File file_image = new File(file_imag);
+        File file_pdf = new File(file_pd);
+
+        RequestBody requestBodypdf = RequestBody.create(MediaType.parse("application/pdf"), file_image);
+        RequestBody requestBodyimg = RequestBody.create(MediaType.parse("image/*"), file_pdf);
+        MultipartBody.Part fileToUploadimg = MultipartBody.Part.createFormData("file", file_image.getName(), requestBodyimg);
+        MultipartBody.Part fileToUploadpdf = MultipartBody.Part.createFormData("file", file_pdf.getName(), requestBodypdf);
+        RequestBody user_institution = RequestBody.create(MediaType.parse("text/plain"), user_institutio);
+        RequestBody user_skills = RequestBody.create(MediaType.parse("text/plain"), user_skill);
+        RequestBody user_place = RequestBody.create(MediaType.parse("text/plain"),user_plac);
+        RequestBody user_currentyear = RequestBody.create(MediaType.parse("text/plain"), user_currentyea);
+        RequestBody user_qualification = RequestBody.create(MediaType.parse("text/plain"), user_qualificatio);
+        RequestBody user_experience = RequestBody.create(MediaType.parse("text/plain"), user_experienc);
+
+        Call<MyProfileData> myProfileDataCall = myProfileApi.upload(user_institution,user_skills,user_place,user_currentyear,user_qualification,user_experience,fileToUploadimg,fileToUploadpdf);
+        myProfileDataCall.enqueue(new Callback<MyProfileData>() {
             @Override
             public void onResponse(Call<MyProfileData> call, Response<MyProfileData> response) {
                 myProfileCallback.onSuccess(response.body());
@@ -63,53 +66,6 @@ class RetrofitProfileProvider implements MyProfileProvider, SkillsProvider {
             @Override
             public void onFailure(Call<MyProfileData> call, Throwable t) {
                 t.printStackTrace();
-                myProfileCallback.onFailure("Unable to Connect to Api");
-            }
-        });
-    }
-
-
-    @Override
-    public void requestPDFUpload(String mediaPath, final MyProfileCallback myProfileCallback) {
-
-        File file = new File(mediaPath);
-        RequestBody requestBody = RequestBody.create(MediaType.parse("pdf"), file);
-        MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("file", file.getName(), requestBody);
-        RequestBody filename = RequestBody.create(MediaType.parse("pdf"), file.getName());
-
-
-        myProfileApi = retrofit.create(MyProfileApi.class);
-        Call<PDFuploadResponse> call = myProfileApi.uploadFile(fileToUpload, filename);
-        call.enqueue(new Callback<PDFuploadResponse>() {
-            @Override
-            public void onResponse(Call<PDFuploadResponse> call, Response<PDFuploadResponse> response) {
-                myProfileCallback.onSuccessPDF(response.body());
-            }
-
-            @Override
-            public void onFailure(Call<PDFuploadResponse> call, Throwable t) {
-                myProfileCallback.onFailurePDF();
-                t.printStackTrace();
-            }
-        });
-    }
-
-
-    @Override
-    public void requestSkills(final SkillsCallback skillCallBack) {
-        myProfileApi = retrofit.create(MyProfileApi.class);
-        Call<SkillsData> call = myProfileApi.requestSkills();
-        call.enqueue(new Callback<SkillsData>() {
-
-            @Override
-            public void onResponse(Call<SkillsData> call, Response<SkillsData> response) {
-                skillCallBack.onSuccess(response.body());
-            }
-
-            @Override
-            public void onFailure(Call<SkillsData> call, Throwable t) {
-                t.printStackTrace();
-                skillCallBack.onFailure();
             }
         });
     }

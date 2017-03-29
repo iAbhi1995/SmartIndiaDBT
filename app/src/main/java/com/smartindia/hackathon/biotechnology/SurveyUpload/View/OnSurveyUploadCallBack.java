@@ -10,6 +10,5 @@ import okhttp3.ResponseBody;
 
 public interface OnSurveyUploadCallBack {
         void onSuccess(SureveyUploadData sureveyUploadData);
-
         void onFailure(String error);;
 }

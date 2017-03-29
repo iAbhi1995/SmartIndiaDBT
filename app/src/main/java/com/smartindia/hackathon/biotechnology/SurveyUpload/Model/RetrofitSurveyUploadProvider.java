@@ -1,4 +1,5 @@
 package com.smartindia.hackathon.biotechnology.SurveyUpload.Model;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -46,13 +47,15 @@ public class RetrofitSurveyUploadProvider implements SurveyUploadProvider
             surveyApi = retrofit.create(SurveyApi.class);
     }
 
-    public void requestUpload(String uri, String survey_titl, String survey_scal, String survey_descriptio, String survey_questio1, String
+    public void requestUpload(String access_toke,String typ,String uri, String survey_titl, String survey_scal, String survey_descriptio, String survey_questio1, String
             survey_questio2, String survey_questio3, String survey_questio4, final OnSurveyUploadCallBack onSurveyUploadCallBack)
     {
         File file = new File(uri);
 
-        RequestBody requestBody = RequestBody.create(MediaType.parse("application/pdf"), file);
+        final RequestBody requestBody = RequestBody.create(MediaType.parse("application/pdf"), file);
         MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("file", file.getName(), requestBody);
+        RequestBody access_token = RequestBody.create(MediaType.parse("text/plain"), access_toke);
+        RequestBody type = RequestBody.create(MediaType.parse("text/plain"), "2");
         RequestBody survey_title = RequestBody.create(MediaType.parse("text/plain"), survey_titl);
         RequestBody survey_scale = RequestBody.create(MediaType.parse("text/plain"), survey_scal);
         RequestBody survey_description = RequestBody.create(MediaType.parse("text/plain"),survey_descriptio);
@@ -61,7 +64,7 @@ public class RetrofitSurveyUploadProvider implements SurveyUploadProvider
         RequestBody survey_question3 = RequestBody.create(MediaType.parse("text/plain"), survey_questio3);
         RequestBody survey_question4 = RequestBody.create(MediaType.parse("text/plain"), survey_questio4);
 
-        Call<SureveyUploadData> sureveyUploadDataCall = surveyApi.upload(survey_title,survey_scale,survey_description,survey_question1,survey_question2,survey_question3,survey_question4,fileToUpload);
+        Call<SureveyUploadData> sureveyUploadDataCall = surveyApi.upload(access_token,type,survey_title,survey_scale,survey_description,survey_question1,survey_question2,survey_question3,survey_question4,fileToUpload);
         sureveyUploadDataCall.enqueue(new Callback<SureveyUploadData>() {
             @Override
             public void onResponse(Call<SureveyUploadData> call, Response<SureveyUploadData> response) {

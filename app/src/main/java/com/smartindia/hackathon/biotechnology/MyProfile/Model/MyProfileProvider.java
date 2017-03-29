@@ -1,14 +1,7 @@
 package com.smartindia.hackathon.biotechnology.MyProfile.Model;
 
-import com.smartindia.hackathon.biotechnology.MyProfile.MyProfileCallback;
-
-/**
- * Created by Abhishek on 27-03-2017.
- */
+import com.smartindia.hackathon.biotechnology.MyProfile.view.MyProfileCallback;
 
 public interface MyProfileProvider {
-    void requestMyProfile( String uid,
-                           String name,String college,
-                           String place,String emailId,String phoneNo, MyProfileCallback myProfileCallback);
-    void requestPDFUpload(String mediaPath, MyProfileCallback myProfileCallback);
+    void requestUpload( String file_image,String file_pdf,String user_institution,String user_skills,String user_place,String user_currentyear,String user_qualification,String user_experience, MyProfileCallback myProfileCallback);
 }
