@@ -1,6 +1,7 @@
 package com.smartindia.hackathon.biotechnology.productDesc.api;
 
 import com.smartindia.hackathon.biotechnology.helper.Urls;
+import com.smartindia.hackathon.biotechnology.productDesc.model.data.ProductData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
 
 import retrofit2.Call;
@@ -16,7 +17,7 @@ public interface ProductApi {
 
 
 
-    //@GET(Urls.REQUEST_PRODUCT)
-    Call<ProfessorData> getProfessor(@Query("access_token") String token,
-                                     @Query("type") String type, @Query("id") String id);
+    @GET(Urls.REQUEST_PRODUCT)
+    Call<ProductData> getProduct(@Query("access_token") String token,
+                                 @Query("type") String type, @Query("id") String id);
 }

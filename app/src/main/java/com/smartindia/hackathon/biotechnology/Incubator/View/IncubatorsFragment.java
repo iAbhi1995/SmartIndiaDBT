@@ -33,8 +33,6 @@ public class IncubatorsFragment extends Fragment implements IncubatorsInterface 
     private String mParam1;
     private String mParam2;
 
-    ProgressBar progressBar = (ProgressBar)getView().findViewById(R.id.progressbar);
-    Toolbar toolbar = (Toolbar)getView().findViewById(R.id.order_toolbar) ;
 
     private SharedPrefs sharedPrefs;
     private String token;
@@ -67,6 +65,7 @@ public class IncubatorsFragment extends Fragment implements IncubatorsInterface 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_incubators_fragmnt, container, false);
+        Toolbar toolbar = (Toolbar)getView().findViewById(R.id.order_toolbar) ;
         initialize();
 
         incubator_name=(TextView)getView().findViewById(R.id.incubator_name);
@@ -78,13 +77,7 @@ public class IncubatorsFragment extends Fragment implements IncubatorsInterface 
         incubator_person=(TextView)getView().findViewById(R.id.incubator_person);
         incubator_contact=(TextView)getView().findViewById(R.id.incubator_contact);
         ProgressBar=(ProgressBar)getView().findViewById(R.id.progressbar);
-        incubatorsPresenter.getIncubator("","");
-
-
-        return view;
-    }
-    private void initialize() {
-        sharedPrefs = new SharedPrefs(getContext());
+        incubatorsPresenter.getIncubator("1","2");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,10 +85,20 @@ public class IncubatorsFragment extends Fragment implements IncubatorsInterface 
             }
         });
 
+
+        return view;
+    }
+
+    private void initialize() {
+
+        sharedPrefs = new SharedPrefs(getContext());
+
+//        ProgressBar progressBar = (ProgressBar)getView().findViewById(R.id.progressbar);
+
         linearLayoutManager = new LinearLayoutManager(getContext());
         incubatorsPresenter = new IncubatorsPresenterImpl(this, new MockDataProviderIncubator());
         token = sharedPrefs.getAccessToken();
-
+         // incubatorsPresenter.getIncubator("1","2");
     }
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
@@ -106,12 +109,7 @@ public class IncubatorsFragment extends Fragment implements IncubatorsInterface 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
+
     }
 
     @Override
@@ -128,9 +126,9 @@ public class IncubatorsFragment extends Fragment implements IncubatorsInterface 
     @Override
     public void showProgressBar(boolean show) {
         if (show)
-            progressBar.setVisibility(View.VISIBLE);
+            ProgressBar.setVisibility(View.VISIBLE);
         else
-            progressBar.setVisibility(View.INVISIBLE);
+            ProgressBar.setVisibility(View.INVISIBLE);
     }
 
     @Override

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar">
+
+        </android.support.v7.widget.Toolbar>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+
+                android:id="@+id/leaderboard_card"
+                android:layout_width="match_parent"
+                android:background="#00F0F8FF"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:backgroundTint="#7747e87f"
+                android:layout_margin="5dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:padding="2dp"
+                        android:text="Mobile App Development"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="2dp"
+                        android:text="Motivation Box"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textSize="18dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="Location(s):" />
+
+                        <TextView
+                            android:id="@+id/internship_location"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="Ahemedabad" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="Start Date:" />
+
+                        <TextView
+                            android:id="@+id/internship_startDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="10 Mar' 17" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="Duration:" />
+
+                        <TextView
+                            android:id="@+id/internship_duration"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="5 months" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="Stipend:" />
+
+                        <TextView
+                            android:id="@+id/internship_stipend"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="Rs 15000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="Apply By:" />
+
+                        <TextView
+                            android:id="@+id/internship_applyBy"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="10 Apr' 17" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:paddingTop="20dp"
+                        android:layout_margin="5dp"
+                        android:background="#55000000"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:paddingTop="5dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="About the Company" />
+
+                        <TextView
+                            android:id="@+id/internship_company_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="This company is smart india hackathon.
+This company is smart india hackathon" />
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="About the Internship" />
+
+                        <TextView
+                            android:id="@+id/internship_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="This company is smart india hackathon.
+This company is smart india hackathon" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/textView14"
+                                android:layout_width="165dp"
+                                android:layout_height="wrap_content"
+                                android:padding="2dp"
+                                android:text="# of Intenships Available:" />
+
+                            <TextView
+                                android:id="@+id/internship_numbers"
+                                android:layout_width="90dp"
+                                android:layout_height="wrap_content"
+                                android:padding="2dp"
+                                android:text="10" />
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="Perks" />
+
+                        <TextView
+                            android:id="@+id/internship_perks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="Rs. 5000" />
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="Who can Apply?" />
+
+                        <TextView
+                            android:id="@+id/internship_prerequisites"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="All" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+        </ScrollView>
+
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:id="@+id/button_intern"
+        android:layout_marginBottom="50dp"
+        android:text="submit"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+</LinearLayout>
+

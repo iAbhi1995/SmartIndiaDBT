@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/order_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            app:title="" />
+    </android.support.design.widget.AppBarLayout>
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:id="@+id/institute_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/progressbar"
+            android:layout_marginBottom="40dp"
+            android:layout_marginEnd="49dp"
+            android:layout_marginRight="49dp"
+            android:layout_toLeftOf="@+id/progressbar"
+            android:layout_toStartOf="@+id/progressbar"
+            android:text="Name" />
+        <TextView
+            android:id="@+id/institution_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/progressbar"
+            android:layout_marginBottom="40dp"
+            android:layout_marginEnd="49dp"
+            android:layout_marginRight="49dp"
+            android:layout_toLeftOf="@+id/progressbar"
+            android:layout_toStartOf="@+id/progressbar"
+            android:text="TextView" />
+        <TextView
+            android:id="@+id/institute_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/progressbar"
+            android:layout_marginBottom="40dp"
+            android:layout_marginEnd="49dp"
+            android:layout_marginRight="49dp"
+            android:layout_toLeftOf="@+id/progressbar"
+            android:layout_toStartOf="@+id/progressbar"
+            android:text="Location on Map" />
+        <TextView
+            android:id="@+id/Courses_Offered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/progressbar"
+            android:layout_marginBottom="40dp"
+            android:layout_marginEnd="49dp"
+            android:layout_marginRight="49dp"
+            android:layout_toLeftOf="@+id/progressbar"
+            android:layout_toStartOf="@+id/progressbar"
+            android:text="TextView" />
+        <TextView
+            android:id="@+id/instrumentsAndLabfacilities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/progressbar"
+            android:layout_marginBottom="40dp"
+            android:layout_marginEnd="49dp"
+            android:layout_marginRight="49dp"
+            android:layout_toLeftOf="@+id/progressbar"
+            android:layout_toStartOf="@+id/progressbar"
+            android:text="Instruments and Lab Facilities" />
+
+        <TextView
+            android:id="@+id/institution_website"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/progressbar"
+            android:layout_marginBottom="40dp"
+            android:layout_marginEnd="49dp"
+            android:layout_marginRight="49dp"
+            android:layout_toLeftOf="@+id/progressbar"
+            android:layout_toStartOf="@+id/progressbar"
+            android:text="Link to WebSite" />
+
+
+    </LinearLayout>
+</RelativeLayout>
+

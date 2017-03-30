@@ -9,6 +9,7 @@ import java.util.List;
 public class ProfessorData {
     private boolean success;
     private String message;
+
     List<ProfessorCityData> professorCityDataList;
     List<ProfessorCollegeData> professorCollegeDataList;
     List<ProfessorTopicData> professorTopicDataList;

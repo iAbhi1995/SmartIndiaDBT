@@ -52,7 +52,7 @@ public class MockProfessorProvider implements ProfessorProvider {
                 professorCollegeDatas.add(professorCollegeData);
                 ProfessorTopicData professorTopicData = new ProfessorTopicData("aman",i + "");
                 professorTopicDatas.add(professorTopicData);
-                ProfessorItemData professorItemData = new ProfessorItemData("aman",i + "","aman2","aman3","aman4");
+                ProfessorItemData professorItemData = new ProfessorItemData("aman",i + "","aman2","aman3","aman4","aman5");
                 professorItemDatas.add(professorItemData);
             }
         }
@@ -65,7 +65,7 @@ public class MockProfessorProvider implements ProfessorProvider {
                 professorCollegeDatas.add(professorCollegeData);
                 ProfessorTopicData professorTopicData = new ProfessorTopicData("aj"+i,i + "");
                 professorTopicDatas.add(professorTopicData);
-                ProfessorItemData professorItemData = new ProfessorItemData("aj"+i,i + "","aman2","aman3","aman4");
+                ProfessorItemData professorItemData = new ProfessorItemData("aj"+i,i + "","aman2","aman3","aman4","aman5");
                 professorItemDatas.add(professorItemData);
             }
 

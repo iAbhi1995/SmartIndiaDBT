@@ -20,7 +20,7 @@ public class MockDataProviderIncubator implements IncubatorProvider{
 
         IncubatorData incubatorData=new IncubatorData(incubatorDetails,"",true);
             OnIncubatorReceived.onSuccess(incubatorData);
-            OnIncubatorReceived.onFailure();
+//            OnIncubatorReceived.onFailure();
     }
 }
 

@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
 import com.smartindia.hackathon.biotechnology.home.Home_page;
+import com.smartindia.hackathon.biotechnology.request.model.MockRequestProvider;
 import com.smartindia.hackathon.biotechnology.request.model.RetrofitRequestProvider;
 import com.smartindia.hackathon.biotechnology.request.model.data.RequestDataDetails;
 import com.smartindia.hackathon.biotechnology.request.presenter.RequestPresenter;
@@ -98,8 +99,8 @@ progressBar=(ProgressBar)view.findViewById(R.id.progressBar) ;
         sharedPrefs = new SharedPrefs(getContext());
 
         access_token=sharedPrefs.getAccessToken();
-
-        requestPresenter=new RequestPresenterImpl(new RetrofitRequestProvider(),this);
+requestPresenter=new RequestPresenterImpl(new MockRequestProvider(),this);
+      //  requestPresenter=new RequestPresenterImpl(new RetrofitRequestProvider(),this);
         requestAdapter=new RequestAdapter(getContext(),this);
 
         linearLayoutManager= new LinearLayoutManager(getContext());
@@ -108,7 +109,7 @@ progressBar=(ProgressBar)view.findViewById(R.id.progressBar) ;
         recyclerView.setAdapter(requestAdapter);
         requestPresenter.requestAppStatus(access_token);
 
-        ((Home_page)getActivity()).getSupportActionBar().hide();
+//        ((Home_page)getActivity()).getSupportActionBar().hide();
 
         return(view);
     }

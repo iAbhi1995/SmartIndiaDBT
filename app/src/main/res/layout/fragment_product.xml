@@ -1,0 +1,36 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.smartindia.hackathon.biotechnology.productDesc.view.ProductFragment">
+
+    <include
+        android:id="@+id/a0"
+        layout="@layout/profile_product"
+        />
+    <include
+        android:id="@+id/a1"
+        layout="@layout/profile_product"
+        />
+    <include
+        android:id="@+id/a2"
+        layout="@layout/biotech_park_product"
+        />
+    <include
+        android:id="@+id/a3"
+        layout="@layout/incubator_product"
+        />
+    <include
+        android:id="@+id/a4"
+        layout="@layout/instrument_product"
+        />
+    <include
+        android:id="@+id/a5"
+        layout="@layout/instutional_product"
+        />
+    <include
+        android:id="@+id/a6"
+        layout="@layout/research_paper_product"
+        />
+
+</FrameLayout>

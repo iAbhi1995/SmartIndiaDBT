@@ -4,8 +4,10 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +26,8 @@ import com.smartindia.hackathon.biotechnology.Internship.presenter.InternshipPre
 import com.smartindia.hackathon.biotechnology.Internship.view.InternshipRecyclerAdapter;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
+import com.smartindia.hackathon.biotechnology.productDesc.model.data.ProductData;
+import com.smartindia.hackathon.biotechnology.productDesc.view.ProductFragment;
 import com.smartindia.hackathon.biotechnology.professor.model.MockProfessorProvider;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorCityData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorCollegeData;
@@ -71,6 +75,7 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
     private ProfessorAdapter professorAdapter;
     private RecyclerView recyclerView;
     private ProgressBar progressBar;
+    private Toolbar toolbar;
 
     private OnFragmentInteractionListener mListener;
 
@@ -125,8 +130,17 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
         progressBar=(ProgressBar)view.findViewById(R.id.professor_bar);
         button_submit= (Button) view.findViewById(R.id.button_submit);
         access_token=sharedPrefs.getAccessToken();
+        toolbar=(Toolbar)view.findViewById(R.id.toolbar);
+
+        toolbar.setNavigationIcon(ContextCompat.getDrawable(getContext(), R.drawable.ic_arrow_back_white_24dp));
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
         type= sharedPrefs.getKeyTypeAnalogus();              ;//type kese lu
-//        professorPresenter=new ProfessorPresenterImpl(new RetrofitProfessorProvider(),this);
+//      professorPresenter=new ProfessorPresenterImpl(new RetrofitProfessorProvider(),this);
         Log.d("professorActivity","1");
         professorPresenter.requestProfessor(access_token,type,"z","z");
         Log.d("professorActivity","2");
@@ -331,6 +345,7 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
         super.onDetach();
         mListener = null;
     }
+
 
     /**
      * This interface must be implemented by activities that contain this

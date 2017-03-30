@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -16,6 +17,8 @@ import com.smartindia.hackathon.biotechnology.Internship.view.InternshipView;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.image_loader.GlideImageLoader;
 import com.smartindia.hackathon.biotechnology.helper.image_loader.ImageLoader;
+import com.smartindia.hackathon.biotechnology.home.Home_page;
+import com.smartindia.hackathon.biotechnology.productDesc.view.ProductFragment;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorItemData;
 
 import java.util.ArrayList;
@@ -61,23 +64,34 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
         *
         *
         * */
-
-
-
-
         return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder( MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
         final ProfessorItemData professorItemData= professorItemDataList.get(position);
         holder.one.setText(professorItemData.getOne());
         holder.two.setText(professorItemData.getTwo());
         holder.three.setText(professorItemData.getThree());
         holder.four.setText(professorItemData.getFour());
-//        imageLoader.loadImage(professorItemData.getImage(),holder.image,holder.progressBar);
+     imageLoader.loadImage(professorItemData.getImage(),holder.image,holder.progressBar);
+
+        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ProductFragment fragment= ProductFragment.newInstance((professorItemDataList.get(position).getId()));
+                ((Home_page)context).setFragment(fragment,professorItemDataList.get(position).getOne());
+            }
+        });
+
+
+
+
 
     }
+
+
+
 
     @Override
     public int getItemCount() {
@@ -91,6 +105,7 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
         private TextView four;
         private ImageView image;
         private ProgressBar progressBar;
+private LinearLayout linearLayout;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -101,6 +116,8 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
             four=(TextView)itemView.findViewById(R.id.description);
             image=(ImageView)itemView.findViewById(R.id.attractn_img);
             progressBar=(ProgressBar)itemView.findViewById(R.id.progress_bar);
+            linearLayout=(LinearLayout)itemView.findViewById(R.id.layout);
         }
     }
-}
+    }
+

@@ -13,54 +13,38 @@ public class ProfessorItemData {
     private String two ;
     private  String three;
     private String four;
-    private String image;
+    private String image,id;
+
+    public ProfessorItemData(String one, String two, String three, String four, String image, String id) {
+        this.one = one;
+        this.two = two;
+        this.three = three;
+        this.four = four;
+        this.image = image;
+        this.id = id;
+    }
 
     public String getOne() {
         return one;
-    }
-
-    public void setOne(String one) {
-        this.one = one;
     }
 
     public String getTwo() {
         return two;
     }
 
-    public void setTwo(String two) {
-        this.two = two;
-    }
-
     public String getThree() {
         return three;
-    }
-
-    public void setThree(String three) {
-        this.three = three;
     }
 
     public String getFour() {
         return four;
     }
 
-    public void setFour(String four) {
-        this.four = four;
-    }
-
     public String getImage() {
         return image;
     }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public ProfessorItemData(String one, String two, String three, String four, String image) {
-
-        this.one = one;
-        this.two = two;
-        this.three = three;
-        this.four = four;
-        this.image = image;
+    public String getId() {
+        return id;
     }
 }
