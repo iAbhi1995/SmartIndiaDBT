@@ -26,6 +26,7 @@ import com.smartindia.hackathon.biotechnology.Internship.presenter.InternshipPre
 import com.smartindia.hackathon.biotechnology.Internship.view.InternshipRecyclerAdapter;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
+import com.smartindia.hackathon.biotechnology.home.Home_page;
 import com.smartindia.hackathon.biotechnology.productDesc.model.data.ProductData;
 import com.smartindia.hackathon.biotechnology.productDesc.view.ProductFragment;
 import com.smartindia.hackathon.biotechnology.professor.model.MockProfessorProvider;
@@ -131,7 +132,7 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
         button_submit= (Button) view.findViewById(R.id.button_submit);
         access_token=sharedPrefs.getAccessToken();
         toolbar=(Toolbar)view.findViewById(R.id.toolbar);
-
+        ((Home_page) getContext()).getSupportActionBar().hide();
         toolbar.setNavigationIcon(ContextCompat.getDrawable(getContext(), R.drawable.ic_arrow_back_white_24dp));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

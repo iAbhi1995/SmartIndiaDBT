@@ -52,6 +52,7 @@ public class Home_page extends AppCompatActivity
 
 
         navigationView.setNavigationItemSelectedListener(this);
+        setFragment(new HomeFragment(),"home");
 
     }
 
