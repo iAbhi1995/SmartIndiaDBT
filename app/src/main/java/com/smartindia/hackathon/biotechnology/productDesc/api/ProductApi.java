@@ -1,8 +1,9 @@
 package com.smartindia.hackathon.biotechnology.productDesc.api;
 
 import com.smartindia.hackathon.biotechnology.helper.Urls;
+
 import com.smartindia.hackathon.biotechnology.productDesc.model.data.ProductData;
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
+
 
 import retrofit2.Call;
 import retrofit2.http.GET;

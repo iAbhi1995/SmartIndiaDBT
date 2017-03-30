@@ -19,18 +19,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
-
-import com.smartindia.hackathon.biotechnology.Incubator.View.IncubatorsFragment;
 import com.smartindia.hackathon.biotechnology.Internship.view.InternshipFragment;
 import com.smartindia.hackathon.biotechnology.R;
+
 import com.smartindia.hackathon.biotechnology.productDesc.view.ProductFragment;
 import com.smartindia.hackathon.biotechnology.professor.view.ProfessorFragment;
 import com.smartindia.hackathon.biotechnology.request.view.RequestFragment;
 
+import com.smartindia.hackathon.biotechnology.SurveyUpload.View.Survey_Upload;
+
+
 public class Home_page extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private String user="1";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +50,6 @@ public class Home_page extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
-        if(user.equals("1"))
 
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -115,12 +116,12 @@ public class Home_page extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        if (id == R.id.aman) {
-            setFragment(new ProfessorFragment(),"professor");
 
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-            setFragment(new IncubatorsFragment(),"incubators");
+        if (id == R.id.aman) {
+            setFragment(new ProfessorFragment(), "professor");
+        }
+         else if (id == R.id.nav_gallery) {
+//            setFragment(new IncubatorsFragment(),"incubators");
 
         } else if (id == R.id.nav_slideshow) {
             setFragment(new ProductFragment(),"product");
