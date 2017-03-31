@@ -77,6 +77,32 @@ Toast.makeText(this,message,Toast.LENGTH_LONG).show();
     }
 
     @Override
+    public void success() {
+        if(sharedPrefs.isLoggedIn()){
+            Log.d("Res", "" + sharedPrefs.isLoggedIn());
+            //           Intent home = new Intent(SplashScreenActivity.this, Homepage.class);
+            //           startActivity(home);
+            //          finish();
+
+        }
+        else
+        {
+            Log.d("Res", "" + sharedPrefs.isLoggedIn());
+
+            //   Intent welcome = new Intent(SplashScreenActivity.this, WelcomeScreenActivity.class);
+            // startActivity(welcome);
+            //finish();
+
+        }
+
+
+
+
+    }
+
+
+
+    /*  @Override
     public void version_check(SplashScreenData splashScreenData) {
 
 
@@ -154,5 +180,5 @@ Toast.makeText(this,message,Toast.LENGTH_LONG).show();
     }
 
 
-
+*/
 }

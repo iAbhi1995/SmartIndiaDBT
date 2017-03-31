@@ -5,4 +5,29 @@
     <color name="colorAccent">#FF4081</color>
     <color name="custom_showcase_bg">#ADD8E6</color>
     <color name="black">#000000</color>
+    <color name="grey">#808080</color>
+    <array name="array_dot_active">
+        <item>@color/grey</item>
+        <item>@color/grey</item>
+        <item>@color/grey</item>
+        <item>@color/grey</item>
+    </array>
+
+    <array name="array_dot_inactive">
+    <item>@color/colorAccent</item>
+    <item>@color/colorAccent</item>
+    <item>@color/colorAccent</item>
+    <item>@color/colorAccent</item>
+
+    </array>
+
+
+
+
+
+
+
+
+
+
 </resources>

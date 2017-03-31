@@ -15,32 +15,42 @@
         <activity
             android:name=".login.view.LoginActivity"
             android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+
+
+        </activity>
        <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <!-- android:name=".Professor.View.Professors" -->
         <!-- android:label="@string/title_activity_professors" -->
         <!-- android:theme="@style/AppTheme.NoActionBar"></activity> -->
         <activity
             android:name=".home.Home_page"
             android:label="@string/title_activity_home_page"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+    />
         <activity
             android:name=".SurveyUpload.View.Survey_Upload"
             android:label="@string/title_activity_survey__upload"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".splashScreen.view.SplashScreenActivity">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+<activity android:name=".welcome.view.Welcome">
 
+
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+
+
+
+</activity>
         <activity
             android:name=".MyProfile.view.MyProfileUpload"
             android:label="@string/title_activity_my_profile_upload"

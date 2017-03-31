@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.smartindia.hackathon.biotechnology.MyProfile.Api.MyProfileApi;
 import com.smartindia.hackathon.biotechnology.MyProfile.Model.Data.MyProfileData;
-import com.smartindia.hackathon.biotechnology.MyProfile.view.MyProfileCallback;
+import com.smartindia.hackathon.biotechnology.MyProfile.MyProfileCallback;
 import com.smartindia.hackathon.biotechnology.helper.Urls;
 
 import java.io.File;

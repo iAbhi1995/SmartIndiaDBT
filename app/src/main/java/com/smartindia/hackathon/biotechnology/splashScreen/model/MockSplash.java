@@ -29,7 +29,7 @@ public class MockSplash implements SplashScreenProvider {
 
         SplashScreenData getMockData(){
 
-            SplashScreenData splashScreenData = new SplashScreenData(1,"Received",true,0);
+            SplashScreenData splashScreenData = new SplashScreenData("Received",true);
             return splashScreenData;
 
         }

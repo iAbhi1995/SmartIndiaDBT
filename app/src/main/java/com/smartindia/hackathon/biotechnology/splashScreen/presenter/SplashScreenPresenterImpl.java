@@ -27,7 +27,7 @@ public class SplashScreenPresenterImpl implements SplashScreenPresenter {
     public void requestSplash()
     {
 
-        //splashScreenView.showProgressBar(true);
+        splashScreenView.showProgressBar(true);
         splashScreenProvider.requestSplash(new SplashScreenCallBack() {
             @Override
             public void onSuccess(SplashScreenData splashScreenData) {
@@ -36,13 +36,13 @@ public class SplashScreenPresenterImpl implements SplashScreenPresenter {
                 if(splashScreenData.isSuccess())
                 {
 
-                    splashScreenView.version_check(splashScreenData);
-                    //splashScreenView.hideProgressBar();
+                    splashScreenView.success();
+                    splashScreenView.hideProgressBar();
                 }
                 else
                 {
                     splashScreenView.showMessage(splashScreenData.getMessage());
-                    //splashScreenView.hideProgressBar();
+                    splashScreenView.hideProgressBar();
 
                 }
             }

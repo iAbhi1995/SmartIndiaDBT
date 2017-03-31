@@ -8,23 +8,23 @@ import java.util.List;
 
 public class ProfessorData {
     private boolean success;
-    private String message;
+    private String message,type;
 
     List<ProfessorCityData> professorCityDataList;
-    List<ProfessorCollegeData> professorCollegeDataList;
     List<ProfessorTopicData> professorTopicDataList;
     List<ProfessorItemData> professorItemDataList;
 
-    public ProfessorData(boolean success, String message, List<ProfessorCityData> professorCityDataList,
-                         List<ProfessorCollegeData> professorCollegeDataList,
-                         List<ProfessorTopicData> professorTopicDataList,
-                         List<ProfessorItemData> professorItemDataList) {
+    public ProfessorData(boolean success, String message, String type, List<ProfessorCityData> professorCityDataList, List<ProfessorTopicData> professorTopicDataList, List<ProfessorItemData> professorItemDataList) {
         this.success = success;
         this.message = message;
+        this.type = type;
         this.professorCityDataList = professorCityDataList;
-        this.professorCollegeDataList = professorCollegeDataList;
         this.professorTopicDataList = professorTopicDataList;
         this.professorItemDataList = professorItemDataList;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public boolean isSuccess() {
@@ -49,14 +49,6 @@ public class ProfessorData {
 
     public void setProfessorCityDataList(List<ProfessorCityData> professorCityDataList) {
         this.professorCityDataList = professorCityDataList;
-    }
-
-    public List<ProfessorCollegeData> getProfessorCollegeDataList() {
-        return professorCollegeDataList;
-    }
-
-    public void setProfessorCollegeDataList(List<ProfessorCollegeData> professorCollegeDataList) {
-        this.professorCollegeDataList = professorCollegeDataList;
     }
 
     public List<ProfessorTopicData> getProfessorTopicDataList() {

@@ -14,7 +14,7 @@ public class SharedPrefs {
 
 
     private static final String PREF_NAME = "welcome";
-    private static final String KEY_TYPE = "1";
+    private static final String KEY_TYPE = "key_type";
     private static final String PREF_NAME_LOGIN = "Login";
     private static final String KEY_ACCESS_TOKEN = "access_token";
     private static final String KEY_IS_LOGGEDIN = "isLoggedIn";

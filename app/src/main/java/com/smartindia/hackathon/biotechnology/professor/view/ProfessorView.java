@@ -17,7 +17,7 @@ public interface ProfessorView
     void showSpinnerCity(ProfessorData professorData);
     void showSpinnerCollege(ProfessorData professorData);
     void showSpinnerTopic(ProfessorData professorData);
-    void check(ProfessorData professorData);
+    void check(ProfessorData professorData,String s);
     void showProgressBar(boolean show);
     void showMessage(String error);
 

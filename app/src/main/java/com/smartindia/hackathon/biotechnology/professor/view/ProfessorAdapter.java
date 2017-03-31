@@ -32,6 +32,7 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
 
     private List<ProfessorItemData> professorItemDataList = new ArrayList<>();
     private Context context;
+    private String type;
     private ProfessorView professorView;
     private ProfessorFragment professorFragment;
     private LayoutInflater layoutInflater;
@@ -44,31 +45,28 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
         imageLoader= new GlideImageLoader(context);
     }
 
-    public void setData(List<ProfessorItemData> itemDataList) {
+    public void setData(List<ProfessorItemData> itemDataList,String type) {
         this.professorItemDataList = itemDataList;
+        this.type=type;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = layoutInflater.inflate(R.layout.common_item, parent, false);
-        /*
-        * if(usertype.equals("0"))
-        *   view=layoutInflator
-        *   else if()
-        *
-        *
-        *
-        *
-        *
-        *
-        *
-        *
-        * */
+        if(type.equals("1"))
+            view=layoutInflater.inflate(R.layout.common_item,parent,false);
+        else
+            view=layoutInflater.inflate(R.layout.common_item,parent,false);
+
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
+        if(type.equals("1"))
+        {
+
+        }
         final ProfessorItemData professorItemData= professorItemDataList.get(position);
         holder.one.setText(professorItemData.getOne());
         holder.two.setText(professorItemData.getTwo());
@@ -99,6 +97,7 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
     }
 
     public class MyViewHolder extends  RecyclerView.ViewHolder{
+
         private TextView one ;
         private TextView two ;
         private  TextView three;
@@ -109,6 +108,11 @@ private LinearLayout linearLayout;
 
         public MyViewHolder(View itemView) {
             super(itemView);
+
+            if(type.equals("1"))
+            {
+
+            }
 
             one=(TextView)itemView.findViewById(R.id.name);
             two=(TextView)itemView.findViewById(R.id.location);

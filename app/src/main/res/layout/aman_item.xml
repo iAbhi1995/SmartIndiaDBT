@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+    <include
+        android:id="@+id/a0"
+        layout="@layout/profile_product"
+        />
+    <include
+        android:id="@+id/a1"
+        layout="@layout/profile_product"
+        />
+    <include
+        android:id="@+id/a2"
+        layout="@layout/biotech_park_product"
+        />
+    <include
+        android:id="@+id/a3"
+        layout="@layout/common_item"
+        />
+    <include
+        android:id="@+id/a4"
+        layout="@layout/instrument_product"
+        />
+    <include
+        android:id="@+id/a5"
+        layout="@layout/instutional_product"
+        />
+    <include
+        android:id="@+id/a6"
+        layout="@layout/research_paper_product"
+        />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

@@ -139,9 +139,9 @@ public class ProductFragment extends Fragment implements ProductView{
 
             incubator_name1=(TextView)view.findViewById(R.id.incubator_name);
             incubator_thrustArea1=(TextView)view.findViewById(R.id.incubator_thrustArea);
-            incubator_state1=(TextView)view.findViewById(R.id.incubator_state);
-            incubator_city1=(TextView)view.findViewById(R.id.incubator_city);
-            incubator_address1=(TextView)view.findViewById(R.id.incubator_address);
+           // incubator_state1=(TextView)view.findViewById(R.id.incubator_state);  //ye change karna hai
+           incubator_city1=(TextView)view.findViewById(R.id.incubator_city);
+           // incubator_address1=(TextView)view.findViewById(R.id.incubator_address);   //ye change karna hai
             incubator_website1=(TextView)view.findViewById(R.id.incubator_website);
             incubator_person1=(TextView)view.findViewById(R.id.incubator_person);
             incubator_contact1=(TextView)view.findViewById(R.id.incubator_contact);
@@ -152,7 +152,7 @@ public class ProductFragment extends Fragment implements ProductView{
         else if(type.equals("4"))
         {
 
-            view= inflater.inflate(R.layout.fragment_product, container, false);
+            //view= inflater.inflate(R.layout.fragment_product, container, false);
 
 
 

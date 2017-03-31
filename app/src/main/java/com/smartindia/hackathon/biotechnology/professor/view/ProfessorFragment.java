@@ -31,7 +31,6 @@ import com.smartindia.hackathon.biotechnology.productDesc.model.data.ProductData
 import com.smartindia.hackathon.biotechnology.productDesc.view.ProductFragment;
 import com.smartindia.hackathon.biotechnology.professor.model.MockProfessorProvider;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorCityData;
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorCollegeData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorTopicData;
 import com.smartindia.hackathon.biotechnology.professor.model.RetrofitProfessorProvider;
@@ -68,7 +67,6 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
 
     private ProfessorCityData professorCityData;
     private ProfessorData professorData;
-    private ProfessorCollegeData professorCollegeData;
     private ProfessorTopicData professorTopicData;
     private ProfessorPresenter professorPresenter;
     private String college_id,city_id,topic_id,access_token,type;
@@ -131,6 +129,10 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
         progressBar=(ProgressBar)view.findViewById(R.id.professor_bar);
         button_submit= (Button) view.findViewById(R.id.button_submit);
         access_token=sharedPrefs.getAccessToken();
+
+
+
+        //this has been done for handling back press
         toolbar=(Toolbar)view.findViewById(R.id.toolbar);
         ((Home_page) getContext()).getSupportActionBar().hide();
         toolbar.setNavigationIcon(ContextCompat.getDrawable(getContext(), R.drawable.ic_arrow_back_white_24dp));
@@ -140,6 +142,9 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
                 getActivity().onBackPressed();
             }
         });
+
+
+        //upto here backpress is handled
         type= sharedPrefs.getKeyTypeAnalogus();              ;//type kese lu
 //      professorPresenter=new ProfessorPresenterImpl(new RetrofitProfessorProvider(),this);
         Log.d("professorActivity","1");
@@ -221,41 +226,41 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
     @Override
     public void showSpinnerCollege(ProfessorData professorData) {
 
-        List<ProfessorCollegeData> professorCollegeDataList=
-                new ArrayList<ProfessorCollegeData>(professorData.getProfessorCollegeDataList());
-        ArrayAdapter<String> adapter;
-        int n= professorCollegeDataList.size();
-        int i=0;
-        final String college_id_ar[]=new String[n];
-        String college_name_ar[]=new String[n];
-        while(i < n)
-        {
-            professorCollegeData= professorCollegeDataList.get(i);
-            college_id_ar[i] =  professorCollegeData.getCollegeId();
-            college_name_ar[i] =  professorCollegeData.getCollege();
-            i++;
-        }
-
-        adapter = new ArrayAdapter<String>(getContext(),
-                android.R.layout.simple_spinner_item, college_name_ar);
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(adapter);
-
-
-        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int t, long l) {
-
-
-                college_id=college_id_ar[t].toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
+//        List<ProfessorCollegeData> professorCollegeDataList=
+//                new ArrayList<ProfessorCollegeData>(professorData.getProfessorCollegeDataList());
+//        ArrayAdapter<String> adapter;
+//        int n= professorCollegeDataList.size();
+//        int i=0;
+//        final String college_id_ar[]=new String[n];
+//        String college_name_ar[]=new String[n];
+//        while(i < n)
+//        {
+//            professorCollegeData= professorCollegeDataList.get(i);
+//            college_id_ar[i] =  professorCollegeData.getCollegeId();
+//            college_name_ar[i] =  professorCollegeData.getCollege();
+//            i++;
+//        }
+//
+//        adapter = new ArrayAdapter<String>(getContext(),
+//                android.R.layout.simple_spinner_item, college_name_ar);
+//
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinner2.setAdapter(adapter);
+//
+//
+//        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> adapterView, View view, int t, long l) {
+//
+//
+//                college_id=college_id_ar[t].toString();
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//            }
+//        });
 
     }
 
@@ -300,12 +305,13 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
     }
 
     @Override
-    public void check(ProfessorData professorData) {
-
+    public void check(ProfessorData professorData,String type) {
+        type=professorData.getType();
         showSpinnerCity(professorData);
         showSpinnerCollege(professorData);
         showSpinnerTopic(professorData);
-        professorAdapter.setData(professorData.getProfessorItemDataList());
+        if(type.equals("1"))
+        professorAdapter.setData(professorData.getProfessorItemDataList(),type);
         professorAdapter.notifyDataSetChanged();
 
     }
