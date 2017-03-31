@@ -10,6 +10,7 @@ public class Urls {
     public static final String Base_Url = "http://127.0.0.1:8000/";
     public static final String Login = "stu_login";
     public static final String SURVEY_UPLOAD = "survey_upload/";
+    public static final String PROFILE_UPLOAD = "pro_upload/";
     public static final String REQUEST_PROFESSOR= "professor/";
     public static final String POSTING_RESUME_PDF=" test_url";
     public static final String OTP = "otp";

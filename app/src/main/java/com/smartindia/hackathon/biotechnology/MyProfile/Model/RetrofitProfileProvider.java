@@ -40,7 +40,7 @@ public class RetrofitProfileProvider implements MyProfileProvider{
         myProfileApi = retrofit.create(MyProfileApi.class);
     }
 
-    public void requestUpload(String file_imag, String file_pd, String user_institutio, String user_skill, String user_plac, String user_currentyea, String user_qualificatio, String user_experienc, final MyProfileCallback myProfileCallback)
+    public void requestUpload(String access_toke,String keyTyp,String file_imag, String file_pd, String user_institutio, String user_skill, String user_plac, String user_currentyea, String user_qualificatio, String user_experienc, final MyProfileCallback myProfileCallback)
     {
         File file_image = new File(file_imag);
         File file_pdf = new File(file_pd);
@@ -49,6 +49,8 @@ public class RetrofitProfileProvider implements MyProfileProvider{
         RequestBody requestBodyimg = RequestBody.create(MediaType.parse("image/*"), file_pdf);
         MultipartBody.Part fileToUploadimg = MultipartBody.Part.createFormData("file", file_image.getName(), requestBodyimg);
         MultipartBody.Part fileToUploadpdf = MultipartBody.Part.createFormData("file", file_pdf.getName(), requestBodypdf);
+        RequestBody access_token = RequestBody.create(MediaType.parse("text/plain"), access_toke);
+        RequestBody keyType = RequestBody.create(MediaType.parse("text/plain"), keyTyp);
         RequestBody user_institution = RequestBody.create(MediaType.parse("text/plain"), user_institutio);
         RequestBody user_skills = RequestBody.create(MediaType.parse("text/plain"), user_skill);
         RequestBody user_place = RequestBody.create(MediaType.parse("text/plain"),user_plac);
@@ -56,7 +58,7 @@ public class RetrofitProfileProvider implements MyProfileProvider{
         RequestBody user_qualification = RequestBody.create(MediaType.parse("text/plain"), user_qualificatio);
         RequestBody user_experience = RequestBody.create(MediaType.parse("text/plain"), user_experienc);
 
-        Call<MyProfileData> myProfileDataCall = myProfileApi.upload(user_institution,user_skills,user_place,user_currentyear,user_qualification,user_experience,fileToUploadimg,fileToUploadpdf);
+        Call<MyProfileData> myProfileDataCall = myProfileApi.upload(access_token,keyType,user_institution,user_skills,user_place,user_currentyear,user_qualification,user_experience,fileToUploadimg,fileToUploadpdf);
         myProfileDataCall.enqueue(new Callback<MyProfileData>() {
             @Override
             public void onResponse(Call<MyProfileData> call, Response<MyProfileData> response) {

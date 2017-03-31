@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="custom_showcase_bg">#ADD8E6</color>
     <color name="black">#000000</color>
+    <color name="primary">#785447</color>
+    <color name="primaryDark">#5B3F36</color>
 </resources>

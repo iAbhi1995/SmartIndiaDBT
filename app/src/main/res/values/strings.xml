@@ -13,4 +13,7 @@
     <string name="title_activity_professors">Settings</string>
     <string name="title_activity_survey__upload">Survey_Upload</string>
     <string name="title_activity_my_profile_upload">MyProfileUpload</string>
+    <string name="quila_name">Quila</string>
+    <string name="quila_tagline">I love bones and slippers</string>
+    <string name="quila_name2">Quila!</string>
 </resources>
