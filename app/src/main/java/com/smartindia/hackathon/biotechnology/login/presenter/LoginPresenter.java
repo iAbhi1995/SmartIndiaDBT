@@ -5,7 +5,9 @@ package com.smartindia.hackathon.biotechnology.login.presenter;
  */
 
 public interface LoginPresenter {
+    void requestLogin(String name, String email, String user_type);
 
-    void requestLogin( String name , String email,String user_type);
-    void requestOtp(String otp);
+    void requestSignUp(String userName, String email);
+
+    void requestProfLogin(String email, String password);
 }
