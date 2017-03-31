@@ -13,17 +13,14 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"></activity>
         <activity
+
             android:name=".login.view.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar">
 
 
         </activity>
-       <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+
         <!-- android:name=".Professor.View.Professors" -->
         <!-- android:label="@string/title_activity_professors" -->
         <!-- android:theme="@style/AppTheme.NoActionBar"></activity> -->

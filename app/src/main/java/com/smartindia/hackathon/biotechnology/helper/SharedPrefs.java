@@ -19,7 +19,6 @@ public class SharedPrefs {
     private static final String KEY_ACCESS_TOKEN = "access_token";
     private static final String KEY_IS_LOGGEDIN = "isLoggedIn";
     private static final String KEY_TYPE_ANALOGUS= "typeAnalogus";
-    private static final String USER_TYPE = "user_type";
 
     private static String TAG = "Shared Preference";
 
@@ -75,4 +74,5 @@ public class SharedPrefs {
     public boolean isLoggedIn() {
         return pref.getBoolean(KEY_IS_LOGGEDIN, false);
     }
-}
+
+    }

@@ -27,4 +27,10 @@ public class Urls {
     public static final String WELCOME= "welcome/";
     public static final String REQUEST_INTERNSHIP= "internship/";//have to consult from iket
     public static final String SET_INTERNSHIP = "set_intern";
+    public static final String PROFESSOR_SIGN_UP = "";
+    public static final String PROFESSOR_LOGIN = "";
+    public static final String REQUEST_INTERNSHIP_DETAILS = "";
+    public static final String APPLY_INTERNSHIP = "";
+    public static final String REQUEST_RESEARCH = "";
+    public static final String REQUEST_RESEARCH_APPROVAL = "";
 }

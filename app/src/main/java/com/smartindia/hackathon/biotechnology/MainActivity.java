@@ -12,7 +12,6 @@ import android.view.View;
 import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.targets.Target;
 import com.github.amlcurran.showcaseview.targets.ViewTarget;
-import com.smartindia.hackathon.biotechnology.login.view.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 

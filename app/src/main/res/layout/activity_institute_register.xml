@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:id="@+id/layout"
+    tools:context="com.smartindia.hackathon.biotechnology.login.view.InstituteRegister">
+
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+ <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="189dp"
+        android:layout_alignParentTop="true">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="18dp"
+            android:gravity="center_horizontal"
+            android:paddingEnd="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColorHint="@color/black">
+            <EditText
+                android:id="@+id/signUpEmail"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="Type Intitute Email Id.."
+                android:inputType="textEmailAddress"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@color/black" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="18dp"
+            android:gravity="center_horizontal"
+            android:paddingEnd="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColorHint="@color/black">
+
+            <EditText
+                android:id="@+id/prfsrName"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="Type your user name.."
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@color/black" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="ProfessorSignUp"
+            android:text="Institute" />
+    </LinearLayout>
+
+
+</RelativeLayout>

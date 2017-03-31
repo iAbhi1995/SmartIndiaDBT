@@ -45,7 +45,7 @@ tools:context="com.smartindia.hackathon.biotechnology.sub_category.view.Products
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:src="@drawable/empty_cart"
+            android:src="@drawable/splash1"
 
             />
 
