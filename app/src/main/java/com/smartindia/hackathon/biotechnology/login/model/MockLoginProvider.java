@@ -40,6 +40,12 @@ public class MockLoginProvider implements LoginProvider {
             }
         }, 500);
     }
+
+    @Override
+    public void handleBackButton() {
+
+    }
+
     public ProfLogInData getMockProfLoginData()
     {
         ProfLogInData profLogInData=new ProfLogInData(true,"success","A0101");

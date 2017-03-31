@@ -16,6 +16,6 @@ public interface ResearchApprovalApi{
     Call<ResearchData> requestResearch(@Query("access_token") String access_token);
 
 
-    @POST(Urls.REQUEST_RESEARCH_APPROVAL)
+    @GET(Urls.REQUEST_RESEARCH_APPROVAL)
     Call<ResearchApprovalData> requestResearchApproval(@Query("inst_id")  String institute_id, @Query("stu_id") String stu_id, @Query("action") String action);
 }

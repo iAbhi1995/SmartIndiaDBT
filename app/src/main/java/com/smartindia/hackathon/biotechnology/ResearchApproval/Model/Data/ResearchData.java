@@ -1,12 +1,13 @@
 package com.smartindia.hackathon.biotechnology.ResearchApproval.Model.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ResearchData
 {
     private boolean success;
     private String message;
-    private List<ResearchDataDetails> researchDataDetailsList;
+    private List<ResearchDataDetails> researchDataDetailsList=new ArrayList<>();
 
 
     public ResearchData(boolean success, String message, List<ResearchDataDetails> researchDataDetailsList) {

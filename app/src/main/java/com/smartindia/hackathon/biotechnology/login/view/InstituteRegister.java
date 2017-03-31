@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 
 import com.smartindia.hackathon.biotechnology.R;
-import com.smartindia.hackathon.biotechnology.login.model.MockLoginProvider;
+import com.smartindia.hackathon.biotechnology.login.model.RetrofitLoginProvider;
 import com.smartindia.hackathon.biotechnology.login.model.data.SignUpResultData;
 import com.smartindia.hackathon.biotechnology.login.presenter.LoginPresenter;
 import com.smartindia.hackathon.biotechnology.login.presenter.LoginPresenterImpl;
@@ -34,7 +34,8 @@ public class InstituteRegister extends AppCompatActivity implements SignUpView,V
         userName=(EditText)findViewById(R.id.prfsrName);
         submitButton=(Button)findViewById(R.id.signUpButton);
         submitButton.setOnClickListener(this);
-        loginPresenter=new LoginPresenterImpl(new MockLoginProvider(),this);
+//        loginPresenter=new LoginPresenterImpl(new MockLoginProvider(),this);
+        loginPresenter=new LoginPresenterImpl(new RetrofitLoginProvider(),this);
     }
 
 
@@ -54,6 +55,17 @@ public class InstituteRegister extends AppCompatActivity implements SignUpView,V
     @Override
     public void showMessage(String message) {
         Snackbar.make(findViewById(R.id.layout), message, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        handlingBackButton();
+        super.onBackPressed();
+    }
+
+    @Override
+    public void handlingBackButton() {
+        loginPresenter.handleBackButton();
     }
 
     @Override

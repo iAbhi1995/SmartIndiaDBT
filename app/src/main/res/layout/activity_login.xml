@@ -30,13 +30,6 @@
         android:layout_centerInParent="true" />
 
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/PrfsrCrdVw"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="15dp">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,7 +37,8 @@
             android:layout_marginBottom="26dp"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:id="@+id/linearLayout2">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="wrap_content"
@@ -114,17 +108,17 @@
                 android:text="Institution Register" />
 
         </LinearLayout>
-    </android.support.v7.widget.CardView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/PrfsrCrdVw"
-        android:layout_alignLeft="@+id/PrfsrCrdVw"
-        android:layout_alignStart="@+id/PrfsrCrdVw"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="24dp"
         android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_above="@+id/linearLayout2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout3">
 
         <TextView
             android:layout_width="wrap_content"
@@ -146,4 +140,5 @@
             android:visibility="gone" />
 
     </LinearLayout>
+
 </RelativeLayout>

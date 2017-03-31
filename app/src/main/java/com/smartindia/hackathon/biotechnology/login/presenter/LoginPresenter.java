@@ -10,4 +10,6 @@ public interface LoginPresenter {
     void requestSignUp(String userName, String email);
 
     void requestProfLogin(String email, String password);
+
+    void handleBackButton();
 }

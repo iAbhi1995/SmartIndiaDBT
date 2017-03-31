@@ -13,4 +13,5 @@
     <string name="title_activity_professors">Settings</string>
     <string name="title_activity_survey__upload">Survey_Upload</string>
     <string name="title_activity_my_profile_upload">MyProfileUpload</string>
+    <string name="title_activity_institute_register">Institute Registration</string>
 </resources>

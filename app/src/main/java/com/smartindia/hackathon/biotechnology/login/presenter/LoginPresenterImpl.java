@@ -16,8 +16,6 @@ public class LoginPresenterImpl implements LoginPresenter {
 
     private LoginView loginView;
     private LoginProvider loginProvider;
-//    private OTPProvider otpProvider;
-//    private OTPView otpView;
     private SignUpView signUpView;
 
     public LoginPresenterImpl(LoginProvider loginProvider, LoginView loginView) {
@@ -108,5 +106,10 @@ public class LoginPresenterImpl implements LoginPresenter {
                 loginView.showMessage("Connection Error");
             }
         });
+    }
+
+    @Override
+    public void handleBackButton() {
+        loginProvider.handleBackButton();
     }
 }

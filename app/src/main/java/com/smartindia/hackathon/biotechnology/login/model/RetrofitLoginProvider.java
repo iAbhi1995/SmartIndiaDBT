@@ -21,6 +21,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
 public class RetrofitLoginProvider implements LoginProvider {
 
     private LoginApi loginApi;
@@ -30,8 +31,11 @@ public class RetrofitLoginProvider implements LoginProvider {
     {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
-
+        OkHttpClient client = new OkHttpClient.Builder().
+                connectTimeout(120, java.util.concurrent.TimeUnit.SECONDS).
+                readTimeout(120, java.util.concurrent.TimeUnit.SECONDS).
+                writeTimeout(120, java.util.concurrent.TimeUnit.SECONDS).
+                addInterceptor(interceptor).build();
 
         Gson gson = new GsonBuilder()
                 .setLenient()
@@ -53,14 +57,12 @@ public class RetrofitLoginProvider implements LoginProvider {
             @Override
             public void onResponse(Call<LoginData> call, Response<LoginData> response) {
                 loginCallBack.onSuccess(response.body());
-                Log.d("Retrofit","success");
             }
 
             @Override
             public void onFailure(Call<LoginData> call, Throwable t) {
                 loginCallBack.onFailure();
                 t.printStackTrace();
-                Log.d("Retrofit","Failed");
             }
         });
 
@@ -103,5 +105,10 @@ public class RetrofitLoginProvider implements LoginProvider {
                 profLoginCallBack.onFailure();
             }
         });
+    }
+
+    @Override
+    public void handleBackButton() {
+
     }
 }
