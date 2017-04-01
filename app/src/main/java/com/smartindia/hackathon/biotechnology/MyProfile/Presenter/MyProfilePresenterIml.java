@@ -2,11 +2,8 @@ package com.smartindia.hackathon.biotechnology.MyProfile.Presenter;
 
 import com.smartindia.hackathon.biotechnology.MyProfile.Model.Data.MyProfileData;
 import com.smartindia.hackathon.biotechnology.MyProfile.Model.MyProfileProvider;
-import com.smartindia.hackathon.biotechnology.MyProfile.view.MyProfileCallback;
-import com.smartindia.hackathon.biotechnology.MyProfile.view.MyProfileUpload;
+import com.smartindia.hackathon.biotechnology.MyProfile.MyProfileCallback;
 import com.smartindia.hackathon.biotechnology.MyProfile.view.MyProfileView;
-import com.smartindia.hackathon.biotechnology.SurveyUpload.Model.Data.SureveyUploadData;
-import com.smartindia.hackathon.biotechnology.SurveyUpload.View.OnSurveyUploadCallBack;
 
 /**
  * Created by Abhishek on 28-03-2017.

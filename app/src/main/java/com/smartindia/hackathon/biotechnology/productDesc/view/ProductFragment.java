@@ -55,7 +55,7 @@ public class ProductFragment extends Fragment implements ProductView,AppBarLayou
     private TextView incubator_name1,incubator_thrustArea1,incubator_state1,
                         incubator_city1,incubator_address1,incubator_website1,incubator_person1
                         ,incubator_contact1;
-
+//ayush
     private static final float PERCENTAGE_TO_SHOW_TITLE_AT_TOOLBAR  = 0.9f;
     private static final float PERCENTAGE_TO_HIDE_TITLE_DETAILS     = 0.3f;
     private static final int ALPHA_ANIMATIONS_DURATION              = 200;
@@ -67,7 +67,7 @@ public class ProductFragment extends Fragment implements ProductView,AppBarLayou
     private TextView mTitle;
     private AppBarLayout mAppBarLayout;
     private Toolbar mToolbar;
-
+//ayush
     public static ProductFragment newInstance(String param1) {
         ProductFragment fragment = new ProductFragment();
         Bundle args = new Bundle();
@@ -131,9 +131,9 @@ public class ProductFragment extends Fragment implements ProductView,AppBarLayou
 
             incubator_name1=(TextView)view.findViewById(R.id.incubator_name);
             incubator_thrustArea1=(TextView)view.findViewById(R.id.incubator_thrustArea);
-            incubator_state1=(TextView)view.findViewById(R.id.incubator_state);
-            incubator_city1=(TextView)view.findViewById(R.id.incubator_city);
-            incubator_address1=(TextView)view.findViewById(R.id.incubator_address);
+           // incubator_state1=(TextView)view.findViewById(R.id.incubator_state);  //ye change karna hai
+           incubator_city1=(TextView)view.findViewById(R.id.incubator_city);
+           // incubator_address1=(TextView)view.findViewById(R.id.incubator_address);   //ye change karna hai
             incubator_website1=(TextView)view.findViewById(R.id.incubator_website);
             incubator_person1=(TextView)view.findViewById(R.id.incubator_person);
             incubator_contact1=(TextView)view.findViewById(R.id.incubator_contact);
@@ -144,12 +144,13 @@ public class ProductFragment extends Fragment implements ProductView,AppBarLayou
         else if(type.equals("4"))
         {
 
-            view= inflater.inflate(R.layout.fragment_product, container, false);
+            //view= inflater.inflate(R.layout.fragment_product, container, false);
 
 
 
 
         }
+        //ayush
         mTitle          = (TextView) view.findViewById(R.id.biotech_park_name1);
         mTitleContainer = (LinearLayout) view.findViewById(R.id.main_linearlayout_title);
         mAppBarLayout   = (AppBarLayout) view.findViewById(R.id.main_appbar);
@@ -287,6 +288,10 @@ public class ProductFragment extends Fragment implements ProductView,AppBarLayou
 
 
     }
+
+
+
+    //ayush
     @Override
     public void onOffsetChanged(AppBarLayout appBarLayout, int offset) {
         int maxScroll = appBarLayout.getTotalScrollRange();

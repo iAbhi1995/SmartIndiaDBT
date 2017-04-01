@@ -24,7 +24,7 @@ import com.google.android.gms.common.api.Status;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
 import com.smartindia.hackathon.biotechnology.home.Home_page;
-import com.smartindia.hackathon.biotechnology.login.model.MockLoginProvider;
+import com.smartindia.hackathon.biotechnology.login.model.RetrofitLoginProvider;
 import com.smartindia.hackathon.biotechnology.login.model.data.LoginData;
 import com.smartindia.hackathon.biotechnology.login.model.data.ProfLogInData;
 import com.smartindia.hackathon.biotechnology.login.presenter.LoginPresenter;
@@ -72,8 +72,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (session.isLoggedIn()) {
             updateUI(true);
         }
-//        loginPresenter = new LoginPresenterImpl(new RetrofitLoginProvider(), this);
-            loginPresenter=new LoginPresenterImpl(new MockLoginProvider(),this);
+
+      loginPresenter = new LoginPresenterImpl(new RetrofitLoginProvider(),this);
+       // loginPresenter = new LoginPresenterImpl(new MockLoginProvider(),this);
+      //  otpPresenter =new LoginPresenterImpl(new RetrofitOTPProvider(),this);
+
     }
 
     public void ProfessorRegister(View view) {
