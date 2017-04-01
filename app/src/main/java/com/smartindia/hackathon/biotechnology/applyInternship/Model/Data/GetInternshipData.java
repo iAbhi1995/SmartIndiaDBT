@@ -18,7 +18,7 @@ public class GetInternshipData {
         this.duration = duration;
         this.stipend = stipend;
         this.applyBy = applyBy;
-//        this.aboutTheCompany = aboutTheCompany;
+
         this.whoCanApply = whoCanApply;
         this.perks = perks;
         this.internshipNumber = internshipNumber;

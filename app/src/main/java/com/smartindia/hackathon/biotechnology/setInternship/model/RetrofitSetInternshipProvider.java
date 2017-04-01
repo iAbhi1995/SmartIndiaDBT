@@ -48,7 +48,7 @@ public class RetrofitSetInternshipProvider implements SetInternshipProvider{
     public void requestIntern(String token, String company,String location,String date,String duration,String stipend,String applyBy,String aboutCompany,String aboutInternship,
                               String no,String perk,String apply, final SetInternshipCallBack setInternshipCallBack) {
 
-        Call<SetInternshipData> call=setInternshipApi.getIntern(token,company, location,date, duration, stipend, applyBy, aboutCompany, aboutInternship,
+        Call<SetInternshipData> call=setInternshipApi.getIntern(token, location,date, duration, stipend, applyBy,  aboutInternship,
                 no,perk, apply);
         call.enqueue(new Callback<SetInternshipData>() {
             @Override

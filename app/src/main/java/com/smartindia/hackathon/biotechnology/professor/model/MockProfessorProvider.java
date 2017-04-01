@@ -12,7 +12,7 @@ import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorTopi
 
 import java.util.ArrayList;
 import java.util.List;
-
+/*
 public class MockProfessorProvider implements ProfessorProvider {
 
     public String city;
@@ -64,13 +64,12 @@ public class MockProfessorProvider implements ProfessorProvider {
 
         }
 
-
-       ProfessorData professorData=new ProfessorData(true,"success",professorCityDatas,
-               professorTopicDatas,professorItemDatas);
-        return professorData;
+//       ProfessorData professorData=new ProfessorData(true,"success",professorCityDatas,
+//               professorTopicDatas,professorItemDatas);
+       // return professorData;
     }
 
-}
+}*/
 
 
 

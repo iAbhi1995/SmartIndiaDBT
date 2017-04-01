@@ -39,7 +39,13 @@ private SharedPrefs sharedPrefs;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+//sharedPrefs=new SharedPrefs(this);
+  //    if(sharedPrefs.getKeyType().equals("0"))
+
+
+
         //if(user)//isse karna bakki hai
+
         setContentView(R.layout.activity_home_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -128,9 +134,9 @@ sharedPrefs=new SharedPrefs(this);
          else if (id == R.id.nav_gallery) {
 
             sharedPrefs.setKeyTypeAnalogus("2");
+            setFragment(new ProfessorFragment(), "INCUBATORS");
 
-
-            setFragment(new SurveyFragment(),"Survey");
+           // setFragment(new SurveyFragment(),"Survey");
 
         } else if (id == R.id.nav_slideshow) {
           //  setFragment(new ProductFragment(),"product");

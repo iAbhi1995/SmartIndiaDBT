@@ -125,7 +125,7 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(professorAdapter);
         spinner1 = (Spinner)view.findViewById(R.id.spinner_city);
-       // spinner2= (Spinner)view.findViewById(R.id.spinner_college);
+
         spinner3 = (Spinner)view.findViewById(R.id.spinner_topic);
         progressBar=(ProgressBar)view.findViewById(R.id.professor_bar);
         button_submit= (Button) view.findViewById(R.id.button_submit);
@@ -187,7 +187,7 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
     public void showSpinnerCity(ProfessorData professorData) {
 
         List<ProfessorCityData> professorCityDataList=
-                new ArrayList<ProfessorCityData>(professorData.getProfessorCityDataList());
+                new ArrayList<ProfessorCityData>(professorData.getCity_list());
         ArrayAdapter<String> adapter;
         int n= professorCityDataList.size();
          String city_id_ar[]=new String[n];
@@ -269,7 +269,7 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
     public void showSpinnerTopic(ProfessorData professorData) {
 
         List<ProfessorTopicData> professorTopicDataList=
-                new ArrayList<ProfessorTopicData>(professorData.getProfessorTopicDataList());
+                new ArrayList<ProfessorTopicData>(professorData.getTopic_list());
         ArrayAdapter<String> adapter;
         int n= professorTopicDataList.size();
        String topic_id_ar[]=new String[n];

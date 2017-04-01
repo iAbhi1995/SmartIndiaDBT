@@ -15,7 +15,9 @@ public class Urls {
     public static final String POSTING_SURVEY = "POSTING_SURVEY";
     public static final String REQUEST_INSTITUTION = "INSTITUTION";
     public static final String REQUEST_SPLASH_SCREEN = "version/";
-    public static final String BASE_URL = "http://172.29.12.19:8000/";
+
+    public static final String BASE_URL = "http://172.29.12.19:8000/";//2 VARIABLES
+
 
     public static final String REQUEST_REQUEST= "request/";//have to consult from iket
     public static final String REQUEST_INCUBATORS= "professor/";//have to consult from iket
