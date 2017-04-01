@@ -19,6 +19,4 @@ public interface SurveyApi {
     Call<SurveyResponse> requestSurveyPost(@Field("id") String id,
                                            @Field("user") String type, @Field("access_token") String access_token, @Field("answer1") String answer1,
                                            @Field("answer2") String answer2, @Field("answer3") String answer3, @Field("answer4") String answer4);
-
-
 }

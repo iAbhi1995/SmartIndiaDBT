@@ -28,6 +28,7 @@
             android:name=".SurveyUpload.View.Survey_Upload"
             android:label="@string/title_activity_survey__upload"
             android:theme="@style/AppTheme.NoActionBar">
+
         </activity>
         <activity android:name=".splashScreen.view.SplashScreenActivity">
 
@@ -37,12 +38,11 @@
             android:name=".MyProfile.view.MyProfileUpload"
             android:label="@string/title_activity_my_profile_upload"
             android:theme="@style/AppTheme.NoActionBar">
-
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
 
         </activity>
     </application>

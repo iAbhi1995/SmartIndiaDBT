@@ -1,5 +1,7 @@
 package com.smartindia.hackathon.biotechnology.MyProfile.Api;
 
+import android.util.Log;
+
 import com.smartindia.hackathon.biotechnology.MyProfile.Model.Data.MyProfileData;
 import com.smartindia.hackathon.biotechnology.helper.Urls;
 
@@ -22,7 +24,6 @@ public interface MyProfileApi {
             @Part("year") RequestBody user_currentyear,
             @Part("user_qualification") RequestBody user_qualification,
             @Part("user_experience") RequestBody user_experience,
-            @Part MultipartBody.Part file_image,
-            @Part MultipartBody.Part file_pdf
+            @Part MultipartBody.Part file
     );
 }

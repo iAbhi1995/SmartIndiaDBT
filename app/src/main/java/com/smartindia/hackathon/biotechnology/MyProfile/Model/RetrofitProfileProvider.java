@@ -1,5 +1,7 @@
 package com.smartindia.hackathon.biotechnology.MyProfile.Model;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.smartindia.hackathon.biotechnology.MyProfile.Api.MyProfileApi;
@@ -42,13 +44,13 @@ public class RetrofitProfileProvider implements MyProfileProvider{
 
     public void requestUpload(String access_toke,String keyTyp,String file_imag, String file_pd, String user_institutio, String user_skill, String user_plac, String user_currentyea, String user_qualificatio, String user_experienc, final MyProfileCallback myProfileCallback)
     {
-        File file_image = new File(file_imag);
+        File file = new File(file_imag);
         File file_pdf = new File(file_pd);
 
-        RequestBody requestBodypdf = RequestBody.create(MediaType.parse("application/pdf"), file_image);
-        RequestBody requestBodyimg = RequestBody.create(MediaType.parse("image/*"), file_pdf);
-        MultipartBody.Part fileToUploadimg = MultipartBody.Part.createFormData("file", file_image.getName(), requestBodyimg);
-        MultipartBody.Part fileToUploadpdf = MultipartBody.Part.createFormData("file", file_pdf.getName(), requestBodypdf);
+        final RequestBody requestBodypdf = RequestBody.create(MediaType.parse("application/pdf"), file_pdf);
+        RequestBody requestBodyimg = RequestBody.create(MediaType.parse("image/*"), file);
+        MultipartBody.Part fileToUploadimg = MultipartBody.Part.createFormData("file", file.getName(), requestBodyimg);
+        MultipartBody.Part fileToUploadpdf = MultipartBody.Part.createFormData("file_pdf", file_pdf.getName(), requestBodypdf);
         RequestBody access_token = RequestBody.create(MediaType.parse("text/plain"), access_toke);
         RequestBody keyType = RequestBody.create(MediaType.parse("text/plain"), keyTyp);
         RequestBody user_institution = RequestBody.create(MediaType.parse("text/plain"), user_institutio);
@@ -58,7 +60,7 @@ public class RetrofitProfileProvider implements MyProfileProvider{
         RequestBody user_qualification = RequestBody.create(MediaType.parse("text/plain"), user_qualificatio);
         RequestBody user_experience = RequestBody.create(MediaType.parse("text/plain"), user_experienc);
 
-        Call<MyProfileData> myProfileDataCall = myProfileApi.upload(access_token,keyType,user_institution,user_skills,user_place,user_currentyear,user_qualification,user_experience,fileToUploadimg,fileToUploadpdf);
+        Call<MyProfileData> myProfileDataCall = myProfileApi.upload(access_token,keyType,user_institution,user_skills,user_place,user_currentyear,user_qualification,user_experience,fileToUploadimg);
         myProfileDataCall.enqueue(new Callback<MyProfileData>() {
             @Override
             public void onResponse(Call<MyProfileData> call, Response<MyProfileData> response) {
