@@ -55,11 +55,6 @@ private InternshipApi internshipApi;
             public void onResponse(Call<InternshipData> call, Response<InternshipData> response) {
 
                 internshipCallBack.onSuccess(response.body());
-
-
-
-
-
             }
 
             @Override
@@ -67,9 +62,6 @@ private InternshipApi internshipApi;
 
                 internshipCallBack.onFailure();
                 t.printStackTrace();
-
-
-
 
             }
         });

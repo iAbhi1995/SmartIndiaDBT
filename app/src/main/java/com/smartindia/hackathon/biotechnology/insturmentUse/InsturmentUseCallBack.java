@@ -1,5 +1,6 @@
 package com.smartindia.hackathon.biotechnology.insturmentUse;
 
+import com.smartindia.hackathon.biotechnology.insturmentUse.model.data.InsturmentUseData;
 import com.smartindia.hackathon.biotechnology.productDesc.model.data.InsturmentData;
 
 /**
@@ -7,6 +8,6 @@ import com.smartindia.hackathon.biotechnology.productDesc.model.data.InsturmentD
  */
 
 public interface InsturmentUseCallBack {
-    void OnSuccess(InsturmentData insturmentData);
+    void OnSuccess(InsturmentUseData insturmentUseData);
     void OnFailure();
 }

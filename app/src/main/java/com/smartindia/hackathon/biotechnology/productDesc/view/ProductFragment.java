@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -52,9 +53,10 @@ public class ProductFragment extends Fragment implements ProductView,AppBarLayou
     private SurveyData surveyData;
     View a0,a1,a2,a3,a4,a5,a6;
    // private ProductData productData;
-    private TextView incubator_name1,incubator_thrustArea1,incubator_state1,
-                        incubator_city1,incubator_address1,incubator_website1,incubator_person1
-                        ,incubator_contact1;
+    private TextView incubator_name,incubator_name1,incubator_thrustArea1,incubator_city1,incubator_website1,incubator_person1,incubator_contact1;
+    private Button biotech_park_loation;
+    private int latitude;
+    private int longitude;
 //ayush
     private static final float PERCENTAGE_TO_SHOW_TITLE_AT_TOOLBAR  = 0.9f;
     private static final float PERCENTAGE_TO_HIDE_TITLE_DETAILS     = 0.3f;
@@ -129,6 +131,7 @@ public class ProductFragment extends Fragment implements ProductView,AppBarLayou
 
 
 
+            incubator_name=(TextView)view.findViewById(R.id.incubator_name1);
             incubator_name1=(TextView)view.findViewById(R.id.incubator_name);
             incubator_thrustArea1=(TextView)view.findViewById(R.id.incubator_thrustArea);
            // incubator_state1=(TextView)view.findViewById(R.id.incubator_state);  //ye change karna hai
@@ -137,7 +140,7 @@ public class ProductFragment extends Fragment implements ProductView,AppBarLayou
             incubator_website1=(TextView)view.findViewById(R.id.incubator_website);
             incubator_person1=(TextView)view.findViewById(R.id.incubator_person);
             incubator_contact1=(TextView)view.findViewById(R.id.incubator_contact);
-
+            biotech_park_loation = (Button)view.findViewById(R.id.biotech_park_loation);
             productPresenter.requestProduct("2",type,"4");
 
         }
@@ -256,14 +259,14 @@ public class ProductFragment extends Fragment implements ProductView,AppBarLayou
             incubator_contact=(TextView)getView().findViewById(R.id.incubator_contact);
 
 */
-
+            latitude = Integer.parseInt(incubatorsDatas.getLatitude());
+            longitude = Integer.parseInt(incubatorsDatas.getLongitude());
+            incubator_name.setText(incubatorsDatas.getIncubator_name());
             incubator_name1.setText(incubatorsDatas.getIncubator_name());
             incubator_thrustArea1.setText(incubatorsDatas.getIncubator_thrustArea());
-            incubator_state1.setText(incubatorsDatas.getIncubator_state());
             incubator_city1.setText(incubatorsDatas.getIncubator_city());
-            incubator_address1.setText(incubatorsDatas.getIncubator_address());
             incubator_website1.setText(incubatorsDatas.getIncubator_website());
-        incubator_person1.setText(incubatorsDatas.getIncubator_person());
+            incubator_person1.setText(incubatorsDatas.getIncubator_person());
             incubator_contact1.setText(incubatorsDatas.getIncubator_contact());
 
 

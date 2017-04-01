@@ -1,6 +1,8 @@
 package com.smartindia.hackathon.biotechnology.insturmentUse.presenter;
 
+import com.smartindia.hackathon.biotechnology.insturmentUse.InsturmentUseCallBack;
 import com.smartindia.hackathon.biotechnology.insturmentUse.model.InsturmentProvider;
+import com.smartindia.hackathon.biotechnology.insturmentUse.model.data.InsturmentUseData;
 import com.smartindia.hackathon.biotechnology.insturmentUse.view.InsturmentUseView;
 
 /**
@@ -18,7 +20,25 @@ private InsturmentProvider insturmentProvider;
 
 
     @Override
-    public void requestInsturment(String id, String name, String email, String institute) {
+    public void requestInsturment(String id, String token, String name, String email, String phone, String institute) {
+        insturmentUseView.showProgressBar(true);
+        insturmentProvider.requestInsturment(id, token, name, email, phone, institute, new InsturmentUseCallBack() {
+            @Override
+            public void OnSuccess(InsturmentUseData insturmentUseData) {
+                if(insturmentUseData.isSuccess())
+                    insturmentUseView.showProgressBar(false);
+                else{
+                    insturmentUseView.showProgressBar(false);
+                    insturmentUseView.showMessage(insturmentUseData.getMessage());
+                }
+            }
 
+            @Override
+            public void OnFailure() {
+                insturmentUseView.showProgressBar(false);
+                insturmentUseView.showMessage("UNABLE TO CONNECT");
+            }
+        });
     }
+
 }

@@ -48,10 +48,11 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 2000);
     }
-
+/*
     public void callLogin(View v) {
         Intent i = new Intent(this, LoginActivity.class);
         startActivity(i);
+<<<<<<< HEAD
+    }*/
     }
 
-}

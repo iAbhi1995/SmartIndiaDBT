@@ -31,6 +31,7 @@ public class Home_page extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener ,
         HomeFragment.OnFragmentInteraction,GetInternshipFragment.OnFragmentInteraction{
 
+private SharedPrefs sharedPrefs;
 
 
     @Override
@@ -41,7 +42,7 @@ public class Home_page extends AppCompatActivity
         setContentView(R.layout.activity_home_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+sharedPrefs=new SharedPrefs(this);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -120,13 +121,21 @@ public class Home_page extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.aman) {
-            setFragment(new ProfessorFragment(), "professor");
+            sharedPrefs.setKeyTypeAnalogus("1");
+            setFragment(new ProfessorFragment(), "INSTURMENT");
         }
          else if (id == R.id.nav_gallery) {
-            setFragment(new Feedback_Fragment(),"Feedback");
+
+            sharedPrefs.setKeyTypeAnalogus("2");
+
+
+            setFragment(new SurveyFragment(),"Survey");
 
         } else if (id == R.id.nav_slideshow) {
-            setFragment(new ProductFragment(),"product");
+          //  setFragment(new ProductFragment(),"product");
+            sharedPrefs.setKeyTypeAnalogus("5");
+            setFragment(new ProfessorFragment(), "survey");
+
 
         } else if (id == R.id.nav_manage) {
         setFragment(new InternshipFragment(),"intern");
