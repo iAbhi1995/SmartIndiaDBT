@@ -77,12 +77,4 @@ public class MockProfessorProvider implements ProfessorProvider {
 }
 */
 
-=======
-        //  ProfessorData professorData=new ProfessorData(true,"success",professorCityDatas,professorCollegeDatas,
-        //   professorTopicDatas,professorItemDatas);
-        return null;
-        //}
->>>>>>> f8b754495914903831ba22529e8fba0832042b7d
 
-    }
-}

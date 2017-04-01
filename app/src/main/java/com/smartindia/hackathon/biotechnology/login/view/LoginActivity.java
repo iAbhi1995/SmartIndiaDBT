@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     Button btnSignOut;
     SharedPrefs session;
-    private SignInButton signInButton;
+    private Button signInButton;
     private GoogleApiClient mGoogleApiClient;
     private int RC_SIGN_IN = 001;
     private String name;
@@ -64,8 +64,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
-        signInButton = (SignInButton) findViewById(R.id.sign_in_button);
-        signInButton.setSize(SignInButton.SIZE_STANDARD);
+        signInButton = (Button) findViewById(R.id.sign_in_button);
         signInButton.setOnClickListener(this);
         prfsrEmail = (EditText) findViewById(R.id.emailID);
         btnSignOut = (Button) findViewById(R.id.btn_sign_out);

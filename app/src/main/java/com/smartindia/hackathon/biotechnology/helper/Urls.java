@@ -16,8 +16,8 @@ public class Urls {
     public static final String OTP = "otp";
     public static final String REQUEST_BIOTECH_PARKS = "biotechpark";//only one api for requests
     public static final String GET_SKILLS = "Skills";
-    public static final String REQUEST_PROFESSOR = "professor/";
-    public static final String REQUEST_BIOTECH_PARKS = "biotechpark";
+
+
     public static final String GETTING_SURVEY = "getting_survey";
     public static final String POSTING_SURVEY = "POSTING_SURVEY";
     public static final String REQUEST_INSTITUTION = "INSTITUTION";
@@ -28,9 +28,7 @@ public class Urls {
     public static final String REQUEST_INCUBATORS= "professor/";//have to consult from iket
     public static final String REQUEST_PRODUCT= "product/";//have to consult from iket
     public static final String WELCOME= "welcome/";
-    public static final String REQUEST_INTERNSHIP= "internship/";//have to consult from iket
 
-    public static final String REQUEST_PRODUCT = "product/";//have to consult from iket
 
     public static final String REQUEST_INTERNSHIP = "internship/";//have to consult from iket
     public static final String SET_INTERNSHIP = "set_intern";

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:id="@+id/relLoginAcvty"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/background"
@@ -11,7 +12,7 @@
         android:id="@+id/sign_in_button"
         android:layout_width="220dp"
         android:layout_height="100dp"
-        android:background="@drawable/googleLogin"
+
         android:layout_marginTop="28dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -30,6 +31,14 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:orientation="vertical">
+          <ProgressBar
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/prgrsbr"/>
+          <Button
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/btn_sign_out"/>
           <TextView
               android:id="@+id/textView7"
               android:layout_width="match_parent"
