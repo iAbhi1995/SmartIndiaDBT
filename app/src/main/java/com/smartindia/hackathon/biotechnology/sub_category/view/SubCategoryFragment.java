@@ -125,8 +125,8 @@ public class SubCategoryFragment extends Fragment implements SubCategoryView{
 
             ((Home_page) getContext()).getSupportActionBar().hide();
         }
-//        subCategoryPresenter = new SubCategoryPresenterImpl(this, new RetrofitSubCategoryDetailsProvider());
-        subCategoryPresenter = new SubCategoryPresenterImpl(this, new MockSubcategoryProvider());
+     subCategoryPresenter = new SubCategoryPresenterImpl(this, new RetrofitSubCategoryDetailsProvider());
+       // subCategoryPresenter = new SubCategoryPresenterImpl(this, new MockSubcategoryProvider());
         //        productsListPresenter = new ProductListPresenterImplementation(this, new RetrofitProductListDetailsProvider());
 
         Log.d("Sub","ReachedPresenterInitialisation");

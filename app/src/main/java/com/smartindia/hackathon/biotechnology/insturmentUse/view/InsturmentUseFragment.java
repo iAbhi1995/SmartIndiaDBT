@@ -4,12 +4,23 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.smartindia.hackathon.biotechnology.R;
+import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
+import com.smartindia.hackathon.biotechnology.insturmentUse.model.RetrofitInsturmentUse;
+import com.smartindia.hackathon.biotechnology.insturmentUse.presenter.InsturmentUsePresenter;
+import com.smartindia.hackathon.biotechnology.insturmentUse.presenter.InsturmentUsePresenterImpl;
+import com.smartindia.hackathon.biotechnology.setInternship.model.RetrofitSetInternshipProvider;
+import com.smartindia.hackathon.biotechnology.setInternship.presenter.SetInternshipPresenterImpl;
 
 import static android.R.id.message;
 
@@ -27,9 +38,13 @@ public class InsturmentUseFragment extends Fragment implements InsturmentUseView
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+private EditText nameTxt,emailTxt,phoneTxt,instituteTxt;
+    private String name,email,institute,phone,id,access_token;
+    private Button button;
+    private SharedPrefs sharedPrefs;
+    private ProgressBar progressBar;
 
-
-
+private InsturmentUsePresenter insturmentUsePresenter;
 
 
 
@@ -82,7 +97,46 @@ public class InsturmentUseFragment extends Fragment implements InsturmentUseView
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_insturment_use, container, false);
+        View view=inflater.inflate(R.layout.fragment_insturment_use, container, false);
+
+        sharedPrefs=new SharedPrefs(getContext());
+       // setInternsipPresenter=new SetInternshipPresenterImpl(new RetrofitSetInternshipProvider(),this);
+
+
+        insturmentUsePresenter=new InsturmentUsePresenterImpl(new RetrofitInsturmentUse(),this);
+        Log.d("Response", "2");
+        button = (Button)view.findViewById(R.id.button222);
+
+        nameTxt=(EditText)view.findViewById(R.id.name22);
+        phoneTxt=(EditText)view.findViewById(R.id.phoneNo2);
+        emailTxt=(EditText)view.findViewById(R.id.email2);
+        instituteTxt=(EditText)view.findViewById(R.id.institution2);
+        progressBar=(ProgressBar)view.findViewById(R.id.insturmentUse_progressBar);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              //  skill=skilltxt.getText().toString();
+                name=nameTxt.getText().toString();
+                phone=phoneTxt.getText().toString();
+                email=emailTxt.getText().toString();
+                institute=instituteTxt.getText().toString();
+                access_token=sharedPrefs.getAccessToken();
+                id="1";// set by bundles is left from insturmrnt wala full view se
+                insturmentUsePresenter.requestInsturment(id,access_token,name,email,phone,institute);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+        return(view);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -95,10 +149,10 @@ public class InsturmentUseFragment extends Fragment implements InsturmentUseView
     @Override
     public void showProgressBar(boolean show) {
         if(show) {
-            //progressBar.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
         }
         else{
-            //progressBar.setVisibility(View.GONE);
+            progressBar.setVisibility(View.GONE);
         }
 
 

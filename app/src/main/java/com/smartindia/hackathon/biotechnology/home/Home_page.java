@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.smartindia.hackathon.biotechnology.Internship.view.InternshipFragment;
 import com.smartindia.hackathon.biotechnology.R;
 
+import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
 import com.smartindia.hackathon.biotechnology.productDesc.view.ProductFragment;
 import com.smartindia.hackathon.biotechnology.professor.view.ProfessorFragment;
 import com.smartindia.hackathon.biotechnology.request.view.RequestFragment;
@@ -31,18 +32,17 @@ import com.smartindia.hackathon.biotechnology.SurveyUpload.View.Survey_Upload;
 
 public class Home_page extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-
+    private SharedPrefs sharedPrefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(user)//isse karna bakki hai
+      //  if(user)//isse karna bakki hai
         setContentView(R.layout.activity_home_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+sharedPrefs=new SharedPrefs(this);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -121,13 +121,18 @@ public class Home_page extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.aman) {
-            setFragment(new ProfessorFragment(), "professor");
+            sharedPrefs.setKeyTypeAnalogus("1");
+            setFragment(new ProfessorFragment(), "INSTURMENT");
         }
          else if (id == R.id.nav_gallery) {
-//            setFragment(new IncubatorsFragment(),"incubators");
+            sharedPrefs.setKeyTypeAnalogus("2");
+            setFragment(new ProfessorFragment(), "INCUBATORS");
 
         } else if (id == R.id.nav_slideshow) {
-            setFragment(new ProductFragment(),"product");
+          //  setFragment(new ProductFragment(),"product");
+            sharedPrefs.setKeyTypeAnalogus("5");
+            setFragment(new ProfessorFragment(), "survey");
+
 
         } else if (id == R.id.nav_manage) {
         setFragment(new InternshipFragment(),"intern");

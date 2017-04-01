@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by aman on 28/3/17.
  */
-
+/*
 public class MockProfessorProvider implements ProfessorProvider {
 
     public String city;
@@ -70,12 +70,12 @@ public class MockProfessorProvider implements ProfessorProvider {
         }
 
 
-        ProfessorData professorData=new ProfessorData(true,"success",professorCityDatas,professorCollegeDatas,
+        ProfessorData professorData=new ProfessorData(true,"success",professorCityDatas,
                 professorTopicDatas,professorItemDatas);
         return professorData;
     }
 
 }
-
+*/
 
 

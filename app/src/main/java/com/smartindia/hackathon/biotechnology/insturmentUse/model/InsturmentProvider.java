@@ -10,7 +10,7 @@ import com.smartindia.hackathon.biotechnology.insturmentUse.InsturmentUseCallBac
 public interface InsturmentProvider {
 
 
-    void requestInsturment(String id, String name, String email, String institute, InsturmentUseCallBack insturmentUseCallBack);
+    void requestInsturment(String id, String token,String name, String email, String phone,String institute, InsturmentUseCallBack insturmentUseCallBack);
 
 
 }

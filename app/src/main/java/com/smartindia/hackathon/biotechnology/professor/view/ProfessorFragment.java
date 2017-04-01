@@ -29,7 +29,7 @@ import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
 import com.smartindia.hackathon.biotechnology.home.Home_page;
 import com.smartindia.hackathon.biotechnology.productDesc.model.data.ProductData;
 import com.smartindia.hackathon.biotechnology.productDesc.view.ProductFragment;
-import com.smartindia.hackathon.biotechnology.professor.model.MockProfessorProvider;
+//import com.smartindia.hackathon.biotechnology.professor.model.MockProfessorProvider;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorCityData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorTopicData;
@@ -69,7 +69,7 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
     private ProfessorData professorData;
     private ProfessorTopicData professorTopicData;
     private ProfessorPresenter professorPresenter;
-    private String college_id,city_id,topic_id,access_token,type,type1;
+    private String city_name,topic_name,access_token,type,type1;
     private LinearLayoutManager linearLayoutManager;
     private ProfessorAdapter professorAdapter;
     private RecyclerView recyclerView;
@@ -117,14 +117,15 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
         View view=inflater.inflate(R.layout.fragment_internship, container, false);
 
         sharedPrefs = new SharedPrefs(getContext());
-        professorPresenter=new ProfessorPresenterImpl(new MockProfessorProvider(),this);
+       // professorPresenter=new ProfessorPresenterImpl(new MockProfessorProvider(),this);
+        professorPresenter=new ProfessorPresenterImpl(new RetrofitProfessorProvider(),this);
         professorAdapter = new ProfessorAdapter(getContext(),this);
         recyclerView=(RecyclerView)view.findViewById(R.id.recycler_filter);
         linearLayoutManager= new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(professorAdapter);
         spinner1 = (Spinner)view.findViewById(R.id.spinner_city);
-        spinner2= (Spinner)view.findViewById(R.id.spinner_college);
+       // spinner2= (Spinner)view.findViewById(R.id.spinner_college);
         spinner3 = (Spinner)view.findViewById(R.id.spinner_topic);
         progressBar=(ProgressBar)view.findViewById(R.id.professor_bar);
         button_submit= (Button) view.findViewById(R.id.button_submit);
@@ -148,7 +149,7 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
         type1= sharedPrefs.getKeyTypeAnalogus();              ;//type kese lu
 //      professorPresenter=new ProfessorPresenterImpl(new RetrofitProfessorProvider(),this);
         Log.d("professorActivity","1");
-        professorPresenter.requestProfessor(access_token,type1,"z","z");
+        professorPresenter.requestProfessor(access_token,type1,"zz","zz");
         Log.d("professorActivity","2");
 
         button_submit.setOnClickListener(
@@ -169,7 +170,7 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
 
     public void submit() {
         Log.d("prof","10");
-        professorPresenter.requestProfessor(access_token,type,city_id,topic_id);
+        professorPresenter.requestProfessor(access_token,type1,city_name,topic_name);
 
 
 
@@ -189,8 +190,8 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
                 new ArrayList<ProfessorCityData>(professorData.getProfessorCityDataList());
         ArrayAdapter<String> adapter;
         int n= professorCityDataList.size();
-        final String city_id_ar[]=new String[n];
-        String city_name_ar[]=new String[n];
+         String city_id_ar[]=new String[n];
+        final String city_name_ar[]=new String[n];
         int i=0;
         while(i < n)
         {
@@ -212,7 +213,7 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
             public void onItemSelected(AdapterView<?> adapterView, View view, int t, long l) {
 
 
-                city_id=city_id_ar[t].toString();
+                city_name=city_name_ar[t].toString();
             }
 
             @Override
@@ -271,8 +272,8 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
                 new ArrayList<ProfessorTopicData>(professorData.getProfessorTopicDataList());
         ArrayAdapter<String> adapter;
         int n= professorTopicDataList.size();
-        final String topic_id_ar[]=new String[n];
-        String topic_name_ar[]=new String[n];
+       String topic_id_ar[]=new String[n];
+        final String topic_name_ar[]=new String[n];
         int i=0;
         while(i < n)
         {
@@ -294,7 +295,7 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
             public void onItemSelected(AdapterView<?> adapterView, View view, int t, long l) {
 
 
-                topic_id=topic_id_ar[t].toString();
+                topic_name=topic_name_ar[t].toString();
             }
 
             @Override
@@ -322,10 +323,11 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
         showSpinnerCity(professorData);
 
         showSpinnerTopic(professorData);
-        if(type.equals("1"))
+
+        //if(type.equals("1"))
             professorAdapter.setData(professorData,type);
-        else if((type.equals("2"))||(type.equals("3"))||(type.equals("4")))
-            professorAdapter.setData(professorData,type);
+       // else if((type.equals("2"))||(type.equals("3"))||(type.equals("4")))
+         //   professorAdapter.setData(professorData,type);
         professorAdapter.notifyDataSetChanged();
 
     }

@@ -6,7 +6,7 @@ package com.smartindia.hackathon.biotechnology.insturmentUse.presenter;
 
 public interface InsturmentUsePresenter {
 
-    void requestInsturment(String id, String name, String email,String institute);
+    void requestInsturment(String id, String token,String name, String email, String phone,String institute);
 
 
 }

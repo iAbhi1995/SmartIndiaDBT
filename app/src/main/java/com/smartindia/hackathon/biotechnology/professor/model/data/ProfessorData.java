@@ -10,21 +10,24 @@ public class ProfessorData {
     private boolean success;
     private String message,type;
     List<InstitutionItemData>institutionItemDataList;
-    List<ProfessorCityData> professorCityDataList;
-    List<ProfessorTopicData> professorTopicDataList;
+
+    List<ProfessorCityData> city_list;
+    List<ProfessorTopicData> topic_list;
     List<ProfessorItemData> professorItemDataList;
     List<SurveyItemData> surveyItemDataList;
+List<ResearchItemData> researchItemDataList;
 
-    public ProfessorData(boolean success, String message, String type, List<InstitutionItemData> institutionItemDataList, List<ProfessorCityData> professorCityDataList, List<ProfessorTopicData> professorTopicDataList,
-                         List<ProfessorItemData> professorItemDataList, List<SurveyItemData> surveyItemDataList) {
+    public ProfessorData(boolean success, String message, String type, List<InstitutionItemData> institutionItemDataList, List<ProfessorCityData> professorCityDataList, List<ProfessorTopicData> professorTopicDataList, List<ProfessorItemData> professorItemDataList, List<SurveyItemData> surveyItemDataList,
+                         List<ResearchItemData> researchItemDataList) {
         this.success = success;
         this.message = message;
         this.type = type;
         this.institutionItemDataList = institutionItemDataList;
-        this.professorCityDataList = professorCityDataList;
-        this.professorTopicDataList = professorTopicDataList;
+        this.city_list = professorCityDataList;
+        this.topic_list = professorTopicDataList;
         this.professorItemDataList = professorItemDataList;
         this.surveyItemDataList = surveyItemDataList;
+        this.researchItemDataList = researchItemDataList;
     }
 
     public boolean isSuccess() {
@@ -44,11 +47,11 @@ public class ProfessorData {
     }
 
     public List<ProfessorCityData> getProfessorCityDataList() {
-        return professorCityDataList;
+        return city_list;
     }
 
     public List<ProfessorTopicData> getProfessorTopicDataList() {
-        return professorTopicDataList;
+        return topic_list;
     }
 
     public List<ProfessorItemData> getProfessorItemDataList() {
@@ -57,5 +60,9 @@ public class ProfessorData {
 
     public List<SurveyItemData> getSurveyItemDataList() {
         return surveyItemDataList;
+    }
+
+    public List<ResearchItemData> getResearchItemDataList() {
+        return researchItemDataList;
     }
 }
