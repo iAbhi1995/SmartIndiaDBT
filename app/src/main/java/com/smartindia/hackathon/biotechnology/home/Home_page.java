@@ -132,10 +132,8 @@ sharedPrefs=new SharedPrefs(this);
             setFragment(new ProfessorFragment(), "INSTURMENT");
         }
          else if (id == R.id.nav_gallery) {
-
             sharedPrefs.setKeyTypeAnalogus("2");
             setFragment(new ProfessorFragment(), "INCUBATORS");
-
            // setFragment(new SurveyFragment(),"Survey");
 
         } else if (id == R.id.nav_slideshow) {
