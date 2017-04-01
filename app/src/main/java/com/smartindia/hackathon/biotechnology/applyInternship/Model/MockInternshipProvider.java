@@ -8,9 +8,6 @@ import com.smartindia.hackathon.biotechnology.applyInternship.Model.Data.ApplyIn
 import com.smartindia.hackathon.biotechnology.applyInternship.Model.Data.GetInternshipData;
 import com.smartindia.hackathon.biotechnology.applyInternship.Presenter.ApplyInternPresenter;
 
-/**
- * Created by Abhishek on 01-04-2017.
- */
 
 public class MockInternshipProvider implements ApplyInternProvider {
     private GetInternshipData mockInternData;
@@ -39,8 +36,7 @@ public class MockInternshipProvider implements ApplyInternProvider {
 
     public GetInternshipData getMockInternData() {
         mockInternData=new GetInternshipData("Success","Living Organic Research","Related to Living Organism","Lucknow",
-                "2nd May","6 months","Rs.5000 /month","30th April","We are looking" +
-                "for a fresher to join our research work.We are currently making a research on Living Organisms.","Only those candidates who are currently pursuing under graduate or post graduate course.","Certificate,Letter of Recommendation,formal dress code","A101A",
+                "2nd May","6 months","Rs.5000 /month","30th April","Only those candidates who are currently pursuing under graduate or post graduate course.","Certificate,Letter of Recommendation,formal dress code","A101A",
                 "The selected researcher willl work with our team",true);
         return mockInternData;
     }

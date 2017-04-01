@@ -59,7 +59,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="bottom|center"
-                        android:text="@string/quila_name"
+                        android:text="Quila"
                         android:textColor="@android:color/white"
                         android:textSize="30sp"
                         />
