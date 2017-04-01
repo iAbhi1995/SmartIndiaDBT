@@ -60,7 +60,7 @@ public class SplashScreenActivity extends Activity implements SplashScreenView {
     @Override
     public void showMessage(String message) {
         //Toast.makeText(this, message,Toast.LENGTH_LONG).show();
-Toast.makeText(this,message,Toast.LENGTH_LONG).show();
+    Toast.makeText(this,message,Toast.LENGTH_LONG).show();
     }
 
     @Override
