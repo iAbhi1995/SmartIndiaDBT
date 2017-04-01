@@ -140,7 +140,6 @@ public class ProductsListFragment extends Fragment implements ProductListView{
 
     @Override
     public void showMessage(String message) {
-
         Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
     }
 
@@ -158,19 +157,49 @@ public class ProductsListFragment extends Fragment implements ProductListView{
     @Override
     public void setProductData(ProductListData productListData)
     {
-
         if(subCategoryId==0) {
             if (productListData.getEquipment_list().size() == 0) {
                 layout_not_available.setVisibility(View.VISIBLE);
                 recyclerView.setVisibility(View.INVISIBLE);
-                //    return;
             } else {
                 layout_not_available.setVisibility(View.GONE);
                 recyclerView.setVisibility(View.VISIBLE);
             }
         }
+        else if(subCategoryId==1 || subCategoryId==2 || subCategoryId==3)
+        {
+            if (productListData.getIncubator_list().size() == 0) {
+                layout_not_available.setVisibility(View.VISIBLE);
+                recyclerView.setVisibility(View.INVISIBLE);
+            } else {
+                layout_not_available.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.VISIBLE);
+            }
+        }
+        else if(subCategoryId==4 || subCategoryId==5)
+        {
+            if (productListData.getSurvey_list().size() == 0) {
+                layout_not_available.setVisibility(View.VISIBLE);
+                recyclerView.setVisibility(View.INVISIBLE);
+            } else {
+                layout_not_available.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.VISIBLE);
+            }
+        }
+        else if(subCategoryId==6 || subCategoryId==7)
+        {
+            if (productListData.getUser_list().size() == 0) {
+                layout_not_available.setVisibility(View.VISIBLE);
+                recyclerView.setVisibility(View.INVISIBLE);
+            } else {
+                layout_not_available.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.VISIBLE);
+            }
+        }
+        Log.d("iket","1");
         productsRecyclerAdapter.setData(productListData,subCategoryId);
         productsRecyclerAdapter.notifyDataSetChanged();
+        Log.d("iket","data changed");
     }
 
 //    @Override

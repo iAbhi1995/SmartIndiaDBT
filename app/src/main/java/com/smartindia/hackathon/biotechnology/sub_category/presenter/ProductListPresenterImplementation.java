@@ -41,7 +41,6 @@ public class ProductListPresenterImplementation implements ProductsListPresenter
                     productListView.showProgressbar(false);
                 }
             }
-
             @Override
             public void onFailure() {
                 productListView.showProgressbar(false);
