@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.applyInternship.Model.Data.ApplyInternData;
 import com.smartindia.hackathon.biotechnology.applyInternship.Model.Data.GetInternshipData;
+import com.smartindia.hackathon.biotechnology.applyInternship.Model.MockInternshipProvider;
 import com.smartindia.hackathon.biotechnology.applyInternship.Model.RetrofitApplyInternshipProvider;
 import com.smartindia.hackathon.biotechnology.applyInternship.Presenter.ApplyInternPresenter;
 import com.smartindia.hackathon.biotechnology.applyInternship.Presenter.ApplyInternPresenterImpl;
@@ -43,7 +44,6 @@ public class GetInternshipFragment extends Fragment implements GetInternshipView
     public GetInternshipFragment() {
         // Required empty public constructor
     }
-
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -88,6 +88,7 @@ public class GetInternshipFragment extends Fragment implements GetInternshipView
         perks = (TextView) v.findViewById(R.id.internship_perks);
         whoCanApply = (TextView) v.findViewById(R.id.internship_prerequisites);
         applyInternPresenter=new ApplyInternPresenterImpl(new RetrofitApplyInternshipProvider(),this);
+//        applyInternPresenter=new ApplyInternPresenterImpl(new MockInternshipProvider(),this);
         applyInternPresenter.getInternship(internId,session.getAccessToken());
         return v;
     }
@@ -95,19 +96,18 @@ public class GetInternshipFragment extends Fragment implements GetInternshipView
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            mListener.onGetInternshipFragment(uri);
         }
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
+
+    }
+
+    public interface OnFragmentInteractionListener {
+        public void onGetInternshipFragment(Uri uri);
     }
 
     @Override
@@ -148,9 +148,9 @@ public class GetInternshipFragment extends Fragment implements GetInternshipView
         Snackbar.make(getView().findViewById(R.id.relLytIntrnship), message, Snackbar.LENGTH_LONG).setAction("Action", null).show();
     }
 
-    public interface OnFragmentInteractionListener {
+    public interface OnFragmentInteraction {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onGetInternshipFragmentInteraction(Uri uri);
     }
 
 

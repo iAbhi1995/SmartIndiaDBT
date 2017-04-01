@@ -32,7 +32,7 @@ import com.smartindia.hackathon.biotechnology.login.model.data.ProfLogInData;
 import com.smartindia.hackathon.biotechnology.login.presenter.LoginPresenter;
 import com.smartindia.hackathon.biotechnology.login.presenter.LoginPresenterImpl;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener,ResearchApprovalApprovalFragment.OnFragmentInteractionListener, GoogleApiClient.OnConnectionFailedListener, LoginView {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener, LoginView {
 
     Button btnSignOut;
     SharedPrefs session;
@@ -212,10 +212,5 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Intent i = new Intent(this, Home_page.class);
         startActivity(i);
         finish();
-    }
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
     }
 }
