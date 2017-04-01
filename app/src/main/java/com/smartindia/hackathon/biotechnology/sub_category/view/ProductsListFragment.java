@@ -21,7 +21,8 @@ import java.util.List;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
 import com.smartindia.hackathon.biotechnology.sub_category.model.RetrofitProductListDetailsProvider;
-import com.smartindia.hackathon.biotechnology.sub_category.model.data.ProductListDetails;
+import com.smartindia.hackathon.biotechnology.sub_category.model.data.Equipment_List;
+import com.smartindia.hackathon.biotechnology.sub_category.model.data.ProductListData;
 import com.smartindia.hackathon.biotechnology.sub_category.presenter.ProductListPresenterImplementation;
 import com.smartindia.hackathon.biotechnology.sub_category.presenter.ProductsListPresenter;
 
@@ -89,7 +90,6 @@ public class ProductsListFragment extends Fragment implements ProductListView{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =inflater.inflate(R.layout.fragment_products_list, container, false);
-
         recyclerView = (RecyclerView)view.findViewById(R.id.productRecycler);
         progressBar = (ProgressBar)view.findViewById(R.id.progressBar);
 //        toolbar = (Toolbar)view.findViewById(R.id.toolbar);
@@ -97,12 +97,8 @@ public class ProductsListFragment extends Fragment implements ProductListView{
 //        toolbar.setVisibility(View.GONE);
         initialize();
         Log.d("subquer",""+querry+subCategoryId);
-
         if(!querry.equals(""))
         productsListPresenter.requestProductList(querry, sharedPrefs.getAccessToken(), subCategoryId);
-
-
-
         return  view;
     }
 
@@ -160,20 +156,20 @@ public class ProductsListFragment extends Fragment implements ProductListView{
     }
 
     @Override
-    public void setProductData(List<ProductListDetails> productListDetails)
+    public void setProductData(ProductListData productListData)
     {
 
-        if(productListDetails.size()==0){
-            layout_not_available.setVisibility(View.VISIBLE);
-            recyclerView.setVisibility(View.INVISIBLE);
-            //    return;
-        }else{
-            layout_not_available.setVisibility(View.GONE);
-            recyclerView.setVisibility(View.VISIBLE);
-
+        if(subCategoryId==0) {
+            if (productListData.getEquipment_list().size() == 0) {
+                layout_not_available.setVisibility(View.VISIBLE);
+                recyclerView.setVisibility(View.INVISIBLE);
+                //    return;
+            } else {
+                layout_not_available.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.VISIBLE);
+            }
         }
-
-        productsRecyclerAdapter.setData(productListDetails,subCategoryId);
+        productsRecyclerAdapter.setData(productListData,subCategoryId);
         productsRecyclerAdapter.notifyDataSetChanged();
     }
 

@@ -34,14 +34,12 @@ public class ProductListPresenterImplementation implements ProductsListPresenter
             public void onSuccess(ProductListData productListData) {
                 if (productListData.isSuccess()) {
 
-                    Log.i(TAG, "List Received : Size :" + productListData.getProduct_list().size());
-                    productListView.setProductData(productListData.getProduct_list());
+                    productListView.setProductData(productListData);
                     productListView.showProgressbar(false);
                 } else {
                     productListView.showMessage(productListData.getMessage());
                     productListView.showProgressbar(false);
                 }
-
             }
 
             @Override
