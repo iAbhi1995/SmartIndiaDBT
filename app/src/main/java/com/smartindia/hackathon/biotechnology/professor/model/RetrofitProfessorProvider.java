@@ -54,8 +54,6 @@ public class RetrofitProfessorProvider implements ProfessorProvider {
             @Override
             public void onResponse(Call<ProfessorData> call, Response<ProfessorData> response) {
                 professorCallBack.onSuccess(response.body());
-
-
             }
 
             @Override

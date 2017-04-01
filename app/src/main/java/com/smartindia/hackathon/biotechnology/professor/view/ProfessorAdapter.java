@@ -42,7 +42,7 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
     private List<FacilityItemData> facilityItemDataList = new ArrayList<>();
 
     private Context context;
-    private String type2;
+    private String type2="1";
     private ProfessorView professorView;
     private ProfessorFragment professorFragment;
     private LayoutInflater layoutInflater;
@@ -58,7 +58,7 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
 
     public void setData(ProfessorData itemData, String type) {
         // this.professorItemDataList = itemDataList;
-        type2 = type;
+        this.type2 = type;
         if (type2.equals("6"))
             professorItemDataList = itemData.getProfessorItemDataList();
 
