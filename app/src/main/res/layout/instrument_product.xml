@@ -271,6 +271,10 @@
                             android:layout_above="@+id/progressbar"
                             android:background="@drawable/location" />
                     </android.support.v7.widget.CardView>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/apply_button"/>
 
                 </LinearLayout>
             </FrameLayout>
