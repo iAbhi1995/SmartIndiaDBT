@@ -12,13 +12,13 @@ public class GetInternshipData {
                              String whoCanApply, String perks, String internshipNumber, String internshipDetail, boolean success) {
         this.message = message;
         this.title = title;
-        this.motivation = motivation;
+        this.motivation = motivation;//institution_name
         this.location = location;
         this.startDate = startDate;
         this.duration = duration;
         this.stipend = stipend;
         this.applyBy = applyBy;
-        this.aboutTheCompany = aboutTheCompany;
+       // this.aboutTheCompany = aboutTheCompany;
         this.whoCanApply = whoCanApply;
         this.perks = perks;
         this.internshipNumber = internshipNumber;

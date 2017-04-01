@@ -10,21 +10,22 @@ public class ProfessorData {
     private boolean success;
     private String message,type;
     List<InstitutionItemData>institutionItemDataList;
-
+    List<FacilityItemData> facilityItemDataList;
     List<ProfessorCityData> city_list;
     List<ProfessorTopicData> topic_list;
     List<ProfessorItemData> professorItemDataList;
     List<SurveyItemData> surveyItemDataList;
 List<ResearchItemData> researchItemDataList;
 
-    public ProfessorData(boolean success, String message, String type, List<InstitutionItemData> institutionItemDataList, List<ProfessorCityData> professorCityDataList, List<ProfessorTopicData> professorTopicDataList, List<ProfessorItemData> professorItemDataList, List<SurveyItemData> surveyItemDataList,
+    public ProfessorData(boolean success, String message, String type, List<InstitutionItemData> institutionItemDataList, List<FacilityItemData> facilityItemDataList, List<ProfessorCityData> city_list, List<ProfessorTopicData> topic_list, List<ProfessorItemData> professorItemDataList, List<SurveyItemData> surveyItemDataList,
                          List<ResearchItemData> researchItemDataList) {
         this.success = success;
         this.message = message;
         this.type = type;
         this.institutionItemDataList = institutionItemDataList;
-        this.city_list = professorCityDataList;
-        this.topic_list = professorTopicDataList;
+        this.facilityItemDataList = facilityItemDataList;
+        this.city_list = city_list;
+        this.topic_list = topic_list;
         this.professorItemDataList = professorItemDataList;
         this.surveyItemDataList = surveyItemDataList;
         this.researchItemDataList = researchItemDataList;
@@ -46,11 +47,15 @@ List<ResearchItemData> researchItemDataList;
         return institutionItemDataList;
     }
 
-    public List<ProfessorCityData> getProfessorCityDataList() {
+    public List<FacilityItemData> getFacilityItemDataList() {
+        return facilityItemDataList;
+    }
+
+    public List<ProfessorCityData> getCity_list() {
         return city_list;
     }
 
-    public List<ProfessorTopicData> getProfessorTopicDataList() {
+    public List<ProfessorTopicData> getTopic_list() {
         return topic_list;
     }
 

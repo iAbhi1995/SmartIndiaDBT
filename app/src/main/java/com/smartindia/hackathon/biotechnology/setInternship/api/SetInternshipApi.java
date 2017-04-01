@@ -16,8 +16,8 @@ import retrofit2.http.Query;
 public interface SetInternshipApi {
 
     @GET(Urls.SET_INTERNSHIP)
-    Call<SetInternshipData> getIntern(@Query("access_token")String token,@Query("access_token")String company,@Query("access_token")String location,@Query("access_token")String date,@Query("access_token")String duration,@Query("access_token")String stipend,@Query("access_token")String applyBy,@Query("access_token")String aboutCompany,@Query("access_token")String aboutInternship,
-                                      @Query("access_token")String no,@Query("access_token")String perk,@Query("access_token")String apply);
+    Call<SetInternshipData> getIntern(@Query("access_token")String token,@Query("city")String location,@Query("start_date")String date,@Query("time_period")String duration,@Query("stipend")String stipend,@Query("apply_by")String applyBy,@Query("about_research")String aboutInternship,
+                                      @Query("seats")String no,@Query("perk")String perk,@Query("criteria")String apply);
 
 
 

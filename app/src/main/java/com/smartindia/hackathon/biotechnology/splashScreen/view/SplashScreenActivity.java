@@ -16,10 +16,12 @@ import android.widget.Toast;
 import com.smartindia.hackathon.biotechnology.BuildConfig;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
+import com.smartindia.hackathon.biotechnology.home.Home_page;
 import com.smartindia.hackathon.biotechnology.splashScreen.model.MockSplash;
 import com.smartindia.hackathon.biotechnology.splashScreen.model.data.SplashScreenData;
 import com.smartindia.hackathon.biotechnology.splashScreen.presenter.SplashScreenPresenter;
 import com.smartindia.hackathon.biotechnology.splashScreen.presenter.SplashScreenPresenterImpl;
+import com.smartindia.hackathon.biotechnology.welcome.view.Welcome;
 
 /**
  * Created by aman on 29/3/17.
@@ -80,18 +82,18 @@ public class SplashScreenActivity extends Activity implements SplashScreenView {
     public void success() {
         if(sharedPrefs.isLoggedIn()){
             Log.d("Res", "" + sharedPrefs.isLoggedIn());
-            //           Intent home = new Intent(SplashScreenActivity.this, Homepage.class);
-            //           startActivity(home);
-            //          finish();
+                     Intent home = new Intent(SplashScreenActivity.this, Home_page.class);
+                       startActivity(home);
+                      finish();
 
         }
         else
         {
             Log.d("Res", "" + sharedPrefs.isLoggedIn());
 
-            //   Intent welcome = new Intent(SplashScreenActivity.this, WelcomeScreenActivity.class);
-            // startActivity(welcome);
-            //finish();
+              Intent welcome = new Intent(SplashScreenActivity.this, Welcome.class);
+            startActivity(welcome);
+            finish();
 
         }
 
