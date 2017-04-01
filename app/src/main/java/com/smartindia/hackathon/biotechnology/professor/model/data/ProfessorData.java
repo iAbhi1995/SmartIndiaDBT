@@ -2,6 +2,8 @@ package com.smartindia.hackathon.biotechnology.professor.model.data;
 
 import java.util.List;
 
+import retrofit2.http.HEAD;
+
 /**
  * Created by aman on 27/3/17.
  */
@@ -10,26 +12,14 @@ public class ProfessorData {
     private boolean success;
     private String message,type;
     List<InstitutionItemData>institutionItemDataList;
+
     List<FacilityItemData> facilityItemDataList;
     List<ProfessorCityData> city_list;
     List<ProfessorTopicData> topic_list;
+
     List<ProfessorItemData> professorItemDataList;
     List<SurveyItemData> surveyItemDataList;
-List<ResearchItemData> researchItemDataList;
-
-    public ProfessorData(boolean success, String message, String type, List<InstitutionItemData> institutionItemDataList, List<FacilityItemData> facilityItemDataList, List<ProfessorCityData> city_list, List<ProfessorTopicData> topic_list, List<ProfessorItemData> professorItemDataList, List<SurveyItemData> surveyItemDataList,
-                         List<ResearchItemData> researchItemDataList) {
-        this.success = success;
-        this.message = message;
-        this.type = type;
-        this.institutionItemDataList = institutionItemDataList;
-        this.facilityItemDataList = facilityItemDataList;
-        this.city_list = city_list;
-        this.topic_list = topic_list;
-        this.professorItemDataList = professorItemDataList;
-        this.surveyItemDataList = surveyItemDataList;
-        this.researchItemDataList = researchItemDataList;
-    }
+    List<ResearchItemData>researchItemDataList;
 
     public boolean isSuccess() {
         return success;
@@ -69,5 +59,19 @@ List<ResearchItemData> researchItemDataList;
 
     public List<ResearchItemData> getResearchItemDataList() {
         return researchItemDataList;
+    }
+
+    public ProfessorData(boolean success, String message, String type, List<InstitutionItemData> institutionItemDataList, List<FacilityItemData> facilityItemDataList, List<ProfessorCityData> city_list, List<ProfessorTopicData> topic_list, List<ProfessorItemData> professorItemDataList, List<SurveyItemData> surveyItemDataList, List<ResearchItemData> researchItemDataList) {
+
+        this.success = success;
+        this.message = message;
+        this.type = type;
+        this.institutionItemDataList = institutionItemDataList;
+        this.facilityItemDataList = facilityItemDataList;
+        this.city_list = city_list;
+        this.topic_list = topic_list;
+        this.professorItemDataList = professorItemDataList;
+        this.surveyItemDataList = surveyItemDataList;
+        this.researchItemDataList = researchItemDataList;
     }
 }

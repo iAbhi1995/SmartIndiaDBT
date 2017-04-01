@@ -3,9 +3,7 @@ package com.smartindia.hackathon.biotechnology.MyProfile.Model.Data;
 import com.smartindia.hackathon.biotechnology.MyProfile.Model.MyProfileProvider;
 import com.smartindia.hackathon.biotechnology.MyProfile.MyProfileCallback;
 
-/**
- * Created by ayush on 01-04-2017.
- */
+
 
 public class MockProfileUploadProvider implements MyProfileProvider {
     @Override

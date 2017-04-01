@@ -52,7 +52,6 @@ public class SubCategoryFragment extends Fragment implements SubCategoryView{
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
     private ViewPager viewPager;
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -116,9 +115,6 @@ public class SubCategoryFragment extends Fragment implements SubCategoryView{
         coordinatorLayout=(CoordinatorLayout)view.findViewById(R.id.coordinate_subcategory);
         Log.d("sub","2");
         layout_not_available= (LinearLayout)view.findViewById(R.id.layout_not_available);
-
-
-
         sharedPrefs = new SharedPrefs(getContext());
 
         if (getActivity() instanceof Home_page) {
@@ -205,7 +201,6 @@ public class SubCategoryFragment extends Fragment implements SubCategoryView{
     @Override
     public void showMessage(String message) {
         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-
     }
 
     @Override

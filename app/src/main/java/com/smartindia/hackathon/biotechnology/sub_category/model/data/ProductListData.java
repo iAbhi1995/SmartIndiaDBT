@@ -7,12 +7,18 @@ public class    ProductListData {
 
     private boolean success;
     private String message;
-    private List<ProductListDetails> product_list;
+    private List<Equipment_List> equipment_list;
+    private List<IncubatorList> incubator_list;
+    private List<UserList> user_list;
+    private List<SurveyList> survey_list;
 
-    public ProductListData(boolean success, String  message, List<ProductListDetails> product_list) {
+    public ProductListData(boolean success, String message, List<Equipment_List> equipment_list, List<IncubatorList> incubator_list,  List<UserList> user_list, List<SurveyList> survey_list) {
         this.success = success;
         this.message = message;
-        this.product_list = product_list;
+        this.equipment_list = equipment_list;
+        this.incubator_list = incubator_list;
+        this.user_list = user_list;
+        this.survey_list = survey_list;
     }
 
     public boolean isSuccess() {
@@ -23,7 +29,20 @@ public class    ProductListData {
         return message;
     }
 
-    public List<ProductListDetails> getProduct_list() {
-        return product_list;
+    public List<Equipment_List> getEquipment_list() {
+        return equipment_list;
+    }
+
+    public List<IncubatorList> getIncubator_list() {
+        return incubator_list;
+    }
+
+
+    public List<UserList> getUser_list() {
+        return user_list;
+    }
+
+    public List<SurveyList> getSurvey_list() {
+        return survey_list;
     }
 }

@@ -48,7 +48,6 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public int getItemPosition(Object object)
     {
-
         return POSITION_NONE;
     }
 
@@ -56,6 +55,4 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public void destroyItem(ViewGroup container, int position, Object object) {
         super.destroyItem(container, position, object);
     }
-
-
 }

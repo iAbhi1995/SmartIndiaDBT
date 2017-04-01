@@ -25,8 +25,8 @@ public class GetInternshipFragment extends Fragment implements GetInternshipView
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
-    private TextView title, motivationBox, location, startDate, duration,
-            stipend, applyBy, aboutTheCompany, whoCanApply, internshipDetails,
+    private TextView title, instituteName, location, startDate, duration,
+            stipend, applyBy, whoCanApply, internshipDetails,
             internshipNumbers, perks;
     SharedPrefs session;
     private ApplyInternPresenter applyInternPresenter;
@@ -44,18 +44,10 @@ public class GetInternshipFragment extends Fragment implements GetInternshipView
     public GetInternshipFragment() {
         // Required empty public constructor
     }
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @return A new instance of fragment GetInternshipFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static GetInternshipFragment newInstance(String intern_id) {
         GetInternshipFragment fragment = new GetInternshipFragment();
         Bundle args = new Bundle();
         args.putString(INTERN_ID, intern_id);
-//        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -65,8 +57,7 @@ public class GetInternshipFragment extends Fragment implements GetInternshipView
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             internId = getArguments().getString(INTERN_ID);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+       }
     }
 
     @Override
@@ -76,13 +67,12 @@ public class GetInternshipFragment extends Fragment implements GetInternshipView
         View v = inflater.inflate(R.layout.set_internship, container, false);
         title = (TextView) v.findViewById(R.id.title);
         progressBar = (ProgressBar) v.findViewById(R.id.progressbar);
-        motivationBox = (TextView) v.findViewById(R.id.textView);
+        instituteName = (TextView) v.findViewById(R.id.textView);
         location = (TextView) v.findViewById(R.id.internship_location);
         startDate = (TextView) v.findViewById(R.id.internship_startDate);
         duration = (TextView) v.findViewById(R.id.internship_duration);
         stipend = (TextView) v.findViewById(R.id.internship_stipend);
         applyBy = (TextView) v.findViewById(R.id.internship_applyBy);
-        aboutTheCompany = (TextView) v.findViewById(R.id.internship_company_description);
         internshipDetails = (TextView) v.findViewById(R.id.internship_details);
         internshipNumbers = (TextView) v.findViewById(R.id.internship_numbers);
         perks = (TextView) v.findViewById(R.id.internship_perks);
@@ -114,13 +104,12 @@ public class GetInternshipFragment extends Fragment implements GetInternshipView
     public void ShowInternDetails(GetInternshipData getInternshipData)
     {
         title.setText(getInternshipData.getTitle());
-        motivationBox.setText(getInternshipData.getMotivation());
+        instituteName.setText(getInternshipData.getInstitute_name());
         location.setText(getInternshipData.getLocation());
         startDate.setText(getInternshipData.getStartDate());
         duration.setText(getInternshipData.getDuration());
         stipend.setText(getInternshipData.getStipend());
         applyBy.setText(getInternshipData.getApplyBy());
-        aboutTheCompany.setText(getInternshipData.getAboutTheCompany());
         whoCanApply.setText(getInternshipData.getWhoCanApply());
         internshipDetails.setText(getInternshipData.getInternshipDetail());
         internshipNumbers.setText(getInternshipData.getInternshipNumber());

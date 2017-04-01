@@ -6,6 +6,7 @@ import android.util.Log;
 
 import java.util.concurrent.TimeUnit;
 
+import com.smartindia.hackathon.biotechnology.helper.Urls;
 import com.smartindia.hackathon.biotechnology.sub_category.OnSubCategoryGetRequest;
 import com.smartindia.hackathon.biotechnology.sub_category.api.SubCategoryRequestApi;
 import com.smartindia.hackathon.biotechnology.sub_category.model.data.SubCategoryData;
@@ -34,7 +35,7 @@ public class RetrofitSubCategoryDetailsProvider implements SubCategoryDetailsPro
         OkHttpClient client = new OkHttpClient.Builder().connectTimeout(2,TimeUnit.MINUTES).readTimeout(2,TimeUnit.MINUTES).addInterceptor(interceptor).build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.43.119:8000/")
+                .baseUrl(Urls.BASE_URL)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
