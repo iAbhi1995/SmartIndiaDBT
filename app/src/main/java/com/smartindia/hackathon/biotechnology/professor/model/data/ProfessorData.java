@@ -15,8 +15,8 @@ public class ProfessorData {
     List<ProfessorItemData> professorItemDataList;
     List<SurveyItemData> surveyItemDataList;
 
-    public ProfessorData(boolean success, String message, String type, List<InstitutionItemData> institutionItemDataList, List<ProfessorCityData> professorCityDataList, List<ProfessorTopicData> professorTopicDataList,
-                         List<ProfessorItemData> professorItemDataList, List<SurveyItemData> surveyItemDataList) {
+    public ProfessorData(boolean success, String message, List<ProfessorCityData> professorCityDataList, List<ProfessorTopicData> professorTopicDataList,
+                         List<ProfessorItemData> professorItemDataList) {
         this.success = success;
         this.message = message;
         this.type = type;

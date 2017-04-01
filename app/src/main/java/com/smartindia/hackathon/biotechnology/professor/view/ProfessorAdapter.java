@@ -114,16 +114,13 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
 
     }
 
-
-
-
     @Override
     public int getItemCount() {
         if(type2.equals("1")){
         return professorItemDataList.size();}
         else if((type2.equals("2"))||(type2.equals("3"))||(type2.equals("4"))) {
-
             return institutionItemDataList.size();}
+        return 0;
     }
 
     public class MyViewHolder extends  RecyclerView.ViewHolder{

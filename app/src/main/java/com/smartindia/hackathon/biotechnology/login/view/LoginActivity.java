@@ -202,7 +202,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         signOut();
     }
 
-
     public void onProfessorLoginVerified(ProfLogInData profLogInData) {
         session.setAccessToken(profLogInData.getAccess_token());
         session.setLogin(true);

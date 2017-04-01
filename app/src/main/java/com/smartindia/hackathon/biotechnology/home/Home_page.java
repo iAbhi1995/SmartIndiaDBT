@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.smartindia.hackathon.biotechnology.InstituteFeedBackForm.View.Feedback_Fragment;
 import com.smartindia.hackathon.biotechnology.Internship.view.InternshipFragment;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.SurveyFilling.View.SurveyFragment;
@@ -36,7 +37,7 @@ public class Home_page extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(user)//isse karna bakki hai
+        //if(user)//isse karna bakki hai
         setContentView(R.layout.activity_home_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -122,7 +123,7 @@ public class Home_page extends AppCompatActivity
             setFragment(new ProfessorFragment(), "professor");
         }
          else if (id == R.id.nav_gallery) {
-            setFragment(new SurveyFragment(),"Survey");
+            setFragment(new Feedback_Fragment(),"Feedback");
 
         } else if (id == R.id.nav_slideshow) {
             setFragment(new ProductFragment(),"product");
