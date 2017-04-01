@@ -22,108 +22,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b2df984-e7bb-4e92-bca2-7ec39f68417d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/background.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/googleLogin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_android_25.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_lock_black_24dp.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_person_black_24dp.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-04-01-06-35-19-807.rawproto" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" afterPath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/1_library_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/1_library_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_25_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_25_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_25_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_25_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/cardview_v7_25_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/cardview_v7_25_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/circularimageview_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/circularimageview_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/constraint_layout_1_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/constraint_layout_1_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/design_25_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/design_25_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/firebase_analytics_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/firebase_analytics_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/firebase_analytics_impl_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/firebase_analytics_impl_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/firebase_appindexing_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/firebase_appindexing_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/firebase_auth_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/firebase_auth_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/firebase_common_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/firebase_common_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/firebase_config_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/firebase_config_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/firebase_crash_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/firebase_crash_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/firebase_database_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/firebase_database_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/firebase_database_connection_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/firebase_database_connection_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/firebase_iid_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/firebase_iid_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/firebase_messaging_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/firebase_messaging_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/firebase_storage_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/firebase_storage_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/firebase_storage_common_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/firebase_storage_common_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/library_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/library_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/library_5_4_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/library_5_4_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/mediarouter_v7_24_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/mediarouter_v7_24_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/multidex_1_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/multidex_1_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/multidex_instrumentation_1_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/multidex_instrumentation_1_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/palette_v7_24_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/palette_v7_24_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_ads_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_ads_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_ads_lite_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_ads_lite_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_analytics_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_analytics_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_analytics_impl_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_analytics_impl_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_appinvite_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_appinvite_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_auth_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_auth_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_auth_base_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_auth_base_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_awareness_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_awareness_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_base_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_base_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_basement_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_basement_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_cast_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_cast_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_cast_framework_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_cast_framework_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_clearcut_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_clearcut_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_drive_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_drive_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_fitness_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_fitness_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_games_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_games_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_gass_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_gass_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_gcm_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_gcm_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_identity_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_identity_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_iid_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_iid_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_instantapps_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_instantapps_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_location_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_location_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_maps_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_maps_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_nearby_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_nearby_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_panorama_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_panorama_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_places_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_places_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_plus_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_plus_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_safetynet_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_safetynet_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_tagmanager_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_tagmanager_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_tagmanager_api_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_tagmanager_api_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_tagmanager_v4_impl_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_tagmanager_v4_impl_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_tasks_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_tasks_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_vision_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_vision_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_wallet_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_wallet_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_wearable_10_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_wearable_10_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_25_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_25_3_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_compat_25_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_compat_25_3_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_ui_25_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_core_ui_25_3_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_utils_25_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_core_utils_25_3_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_fragment_25_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_fragment_25_3_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_media_compat_25_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_media_compat_25_3_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_25_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_25_3_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_25_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_25_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/transition_25_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/transition_25_1_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/MyProfile/Model/Data/MockProfileUploadProvider.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/MyProfile/Model/Data/MockProfileUploadProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/home/Home_page.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/home/Home_page.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/productDesc/model/MockProduct.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/productDesc/model/MockProduct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/productDesc/model/data/IncubatorsData.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/productDesc/model/data/IncubatorsData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/productDesc/view/ProductFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/productDesc/view/ProductFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/professor/model/MockProfessorProvider.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/professor/model/MockProfessorProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/professor/view/ProfessorAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/professor/view/ProfessorAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/splashScreen/view/SplashScreenActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/splashScreen/view/SplashScreenActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/biotech_park_product.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/biotech_park_product.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/incubator_product.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/incubator_product.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
     </list>
     <ignored path="biotechnology.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -3300,7 +3199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491040280169</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="login xml done">
+      <created>1491046366759</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1491046366759</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3321,7 +3227,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24650913" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24650913" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -3358,7 +3264,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="login modified" />
     <MESSAGE value="login finally done" />
-    <option name="LAST_COMMIT_MESSAGE" value="login finally done" />
+    <MESSAGE value="login xml done" />
+    <option name="LAST_COMMIT_MESSAGE" value="login xml done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3375,13 +3282,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/ResearchApproval/View/ResearchApprovalViewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="36" column="70" selection-start-line="36" selection-start-column="70" selection-end-line="36" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/smartindia/hackathon/biotechnology/ResearchApproval/Model/MockProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -3822,6 +3722,14 @@
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/button_filter.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
