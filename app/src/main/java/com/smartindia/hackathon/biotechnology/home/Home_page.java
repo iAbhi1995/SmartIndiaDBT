@@ -22,6 +22,7 @@ import com.smartindia.hackathon.biotechnology.Internship.view.InternshipFragment
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.SurveyFilling.View.SurveyFragment;
 import com.smartindia.hackathon.biotechnology.applyInternship.View.GetInternshipFragment;
+import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
 import com.smartindia.hackathon.biotechnology.productDesc.view.ProductFragment;
 import com.smartindia.hackathon.biotechnology.professor.view.ProfessorFragment;
 import com.smartindia.hackathon.biotechnology.request.view.RequestFragment;

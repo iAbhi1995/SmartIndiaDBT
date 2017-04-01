@@ -1,9 +1,4 @@
 package com.smartindia.hackathon.biotechnology.helper;
-
-/**
- * Created by aman on 27/3/17.
- */
-
 public class Urls {
 
     public static final String POSTING_MY_PROFILE = "test_url";
@@ -14,9 +9,7 @@ public class Urls {
     public static final String REQUEST_PROFESSOR= "professor/";
     public static final String POSTING_RESUME_PDF=" test_url";
     public static final String OTP = "otp";
-    public static final String REQUEST_BIOTECH_PARKS = "biotechpark";//only one api for requests
     public static final String GET_SKILLS = "Skills";
-    public static final String REQUEST_PROFESSOR = "professor/";
     public static final String REQUEST_BIOTECH_PARKS = "biotechpark";
     public static final String GETTING_SURVEY = "getting_survey";
     public static final String POSTING_SURVEY = "POSTING_SURVEY";
@@ -36,5 +29,8 @@ public class Urls {
     public static final String REQUEST_INTERNSHIP_DETAILS = "";
     public static final String APPLY_INTERNSHIP = "";
     public static final String REQUEST_RESEARCH = "";
+    public static final String FEEDBACK_QUES = "";
+    public static final String FEEDBACK_SUBMIT = "";
+    public static final String REQUEST_INSTRUMENT_USE = "";
     public static final String REQUEST_RESEARCH_APPROVAL = "";
 }

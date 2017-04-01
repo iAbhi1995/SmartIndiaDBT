@@ -72,11 +72,6 @@
 
 </activity>
         </activity>
-
-        <activity
-            android:name=".MyProfile.view.MyProfileUpload"
-            android:label="@string/title_activity_my_profile_upload"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

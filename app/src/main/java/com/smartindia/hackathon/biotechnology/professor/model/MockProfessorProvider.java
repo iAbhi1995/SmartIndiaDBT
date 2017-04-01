@@ -35,7 +35,6 @@ public class MockProfessorProvider implements ProfessorProvider {
 
     public ProfessorData getmockProfessor() {
         List<ProfessorCityData> professorCityDatas = new ArrayList<>();
-
         List<ProfessorTopicData> professorTopicDatas = new ArrayList<>();
         List<ProfessorItemData> professorItemDatas = new ArrayList<>();
 
@@ -66,8 +65,8 @@ public class MockProfessorProvider implements ProfessorProvider {
         }
 
 
-        ProfessorData professorData=new ProfessorData(true,"success",professorCityDatas,professorCollegeDatas,
-                professorTopicDatas,professorItemDatas);
+       ProfessorData professorData=new ProfessorData(true,"success",professorCityDatas,
+               professorTopicDatas,professorItemDatas);
         return professorData;
     }
 
