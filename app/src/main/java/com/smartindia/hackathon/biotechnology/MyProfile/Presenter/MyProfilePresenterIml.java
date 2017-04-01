@@ -2,11 +2,8 @@ package com.smartindia.hackathon.biotechnology.MyProfile.Presenter;
 
 import com.smartindia.hackathon.biotechnology.MyProfile.Model.Data.MyProfileData;
 import com.smartindia.hackathon.biotechnology.MyProfile.Model.MyProfileProvider;
-import com.smartindia.hackathon.biotechnology.MyProfile.view.MyProfileCallback;
-import com.smartindia.hackathon.biotechnology.MyProfile.view.MyProfileUpload;
+import com.smartindia.hackathon.biotechnology.MyProfile.MyProfileCallback;
 import com.smartindia.hackathon.biotechnology.MyProfile.view.MyProfileView;
-import com.smartindia.hackathon.biotechnology.SurveyUpload.Model.Data.SureveyUploadData;
-import com.smartindia.hackathon.biotechnology.SurveyUpload.View.OnSurveyUploadCallBack;
 
 /**
  * Created by Abhishek on 28-03-2017.
@@ -24,9 +21,9 @@ public class MyProfilePresenterIml implements MyProfilePresenter {
     }
 
     @Override
-    public void requestUpload(String file_image, String file_pdf, String user_institution, String user_skills, String user_place, String user_currentyear, String user_qualification, String user_experience) {
+    public void requestUpload(String access_token,String keyType,String file_image, String file_pdf, String user_institution, String user_skills, String user_place, String user_currentyear, String user_qualification, String user_experience) {
         myProfileView.showLoading(true);
-        myProfileProvider.requestUpload(file_image,file_pdf,user_institution,user_skills,user_place,user_currentyear,user_qualification,user_experience, new MyProfileCallback() {
+        myProfileProvider.requestUpload(access_token,keyType,file_image,file_pdf,user_institution,user_skills,user_place,user_currentyear,user_qualification,user_experience, new MyProfileCallback() {
             @Override
             public void onSuccess(MyProfileData myProfileData) {
                 if (myProfileData.isSuccess()) {

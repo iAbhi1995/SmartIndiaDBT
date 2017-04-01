@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"></activity>
         <activity
-            android:name=".login.view.LoginActivity"
+           android:name=".login.view.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -39,6 +39,27 @@
         </activity>
         <activity android:name=".splashScreen.view.SplashScreenActivity">
 
+        </activity>
+<activity android:name=".welcome.view.Welcome">
+
+        <activity
+            android:name=".MyProfile.view.MyProfileUpload"
+            android:label="@string/title_activity_my_profile_upload"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+
+
+
+</activity>
         </activity>
 
         <activity

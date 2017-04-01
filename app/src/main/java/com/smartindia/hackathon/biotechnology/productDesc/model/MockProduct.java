@@ -13,7 +13,7 @@ import com.smartindia.hackathon.biotechnology.productDesc.model.data.ProfileData
 import com.smartindia.hackathon.biotechnology.productDesc.model.data.ResearchPaperData;
 import com.smartindia.hackathon.biotechnology.productDesc.model.data.SurveyData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorCityData;
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorCollegeData;
+
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorItemData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorTopicData;
@@ -53,7 +53,7 @@ public class MockProduct implements ProductProvider {
 
     public ProductData getmock() {
 
-        BiotechParkData biotechParkDatas = new BiotechParkData("", "", "", "", "", "");
+        BiotechParkData biotechParkDatas = new BiotechParkData("", "", "", "", "", "","");
         IncubatorsData incubatorsDatas = new IncubatorsData("", "", "", "", "", "", "", "a");
         InstitutionsData institutionsDatas = new InstitutionsData("", "", "", "", "", "", "", "", "");
         InsturmentData insturmentDatas = new InsturmentData("", "", "", "", "", "", "");
@@ -64,7 +64,7 @@ public class MockProduct implements ProductProvider {
         ProductData productData = new ProductData(true, "Success", biotechParkDatas, incubatorsDatas,
                 insturmentDatas, researchPaperDatas, profileDatas, surveyDatas);
         if(type.equals("3")) {
-            biotechParkDatas = new BiotechParkData("", "", "", "", "", "");
+            biotechParkDatas = new BiotechParkData("", "", "", "", "", "","");
             incubatorsDatas = new IncubatorsData("a", "a", "a", "a", "a", "a", "a", "a");
             institutionsDatas = new InstitutionsData("", "", "", "", "", "", "", "", "");
             insturmentDatas = new InsturmentData("", "", "", "", "", "", "");

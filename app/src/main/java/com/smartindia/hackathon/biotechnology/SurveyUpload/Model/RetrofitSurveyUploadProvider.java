@@ -55,7 +55,7 @@ public class RetrofitSurveyUploadProvider implements SurveyUploadProvider
         final RequestBody requestBody = RequestBody.create(MediaType.parse("application/pdf"), file);
         MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("file", file.getName(), requestBody);
         RequestBody access_token = RequestBody.create(MediaType.parse("text/plain"), access_toke);
-        RequestBody type = RequestBody.create(MediaType.parse("text/plain"), "2");
+        RequestBody type = RequestBody.create(MediaType.parse("text/plain"), typ);
         RequestBody survey_title = RequestBody.create(MediaType.parse("text/plain"), survey_titl);
         RequestBody survey_scale = RequestBody.create(MediaType.parse("text/plain"), survey_scal);
         RequestBody survey_description = RequestBody.create(MediaType.parse("text/plain"),survey_descriptio);

@@ -4,6 +4,13 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -12,19 +19,24 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.smartindia.hackathon.biotechnology.MyProfile.Model.Data.MockProfileUploadProvider;
 import com.smartindia.hackathon.biotechnology.MyProfile.Model.RetrofitProfileProvider;
 import com.smartindia.hackathon.biotechnology.MyProfile.Presenter.MyProfilePresenter;
 import com.smartindia.hackathon.biotechnology.MyProfile.Presenter.MyProfilePresenterIml;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.FilePath;
+import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
 
 import java.io.IOException;
 
@@ -33,9 +45,9 @@ public class MyProfileUpload extends AppCompatActivity  implements MyProfileView
     private ProgressBar progressbar;
     private MyProfilePresenter myProfilePresenter;
     private Button add_pdf;
-    private ImageButton add_pic;
+    private ImageView add_pic;
     private Button buttonUpload;
-    private ImageView imageView;
+    SharedPrefs sharedPrefs;
     private Uri file_pdf;
     private Uri file_image;
 
@@ -53,7 +65,7 @@ public class MyProfileUpload extends AppCompatActivity  implements MyProfileView
     private Bitmap bitmap;
 
     public EditText user_institutio,user_skill,user_plac,user_currentyea,user_qualificatio,user_experienc;
-
+    private RadioGroup personTypeGroup;
 
 
     @Override
@@ -62,13 +74,14 @@ public class MyProfileUpload extends AppCompatActivity  implements MyProfileView
         setContentView(R.layout.activity_my_profile_upload);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        sharedPrefs = new SharedPrefs(this);
         requestStoragePermission();
 
         //Initializing views
         add_pdf = (Button) findViewById(R.id.add_pdf);
-        buttonUpload = (Button) findViewById(R.id.buttonUpload);
-        imageView = (ImageButton) findViewById(R.id.add_pic);
+        buttonUpload = (Button) findViewById(R.id.button_upload);
+        add_pic = (ImageView) findViewById(R.id.add_pic);
+
 
         add_pdf.setOnClickListener(this);
         add_pic.setOnClickListener(this);
@@ -92,11 +105,22 @@ public class MyProfileUpload extends AppCompatActivity  implements MyProfileView
         myProfilePresenter= new MyProfilePresenterIml(this,
                 new RetrofitProfileProvider());
     }
-    private void showFileChooser() {
+    private void showFileChooser(View v) {
         Intent intent = new Intent();
-        intent.setType("application/pdf");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_FILE_REQUEST);
+        if(v == add_pic)
+        {
+            intent.setType("image/*");
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+            startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
+        }
+        else
+        {
+            intent.setType("application/pdf");
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+            startActivityForResult(Intent.createChooser(intent, "Select File"), PICK_FILE_REQUEST);
+        }
+
+
     }
 
     @Override
@@ -112,11 +136,14 @@ public class MyProfileUpload extends AppCompatActivity  implements MyProfileView
             file_image = data.getData();
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), file_image);
-                imageView.setImageBitmap(bitmap);
+                Bitmap resized = Bitmap.createScaledBitmap(bitmap, 100, 100, true);
+                Bitmap conv_bm = getRoundedRectBitmap(resized, 100);
+                add_pic.setImageBitmap(conv_bm);
 
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            Log.d("Ayush1",file_image.toString());
         }
         if (requestCode == PICK_FILE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             file_pdf = data.getData();
@@ -172,7 +199,7 @@ public class MyProfileUpload extends AppCompatActivity  implements MyProfileView
     @Override
     public void onClick(View v) {
         if (v == add_pic||v == add_pdf) {
-            showFileChooser();
+            showFileChooser(v);
         }
         if (v == buttonUpload) {
             sendRequest();
@@ -181,8 +208,50 @@ public class MyProfileUpload extends AppCompatActivity  implements MyProfileView
     public void sendRequest()
     {
         FilePath FilePath = new FilePath();
-        String image_path = FilePath.getPath(getApplicationContext(),file_image);
-        String pdf_path = FilePath.getPath(getApplicationContext(),file_pdf);
-        myProfilePresenter.requestUpload(image_path,pdf_path,user_institution,user_skills,user_place,user_currentyear,user_qualification,user_experience);
+        personTypeGroup = (RadioGroup) findViewById(R.id.personType);
+        int selectedId = personTypeGroup.getCheckedRadioButtonId();;
+
+        if(selectedId==R.id.student)
+        {
+            sharedPrefs.setKeyType("0");
+        }
+        else
+        {
+            sharedPrefs.setKeyType("1");
+        }
+
+        if(file_pdf == null || file_image ==null)
+        {
+            Toast.makeText(getApplicationContext(), "You have not uploaded either image or file.", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            String pdf_path = FilePath.getPath(getApplicationContext(),file_pdf);
+            String image_path = FilePath.getPath(getApplicationContext(),file_image);
+            myProfilePresenter.requestUpload(sharedPrefs.getAccessToken(),sharedPrefs.getKeyType(),image_path,pdf_path,user_institution,user_skills,user_place,user_currentyear,user_qualification,user_experience);
+
+        }
+        }
+    public static Bitmap getRoundedRectBitmap(Bitmap bitmap, int pixels) {
+        Bitmap result = null;
+        try {
+            result = Bitmap.createBitmap(99, 99, Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(result);
+
+            int color = 0xff424242;
+            Paint paint = new Paint();
+            Rect rect = new Rect(0, 0, 150, 150);
+
+            paint.setAntiAlias(true);
+            canvas.drawARGB(0, 0, 0, 0);
+            paint.setColor(color);
+            canvas.drawCircle(50, 50, 50, paint);
+            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+            canvas.drawBitmap(bitmap, rect, rect, paint);
+
+        } catch (NullPointerException e) {
+        } catch (OutOfMemoryError o) {
+        }
+        return result;
     }
 }
