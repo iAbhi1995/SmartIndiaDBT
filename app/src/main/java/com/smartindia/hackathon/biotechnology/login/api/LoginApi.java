@@ -18,11 +18,11 @@ public interface LoginApi {
                                  @Query("id") String id);
 
 
-    @POST(Urls.PROFESSOR_SIGN_UP)
+    @GET(Urls.PROFESSOR_SIGN_UP)
     Call<SignUpResultData> requestSignUp(@Query("name") String name,
                                          @Query("email") String email);
 
-    @POST(Urls.PROFESSOR_LOGIN)
+    @GET(Urls.PROFESSOR_LOGIN)
     Call<ProfLogInData> requestProfLogin(@Query("email") String email,
                                          @Query("pass") String password);
 }

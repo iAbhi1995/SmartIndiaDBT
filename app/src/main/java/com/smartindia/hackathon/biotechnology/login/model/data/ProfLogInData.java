@@ -1,9 +1,5 @@
 package com.smartindia.hackathon.biotechnology.login.model.data;
 
-/**
- * Created by Abhishek on 29-03-2017.
- */
-
 public class ProfLogInData {
     private boolean success;
     private String message,access_token;

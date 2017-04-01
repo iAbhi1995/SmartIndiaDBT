@@ -286,7 +286,7 @@
                         android:id="@+id/tv1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_above="@+id/progressbar"
+                        android:layout_above="@+id/progressbar_incubator_desc"
                         android:layout_marginBottom="15dp"
                         android:layout_marginEnd="49dp"
                         android:layout_marginRight="49dp"
@@ -302,7 +302,7 @@
                         android:layout_marginRight="49dp"
                         app:cardCornerRadius="10dp">
 
-                        <ImageButton
+                        <Button
                             android:id="@+id/biotech_park_loation"
                             android:layout_width="300dp"
                             android:layout_height="wrap_content"

@@ -20,10 +20,11 @@ import java.util.List;
 public class MockProfessorProvider implements ProfessorProvider {
 
     public String city;
+
     @Override
     public void requestProfessor(String token, String type, String city, String topic, final ProfessorCallBack professorCallBack) {
 
-            this.city = city;
+        this.city = city;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -43,33 +44,31 @@ public class MockProfessorProvider implements ProfessorProvider {
         List<ProfessorTopicData> professorTopicDatas = new ArrayList<>();
         List<ProfessorItemData> professorItemDatas = new ArrayList<>();
 
-        if(!city.equals("aman"))
-        {
-            for (int i =0; i < 5; i++) {
-                ProfessorCityData professorCityData = new ProfessorCityData("aman",i + "");
+        if (!city.equals("aman")) {
+            for (int i = 0; i < 5; i++) {
+                ProfessorCityData professorCityData = new ProfessorCityData("aman", i + "");
                 professorCityDatas.add(professorCityData);
 
-                ProfessorTopicData professorTopicData = new ProfessorTopicData("aman",i + "");
+                ProfessorTopicData professorTopicData = new ProfessorTopicData("aman", i + "");
                 professorTopicDatas.add(professorTopicData);
-                ProfessorItemData professorItemData = new ProfessorItemData("aman",i + "","aman2","aman3","aman4","aman5");
+                ProfessorItemData professorItemData = new ProfessorItemData("aman", i + "", "aman2", "aman3", "aman4", "aman5");
                 professorItemDatas.add(professorItemData);
             }
-        }
-        else
-        {
-            for (int i =0; i < 5; i++) {
-                ProfessorCityData professorCityData = new ProfessorCityData("ag"+i,i + "");
+        } else {
+            for (int i = 0; i < 5; i++) {
+                ProfessorCityData professorCityData = new ProfessorCityData("ag" + i, i + "");
                 professorCityDatas.add(professorCityData);
 
-                ProfessorTopicData professorTopicData = new ProfessorTopicData("aj"+i,i + "");
+                ProfessorTopicData professorTopicData = new ProfessorTopicData("aj" + i, i + "");
                 professorTopicDatas.add(professorTopicData);
-                ProfessorItemData professorItemData = new ProfessorItemData("aj"+i,i + "","aman2","aman3","aman4","aman5");
+                ProfessorItemData professorItemData = new ProfessorItemData("aj" + i, i + "", "aman2", "aman3", "aman4", "aman5");
                 professorItemDatas.add(professorItemData);
             }
 
         }
 
 
+<<<<<<< HEAD
         ProfessorData professorData=new ProfessorData(true,"success",professorCityDatas,
                 professorTopicDatas,professorItemDatas);
         return professorData;
@@ -78,4 +77,12 @@ public class MockProfessorProvider implements ProfessorProvider {
 }
 */
 
+=======
+        //  ProfessorData professorData=new ProfessorData(true,"success",professorCityDatas,professorCollegeDatas,
+        //   professorTopicDatas,professorItemDatas);
+        return null;
+        //}
+>>>>>>> f8b754495914903831ba22529e8fba0832042b7d
 
+    }
+}

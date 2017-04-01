@@ -265,6 +265,7 @@
                         <ImageButton
                             android:id="@+id/biotech_park_loation"
                             android:layout_width="300dp"
+                            android:layout_gravity="center_horizontal"
                             android:layout_height="wrap_content"
                             android:layout_above="@+id/progressbar"
                             android:background="@drawable/location" />

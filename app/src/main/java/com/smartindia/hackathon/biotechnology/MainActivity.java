@@ -12,6 +12,7 @@ import android.view.View;
 import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.targets.Target;
 import com.github.amlcurran.showcaseview.targets.ViewTarget;
+import com.smartindia.hackathon.biotechnology.login.view.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,5 +52,7 @@ public class MainActivity extends AppCompatActivity {
     public void callLogin(View v) {
         Intent i = new Intent(this, LoginActivity.class);
         startActivity(i);
+<<<<<<< HEAD
     }*/
-}
+    }
+

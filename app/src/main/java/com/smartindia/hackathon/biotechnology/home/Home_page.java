@@ -1,44 +1,48 @@
 package com.smartindia.hackathon.biotechnology.home;
 
-import android.content.ClipData;
 import android.content.DialogInterface;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
-import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
 import com.smartindia.hackathon.biotechnology.Internship.view.InternshipFragment;
 import com.smartindia.hackathon.biotechnology.R;
 
+
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
+
+import com.smartindia.hackathon.biotechnology.SurveyFilling.View.SurveyFragment;
+import com.smartindia.hackathon.biotechnology.applyInternship.View.GetInternshipFragment;
+
 import com.smartindia.hackathon.biotechnology.productDesc.view.ProductFragment;
 import com.smartindia.hackathon.biotechnology.professor.view.ProfessorFragment;
 import com.smartindia.hackathon.biotechnology.request.view.RequestFragment;
 
-import com.smartindia.hackathon.biotechnology.SurveyUpload.View.Survey_Upload;
 
+public class Home_page extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener ,
+        HomeFragment.OnFragmentInteraction,GetInternshipFragment.OnFragmentInteraction{
 
-public class Home_page extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
-    private SharedPrefs sharedPrefs;
+private SharedPrefs sharedPrefs;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
       //  if(user)//isse karna bakki hai
+
         setContentView(R.layout.activity_home_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -125,8 +129,12 @@ sharedPrefs=new SharedPrefs(this);
             setFragment(new ProfessorFragment(), "INSTURMENT");
         }
          else if (id == R.id.nav_gallery) {
+
             sharedPrefs.setKeyTypeAnalogus("2");
-            setFragment(new ProfessorFragment(), "INCUBATORS");
+
+
+            setFragment(new SurveyFragment(),"Survey");
+
 
         } else if (id == R.id.nav_slideshow) {
           //  setFragment(new ProductFragment(),"product");
@@ -137,8 +145,6 @@ sharedPrefs=new SharedPrefs(this);
         } else if (id == R.id.nav_manage) {
         setFragment(new InternshipFragment(),"intern");
         } else if (id == R.id.nav_share) {
-
-
             setFragment(new RequestFragment(),"response");
         } else if (id == R.id.nav_send) {
 
@@ -159,14 +165,16 @@ sharedPrefs=new SharedPrefs(this);
             getSupportActionBar().setTitle(title);
         }
     }
+    @Override
+    public void onHomeFragmentInteraction(Uri uri)
+    {
 
+    }
 
+    @Override
+    public void onGetInternshipFragmentInteraction(Uri uri) {
 
-
-
-
-
-
+    }
 }
 
 

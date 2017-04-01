@@ -44,24 +44,29 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/result"/>
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/accept_button"
                     android:text="Accept"
-                    android:layout_weight="0.30"/>
+                    android:layout_weight="0.28"/>
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/reject_button"
                     android:text="Reject"
-                    android:layout_weight="0.30"/>
+                    android:layout_weight="0.28"/>
 
                 <Button
                     android:id="@+id/stu_profile_button"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight=".40"
+                    android:layout_weight=".44"
                     android:text="Student Profile" />
             </LinearLayout>
             </LinearLayout>

@@ -1,6 +1,5 @@
 package com.smartindia.hackathon.biotechnology.home;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.smartindia.hackathon.biotechnology.R;
-import com.smartindia.hackathon.biotechnology.sub_category.view.ProductsListFragment;
 import com.smartindia.hackathon.biotechnology.sub_category.view.SubCategoryFragment;
 
 /**
@@ -70,8 +68,8 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_home, container, false);
-        searchLayout=(RelativeLayout)view.findViewById(R.id.search_layout);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        searchLayout = (RelativeLayout) view.findViewById(R.id.search_layout);
         searchLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,22 +83,10 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
+   public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            mListener.onHomeFragmentInteraction(uri);
         }
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-//        if (context instanceof OnFragmentInteractionListener) {
-//            mListener = (OnFragmentInteractionListener) context;
-//        } else {
-//            throw new RuntimeException(context.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
     }
 
     @Override
@@ -121,6 +107,10 @@ public class HomeFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onHomeFragmentInteraction(Uri uri);
+    }
+
+    public interface OnFragmentInteraction {
+        void onHomeFragmentInteraction(Uri uri);
     }
 }

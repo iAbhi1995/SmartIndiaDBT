@@ -54,7 +54,7 @@ public class MockProduct implements ProductProvider {
     public ProductData getmock() {
 
         BiotechParkData biotechParkDatas = new BiotechParkData("", "", "", "", "", "","");
-        IncubatorsData incubatorsDatas = new IncubatorsData("", "", "", "", "", "", "", "a");
+        IncubatorsData incubatorsDatas = new IncubatorsData("", "", "", "", "", "", "", "");
         InstitutionsData institutionsDatas = new InstitutionsData("", "", "", "", "", "", "", "", "");
         InsturmentData insturmentDatas = new InsturmentData("", "", "", "", "", "", "");
         ProfileData profileDatas = new ProfileData("", "", "", "", "", "", "", "", "");
