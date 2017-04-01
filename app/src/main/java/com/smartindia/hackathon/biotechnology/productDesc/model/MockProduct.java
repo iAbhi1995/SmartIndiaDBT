@@ -13,7 +13,7 @@ import com.smartindia.hackathon.biotechnology.productDesc.model.data.ProfileData
 import com.smartindia.hackathon.biotechnology.productDesc.model.data.ResearchPaperData;
 import com.smartindia.hackathon.biotechnology.productDesc.model.data.SurveyData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorCityData;
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorCollegeData;
+
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorItemData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorTopicData;

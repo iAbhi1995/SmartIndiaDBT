@@ -32,7 +32,7 @@ public class ProfessorPresenterImpl implements ProfessorPresenter {
                 {
                     Log.d("professorActivity",professorData.isSuccess()+"");
                     Log.d("professorActivity","2");
-                    professorView.check(professorData);
+                    professorView.check(professorData);//have to xheck
                     professorView.showProgressBar(false);
 
                 }

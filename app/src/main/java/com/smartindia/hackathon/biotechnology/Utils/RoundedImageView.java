@@ -14,11 +14,8 @@ import android.graphics.drawable.VectorDrawable;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.ImageView;
-
-/**
- * Created by Abhishek on 22-08-2016.
- */
-public class RoundedImageView extends ImageView {
+public class RoundedImageView extends android.support.v7.widget.AppCompatImageView {
+    private Paint mborderpaint;
 
     public RoundedImageView(Context context) {
         super(context);
@@ -31,6 +28,7 @@ public class RoundedImageView extends ImageView {
 
     public RoundedImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        initBorderPaint();
     }
 
     @Override
@@ -67,7 +65,7 @@ public class RoundedImageView extends ImageView {
         int w = getWidth(), h = getHeight();
 
         Bitmap roundBitmap =  getCroppedBitmap(bitmap, w);
-        canvas.drawBitmap(roundBitmap, 0,0, null);
+        canvas.drawBitmap(roundBitmap, 0,0, mborderpaint);
     }
 
     public static Bitmap getCroppedBitmap(Bitmap bmp, int radius) {
@@ -94,5 +92,13 @@ public class RoundedImageView extends ImageView {
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
         canvas.drawBitmap(sbmp, rect, rect, paint);
         return output;
+    }
+    private void initBorderPaint()
+    {
+        mborderpaint = new Paint();
+        mborderpaint.setAntiAlias(true);
+        mborderpaint.setStyle(Paint.Style.STROKE);
+        mborderpaint.setColor(Color.WHITE);
+        mborderpaint.setStrokeWidth((float) 100);
     }
 }

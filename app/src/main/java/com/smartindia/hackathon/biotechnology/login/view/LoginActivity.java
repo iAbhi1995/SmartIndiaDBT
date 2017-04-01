@@ -72,14 +72,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (session.isLoggedIn()) {
             updateUI(true);
         }
-<<<<<<< HEAD
+
       loginPresenter = new LoginPresenterImpl(new RetrofitLoginProvider(),this);
        // loginPresenter = new LoginPresenterImpl(new MockLoginProvider(),this);
-        otpPresenter =new LoginPresenterImpl(new RetrofitOTPProvider(),this);
-=======
-//        loginPresenter = new LoginPresenterImpl(new RetrofitLoginProvider(), this);
-            loginPresenter=new LoginPresenterImpl(new MockLoginProvider(),this);
->>>>>>> 67f2993ae919915aaed2c813b6b26f277ca6ec35
+      //  otpPresenter =new LoginPresenterImpl(new RetrofitOTPProvider(),this);
+
     }
 
     public void ProfessorRegister(View view) {

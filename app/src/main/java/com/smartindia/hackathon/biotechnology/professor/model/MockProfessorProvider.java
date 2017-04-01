@@ -5,7 +5,7 @@ import android.util.Log;
 
 import com.smartindia.hackathon.biotechnology.professor.ProfessorCallBack;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorCityData;
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorCollegeData;
+
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorItemData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorTopicData;
@@ -39,7 +39,7 @@ public class MockProfessorProvider implements ProfessorProvider {
 
     public ProfessorData getmockProfessor() {
         List<ProfessorCityData> professorCityDatas = new ArrayList<>();
-        List<ProfessorCollegeData> professorCollegeDatas = new ArrayList<>();
+
         List<ProfessorTopicData> professorTopicDatas = new ArrayList<>();
         List<ProfessorItemData> professorItemDatas = new ArrayList<>();
 
@@ -48,8 +48,7 @@ public class MockProfessorProvider implements ProfessorProvider {
             for (int i =0; i < 5; i++) {
                 ProfessorCityData professorCityData = new ProfessorCityData("aman",i + "");
                 professorCityDatas.add(professorCityData);
-                ProfessorCollegeData professorCollegeData = new ProfessorCollegeData("aman",i + "");
-                professorCollegeDatas.add(professorCollegeData);
+
                 ProfessorTopicData professorTopicData = new ProfessorTopicData("aman",i + "");
                 professorTopicDatas.add(professorTopicData);
                 ProfessorItemData professorItemData = new ProfessorItemData("aman",i + "","aman2","aman3","aman4","aman5");
@@ -61,8 +60,7 @@ public class MockProfessorProvider implements ProfessorProvider {
             for (int i =0; i < 5; i++) {
                 ProfessorCityData professorCityData = new ProfessorCityData("ag"+i,i + "");
                 professorCityDatas.add(professorCityData);
-                ProfessorCollegeData professorCollegeData = new ProfessorCollegeData("ag"+i,i + "");
-                professorCollegeDatas.add(professorCollegeData);
+
                 ProfessorTopicData professorTopicData = new ProfessorTopicData("aj"+i,i + "");
                 professorTopicDatas.add(professorTopicData);
                 ProfessorItemData professorItemData = new ProfessorItemData("aj"+i,i + "","aman2","aman3","aman4","aman5");

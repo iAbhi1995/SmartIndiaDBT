@@ -18,6 +18,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.smartindia.hackathon.biotechnology.MyProfile.Model.RetrofitProfileProvider;
@@ -25,6 +27,7 @@ import com.smartindia.hackathon.biotechnology.MyProfile.Presenter.MyProfilePrese
 import com.smartindia.hackathon.biotechnology.MyProfile.Presenter.MyProfilePresenterIml;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.FilePath;
+import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
 
 import java.io.IOException;
 
@@ -36,6 +39,7 @@ public class MyProfileUpload extends AppCompatActivity  implements MyProfileView
     private ImageButton add_pic;
     private Button buttonUpload;
     private ImageView imageView;
+    SharedPrefs sharedPrefs = new SharedPrefs(this);
     private Uri file_pdf;
     private Uri file_image;
 
@@ -53,7 +57,7 @@ public class MyProfileUpload extends AppCompatActivity  implements MyProfileView
     private Bitmap bitmap;
 
     public EditText user_institutio,user_skill,user_plac,user_currentyea,user_qualificatio,user_experienc;
-
+    private RadioGroup personTypeGroup;
 
 
     @Override
@@ -67,11 +71,12 @@ public class MyProfileUpload extends AppCompatActivity  implements MyProfileView
 
         //Initializing views
         add_pdf = (Button) findViewById(R.id.add_pdf);
-        buttonUpload = (Button) findViewById(R.id.buttonUpload);
+        buttonUpload = (Button) findViewById(R.id.button_upload);
         imageView = (ImageButton) findViewById(R.id.add_pic);
 
+
         add_pdf.setOnClickListener(this);
-        add_pic.setOnClickListener(this);
+        imageView.setOnClickListener(this);
         buttonUpload.setOnClickListener(this);
 
         progressbar = (ProgressBar)findViewById(R.id.progressbar);
@@ -181,8 +186,19 @@ public class MyProfileUpload extends AppCompatActivity  implements MyProfileView
     public void sendRequest()
     {
         FilePath FilePath = new FilePath();
+        personTypeGroup = (RadioGroup) findViewById(R.id.personType);
+        int selectedId = personTypeGroup.getCheckedRadioButtonId();;
+
+        if(selectedId==R.id.student)
+        {
+            sharedPrefs.setKeyType("0");
+        }
+        else
+        {
+            sharedPrefs.setKeyType("1");
+        }
         String image_path = FilePath.getPath(getApplicationContext(),file_image);
         String pdf_path = FilePath.getPath(getApplicationContext(),file_pdf);
-        myProfilePresenter.requestUpload(image_path,pdf_path,user_institution,user_skills,user_place,user_currentyear,user_qualification,user_experience);
+        myProfilePresenter.requestUpload(sharedPrefs.getAccessToken(),sharedPrefs.getKeyType(),image_path,pdf_path,user_institution,user_skills,user_place,user_currentyear,user_qualification,user_experience);
     }
 }
