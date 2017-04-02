@@ -20,7 +20,7 @@ public class Urls {
     public static final String REQUEST_REQUEST= "request/";//have to consult from iket
     public static final String REQUEST_INCUBATORS= "professor/";//have to consult from iket
     public static final String WELCOME= "welcome/";
-    public static final String REQUEST_PRODUCT= "product/";//have to consult from iket
+    public static final String REQUEST_PRODUCT= "equipment_detail/";//have to consult from iket
     public static final String REQUEST_INTERNSHIP = "internship/";//have to consult from iket
     public static final String SET_INTERNSHIP = "set_intern";
     public static final String PROFESSOR_SIGN_UP = "inst_signup/";

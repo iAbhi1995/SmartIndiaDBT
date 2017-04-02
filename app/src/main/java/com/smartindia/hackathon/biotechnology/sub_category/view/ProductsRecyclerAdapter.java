@@ -16,6 +16,9 @@ import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
 import com.smartindia.hackathon.biotechnology.helper.image_loader.GlideImageLoader;
 import com.smartindia.hackathon.biotechnology.helper.image_loader.ImageLoader;
+import com.smartindia.hackathon.biotechnology.home.Home_page;
+import com.smartindia.hackathon.biotechnology.instrument.view.InstrumentFragment;
+import com.smartindia.hackathon.biotechnology.productDesc.view.ProductFragment;
 import com.smartindia.hackathon.biotechnology.sub_category.model.data.Equipment_List;
 import com.smartindia.hackathon.biotechnology.sub_category.model.data.IncubatorList;
 import com.smartindia.hackathon.biotechnology.sub_category.model.data.ProductListData;
@@ -83,7 +86,7 @@ public class ProductsRecyclerAdapter extends RecyclerView.Adapter<ProductsRecycl
     }
 
     @Override
-    public void onBindViewHolder(ProductViewHolder holder, int position) {
+    public void onBindViewHolder(ProductViewHolder holder, final int position) {
 
         Log.d("iket","subid"+subcategoryId);
         if (subcategoryId == 0) {
@@ -93,6 +96,14 @@ public class ProductsRecyclerAdapter extends RecyclerView.Adapter<ProductsRecycl
             holder.features.setText(equipment_list.getFeatures());
             holder.city.setText(equipment_list.getCity());
             imageLoader.loadImage(equipment_list.getImage(),holder.image);
+            holder.name.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    InstrumentFragment fragment = InstrumentFragment.newInstance((equipmentList.get(position).getId()));
+                    ((Home_page) context).setFragment(fragment, equipmentList.get(position).getName());
+                }
+            });
+
         }
         else if(subcategoryId==1 || subcategoryId==2 || subcategoryId==3)
         {
@@ -139,12 +150,12 @@ public class ProductsRecyclerAdapter extends RecyclerView.Adapter<ProductsRecycl
         public ImageView image;
         public TextView name, features, city, institue,email,field,description,title;
         ProgressBar progressBar;
-        LinearLayout linearLayout;
+        public LinearLayout linearLayout;
 
         public ProductViewHolder(View itemView) {
             super(itemView);
             if (subcategoryId == 0) {
-//                linearLayout=(LinearLayout)itemView.findViewById(R.id.layout10);
+                linearLayout=(LinearLayout)itemView.findViewById(R.id.layout10);
                 image = (ImageView) itemView.findViewById(R.id.institute_image);
                 name = (TextView) itemView.findViewById(R.id.instrument_name);
                 city = (TextView) itemView.findViewById(R.id.instrument_city);

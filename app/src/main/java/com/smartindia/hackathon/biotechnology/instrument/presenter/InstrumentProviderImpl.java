@@ -29,7 +29,7 @@ public class InstrumentProviderImpl implements InstrumentPresenter {
                 if(instrumentData.isSuccess())
                 {
                     instrumentView.showProgressBar(false);
-
+                    instrumentView.onCheck(instrumentData);
                 }
                 else
                 {
