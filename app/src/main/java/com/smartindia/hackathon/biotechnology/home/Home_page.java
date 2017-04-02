@@ -1,6 +1,7 @@
 package com.smartindia.hackathon.biotechnology.home;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -19,13 +20,17 @@ import android.widget.Toast;
 
 import com.smartindia.hackathon.biotechnology.InstituteFeedBackForm.View.Feedback_Fragment;
 import com.smartindia.hackathon.biotechnology.Internship.view.InternshipFragment;
-import com.smartindia.hackathon.biotechnology.R;
+import com.smartindia.hackathon.biotechnology.*;
+import com.smartindia.hackathon.biotechnology.MyProfile.view.MyProfileUpload;
+import com.smartindia.hackathon.biotechnology.ResearchPaper.View.ResearchPaperFrag;
 import com.smartindia.hackathon.biotechnology.SurveyFilling.View.SurveyFragment;
+import com.smartindia.hackathon.biotechnology.SurveyUpload.View.Survey_Upload;
 import com.smartindia.hackathon.biotechnology.applyInternship.View.GetInternshipFragment;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
 import com.smartindia.hackathon.biotechnology.productDesc.view.ProductFragment;
 import com.smartindia.hackathon.biotechnology.professor.view.ProfessorFragment;
 import com.smartindia.hackathon.biotechnology.request.view.RequestFragment;
+import com.smartindia.hackathon.biotechnology.setInternship.view.SetInternshipFragment;
 
 
 public class Home_page extends AppCompatActivity
@@ -119,40 +124,62 @@ private SharedPrefs sharedPrefs;
         return super.onOptionsItemSelected(item);
     }
 
+
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.aman) {
-            sharedPrefs.setKeyTypeAnalogus("1");
-            setFragment(new ProfessorFragment(), "INSTURMENT");
+        if (id == R.id.myprofile) {
+            Intent welcome = new Intent(Home_page.this, MyProfileUpload.class);
+            startActivity(welcome);
+            finish();
         }
-         else if (id == R.id.nav_gallery) {
+        else if (id == R.id.incubator) {
             sharedPrefs.setKeyTypeAnalogus("2");
             setFragment(new ProfessorFragment(), "INCUBATORS");
-           // setFragment(new SurveyFragment(),"Survey");
 
-        } else if (id == R.id.nav_slideshow) {
-          //  setFragment(new ProductFragment(),"product");
+        } else if (id == R.id.equipment) {
+            //  setFragment(new ProductFragment(),"product");
+            sharedPrefs.setKeyTypeAnalogus("1");
+            setFragment(new ProfessorFragment(), "EQUIPMENTS");
+        }
+        else if (id == R.id.biotechparks) {
+            sharedPrefs.setKeyTypeAnalogus("3");
+            setFragment(new ProfessorFragment(),"BIOTECH PARKS");
+        }
+        else if (id == R.id.givesurvey) {
             sharedPrefs.setKeyTypeAnalogus("5");
-            setFragment(new ProfessorFragment(),"Survey");
+            setFragment(new ProfessorFragment(),"SURVEY");
+        }
+        else if (id == R.id.institution) {
+            sharedPrefs.setKeyTypeAnalogus("4");
+            setFragment(new ProfessorFragment(),"INSTITUTION");
+        }
+        else if (id == R.id.professor) {
+            sharedPrefs.setKeyTypeAnalogus("6");
+//            setFragment(new ProfessorFragment(),"PROFESSOR");
 
+        }
+        else if (id == R.id.student) {
+            sharedPrefs.setKeyTypeAnalogus("6");
+//            setFragment(new ProfessorFragment(),"STUDENT");
 
-        } else if (id == R.id.nav_manage) {
-        setFragment(new InternshipFragment(),"intern");
-        } else if (id == R.id.nav_share) {
-            setFragment(new RequestFragment(),"response");
-        } else if (id == R.id.nav_send) {
-
+        }
+        else if (id == R.id.takesurvey) {
+            Intent welcome = new Intent(Home_page.this, Survey_Upload.class);
+            startActivity(welcome);
+            }
+        else if (id == R.id.setinternship) {
+            setFragment(new SetInternshipFragment(),"SET INTERNSHIP");
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
     public void addFragment(Fragment fragment, String title) {
         if (fragment != null) {
             FragmentManager fragmentManager = getSupportFragmentManager();
