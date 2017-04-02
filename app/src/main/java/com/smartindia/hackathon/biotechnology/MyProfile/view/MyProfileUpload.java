@@ -5,12 +5,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
-import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -23,14 +21,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.smartindia.hackathon.biotechnology.MyProfile.Model.Data.MockProfileUploadProvider;
 import com.smartindia.hackathon.biotechnology.MyProfile.Model.RetrofitProfileProvider;
 import com.smartindia.hackathon.biotechnology.MyProfile.Presenter.MyProfilePresenter;
 import com.smartindia.hackathon.biotechnology.MyProfile.Presenter.MyProfilePresenterIml;
@@ -40,33 +35,51 @@ import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
 
 import java.io.IOException;
 
-public class MyProfileUpload extends AppCompatActivity  implements MyProfileView,View.OnClickListener {
+public class MyProfileUpload extends AppCompatActivity implements MyProfileView, View.OnClickListener {
 
-    private ProgressBar progressbar;
-    private MyProfilePresenter myProfilePresenter;
-    private Button add_pdf;
-    private ImageView add_pic;
-    private Button buttonUpload;
-    SharedPrefs sharedPrefs;
-    private Uri file_pdf;
-    private Uri file_image;
-
-    private int PICK_IMAGE_REQUEST = 1;
-    private int PICK_FILE_REQUEST = 2;
     private static final int STORAGE_PERMISSION_CODE = 123;
-
-
     public String user_institution;
     public String user_skills;
     public String user_place;
     public String user_currentyear;
     public String user_qualification;
     public String user_experience;
+    public EditText user_institutio, user_skill, user_plac, user_currentyea, user_qualificatio, user_experienc;
+    private ProgressBar progressbar;
+    private MyProfilePresenter myProfilePresenter;
+    private Button add_pdf;
+    private ImageView add_pic;
+    private Button buttonUpload;
+    private Uri file_pdf;
+    private Uri file_image;
+    private int PICK_IMAGE_REQUEST = 1;
+    private int PICK_FILE_REQUEST = 2;
     private Bitmap bitmap;
-
-    public EditText user_institutio,user_skill,user_plac,user_currentyea,user_qualificatio,user_experienc;
     private RadioGroup personTypeGroup;
+    private SharedPrefs sharedPrefs;
 
+    public static Bitmap getRoundedRectBitmap(Bitmap bitmap, int pixels) {
+        Bitmap result = null;
+        try {
+            result = Bitmap.createBitmap(99, 99, Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(result);
+
+            int color = 0xff424242;
+            Paint paint = new Paint();
+            Rect rect = new Rect(0, 0, 150, 150);
+
+            paint.setAntiAlias(true);
+            canvas.drawARGB(0, 0, 0, 0);
+            paint.setColor(color);
+            canvas.drawCircle(50, 50, 50, paint);
+            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+            canvas.drawBitmap(bitmap, rect, rect, paint);
+
+        } catch (NullPointerException e) {
+        } catch (OutOfMemoryError o) {
+        }
+        return result;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,45 +95,45 @@ public class MyProfileUpload extends AppCompatActivity  implements MyProfileView
         buttonUpload = (Button) findViewById(R.id.button_upload);
         add_pic = (ImageView) findViewById(R.id.add_pic);
 
+        personTypeGroup = (RadioGroup) findViewById(R.id.personType);
+
+        if (sharedPrefs != null && sharedPrefs.isLoggedIn() && sharedPrefs.getKeyType() == "2")
+            personTypeGroup.setVisibility(View.GONE);
+
 
         add_pdf.setOnClickListener(this);
         add_pic.setOnClickListener(this);
         buttonUpload.setOnClickListener(this);
 
-        progressbar = (ProgressBar)findViewById(R.id.progressbar);
-        user_institutio=(EditText) findViewById(R.id.user_institution);
-        user_skill=(EditText) findViewById(R.id.user_skills);
-        user_plac=(EditText) findViewById(R.id.user_place);
-        user_currentyea=(EditText) findViewById(R.id.user_currentyear);
-        user_qualificatio=(EditText) findViewById(R.id.user_qualification);
-        user_experienc=(EditText) findViewById(R.id.user_experience);
-
+        progressbar = (ProgressBar) findViewById(R.id.progressbar);
+        user_institutio = (EditText) findViewById(R.id.user_institution);
+        user_skill = (EditText) findViewById(R.id.user_skills);
+        user_plac = (EditText) findViewById(R.id.user_place);
+        user_currentyea = (EditText) findViewById(R.id.user_currentyear);
+        user_qualificatio = (EditText) findViewById(R.id.user_qualification);
+        user_experienc = (EditText) findViewById(R.id.user_experience);
         user_institution = user_institutio.getText().toString();
-        user_skills=user_skill.getText().toString();
-        user_place=user_plac.getText().toString();
-        user_currentyear=user_currentyea.getText().toString();
-        user_qualification=user_qualificatio.getText().toString();
-        user_experience=user_experienc.getText().toString();
+        user_skills = user_skill.getText().toString();
+        user_place = user_plac.getText().toString();
+        user_currentyear = user_currentyea.getText().toString();
+        user_qualification = user_qualificatio.getText().toString();
+        user_experience = user_experienc.getText().toString();
 
-        myProfilePresenter= new MyProfilePresenterIml(this,
+        myProfilePresenter = new MyProfilePresenterIml(this,
                 new RetrofitProfileProvider());
     }
+
     private void showFileChooser(View v) {
         Intent intent = new Intent();
-        if(v == add_pic)
-        {
+        if (v == add_pic) {
             intent.setType("image/*");
             intent.setAction(Intent.ACTION_GET_CONTENT);
             startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
-        }
-        else
-        {
+        } else {
             intent.setType("application/pdf");
             intent.setAction(Intent.ACTION_GET_CONTENT);
             startActivityForResult(Intent.createChooser(intent, "Select File"), PICK_FILE_REQUEST);
         }
-
-
     }
 
     @Override
@@ -143,7 +156,7 @@ public class MyProfileUpload extends AppCompatActivity  implements MyProfileView
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Log.d("Ayush1",file_image.toString());
+            Log.d("Ayush1", file_image.toString());
         }
         if (requestCode == PICK_FILE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             file_pdf = data.getData();
@@ -155,11 +168,7 @@ public class MyProfileUpload extends AppCompatActivity  implements MyProfileView
             return;
 
         if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
-            //If the user has denied the permission previously your code will come to this block
-            //Here you can explain why you need this permission
-            //Explain here why you need this permission
         }
-        //And finally ask for the permission
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
     }
 
@@ -194,64 +203,33 @@ public class MyProfileUpload extends AppCompatActivity  implements MyProfileView
         }
     }
 
-
-
     @Override
     public void onClick(View v) {
-        if (v == add_pic||v == add_pdf) {
+        if (v == add_pic || v == add_pdf) {
             showFileChooser(v);
         }
         if (v == buttonUpload) {
             sendRequest();
         }
     }
-    public void sendRequest()
-    {
-        FilePath FilePath = new FilePath();
-        personTypeGroup = (RadioGroup) findViewById(R.id.personType);
-        int selectedId = personTypeGroup.getCheckedRadioButtonId();;
 
-        if(selectedId==R.id.student)
-        {
+    public void sendRequest() {
+        FilePath FilePath = new FilePath();
+        int selectedId = personTypeGroup.getCheckedRadioButtonId();
+
+        if (selectedId == R.id.student) {
             sharedPrefs.setKeyType("0");
-        }
-        else
-        {
+        } else {
             sharedPrefs.setKeyType("1");
         }
 
-        if(file_pdf == null || file_image ==null)
-        {
+        if (file_pdf == null || file_image == null) {
             Toast.makeText(getApplicationContext(), "You have not uploaded either image or file.", Toast.LENGTH_SHORT).show();
-        }
-        else
-        {
-            String pdf_path = FilePath.getPath(getApplicationContext(),file_pdf);
-            String image_path = FilePath.getPath(getApplicationContext(),file_image);
-            myProfilePresenter.requestUpload(sharedPrefs.getAccessToken(),sharedPrefs.getKeyType(),image_path,pdf_path,user_institution,user_skills,user_place,user_currentyear,user_qualification,user_experience);
+        } else {
+            String pdf_path = com.smartindia.hackathon.biotechnology.helper.FilePath.getPath(getApplicationContext(), file_pdf);
+            String image_path = com.smartindia.hackathon.biotechnology.helper.FilePath.getPath(getApplicationContext(), file_image);
+            myProfilePresenter.requestUpload(sharedPrefs.getAccessToken(), sharedPrefs.getKeyType(), image_path, pdf_path, user_institution, user_skills, user_place, user_currentyear, user_qualification, user_experience);
 
         }
-        }
-    public static Bitmap getRoundedRectBitmap(Bitmap bitmap, int pixels) {
-        Bitmap result = null;
-        try {
-            result = Bitmap.createBitmap(99, 99, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(result);
-
-            int color = 0xff424242;
-            Paint paint = new Paint();
-            Rect rect = new Rect(0, 0, 150, 150);
-
-            paint.setAntiAlias(true);
-            canvas.drawARGB(0, 0, 0, 0);
-            paint.setColor(color);
-            canvas.drawCircle(50, 50, 50, paint);
-            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-            canvas.drawBitmap(bitmap, rect, rect, paint);
-
-        } catch (NullPointerException e) {
-        } catch (OutOfMemoryError o) {
-        }
-        return result;
     }
 }

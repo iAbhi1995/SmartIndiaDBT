@@ -26,21 +26,23 @@ public class Feedback_Fragment extends Fragment implements FeedbackView {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    private static String instId = "0";
+    private static String INST_ID = "inst_id";
+    String ans1, ans2, ans3, ans4;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
     private OnFragmentInteractionListener mListener;
     private FeedbackPresenter presenter;
-    private static String instId="0";
-    private static String INST_ID = "inst_id";
     private String comment = "";
-
+    private TextView ques1, ques2, ques3, ques4;
+    private ProgressBar progressBar;
+    private Button submitButton;
+    private EditText comments;
+    private RadioGroup ans1Grp, ans2Grp, ans3Grp, ans4Grp;
     public Feedback_Fragment() {
         // Required empty public constructor
     }
-
 
     // TODO: Rename and change types and number of parameters
     public static Feedback_Fragment newInstance(String param1, String param2) {
@@ -69,13 +71,6 @@ public class Feedback_Fragment extends Fragment implements FeedbackView {
 //            instId = getArguments().getString(INST_ID);
         }
     }
-
-    private TextView ques1, ques2, ques3, ques4;
-    private ProgressBar progressBar;
-    private Button submitButton;
-    private EditText comments;
-    private RadioGroup ans1Grp, ans2Grp, ans3Grp, ans4Grp;
-    String ans1, ans2, ans3, ans4;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

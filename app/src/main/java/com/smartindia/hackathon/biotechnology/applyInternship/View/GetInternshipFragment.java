@@ -14,26 +14,22 @@ import android.widget.TextView;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.applyInternship.Model.Data.ApplyInternData;
 import com.smartindia.hackathon.biotechnology.applyInternship.Model.Data.GetInternshipData;
-import com.smartindia.hackathon.biotechnology.applyInternship.Model.MockInternshipProvider;
 import com.smartindia.hackathon.biotechnology.applyInternship.Model.RetrofitApplyInternshipProvider;
 import com.smartindia.hackathon.biotechnology.applyInternship.Presenter.ApplyInternPresenter;
 import com.smartindia.hackathon.biotechnology.applyInternship.Presenter.ApplyInternPresenterImpl;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
 
 
-public class GetInternshipFragment extends Fragment implements GetInternshipView {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+public class
+GetInternshipFragment extends Fragment implements GetInternshipView {
 
+    private static final String INTERN_ID = "intern_id";
+    SharedPrefs session;
     private TextView title, instituteName, location, startDate, duration,
             stipend, applyBy, whoCanApply, internshipDetails,
             internshipNumbers, perks;
-    SharedPrefs session;
     private ApplyInternPresenter applyInternPresenter;
-
-    private static final String INTERN_ID = "intern_id";
 //    private static final String ARG_PARAM2 = "param2";
-
     // TODO: Rename and change types of parameters
     private String internId;
 
@@ -96,10 +92,6 @@ public class GetInternshipFragment extends Fragment implements GetInternshipView
 
     }
 
-    public interface OnFragmentInteractionListener {
-        public void onGetInternshipFragment(Uri uri);
-    }
-
     @Override
     public void ShowInternDetails(GetInternshipData getInternshipData)
     {
@@ -116,7 +108,6 @@ public class GetInternshipFragment extends Fragment implements GetInternshipView
         perks.setText(getInternshipData.getPerks());
 
     }
-
 
     @Override
     public void onDetach() {
@@ -137,12 +128,6 @@ public class GetInternshipFragment extends Fragment implements GetInternshipView
         Snackbar.make(getView().findViewById(R.id.relLytIntrnship), message, Snackbar.LENGTH_LONG).setAction("Action", null).show();
     }
 
-    public interface OnFragmentInteraction {
-        // TODO: Update argument type and name
-        void onGetInternshipFragmentInteraction(Uri uri);
-    }
-
-
     public void ApplyInternship(View v)
     {
         applyInternPresenter.applyInternship(internId,session.getAccessToken());
@@ -151,5 +136,15 @@ public class GetInternshipFragment extends Fragment implements GetInternshipView
     @Override
     public void SuccessfullApplication(ApplyInternData applyInternData) {
         Snackbar.make(getView().findViewById(R.id.relLytIntrnship), "Submission SuccesFul", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+    }
+
+
+    public interface OnFragmentInteractionListener {
+        void onGetInternshipFragment(Uri uri);
+    }
+
+    public interface OnFragmentInteraction {
+        // TODO: Update argument type and name
+        void onGetInternshipFragmentInteraction(Uri uri);
     }
 }

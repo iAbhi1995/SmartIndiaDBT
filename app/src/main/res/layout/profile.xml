@@ -1,225 +1,153 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="1"
-    tools:context="com.smartindia.hackathon.biotechnology.MyProfile.view.MyProfileFragment">
+    android:layout_height="match_parent">
 
-    <com.pkmmte.view.CircularImageView
+    <RelativeLayout
+        android:id="@+id/RelativeLayout_profile"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/splash1"
-        android:id="@+id/my_profile_pic"
-        app:border="true"
-        app:border_color="#EEEEEE"
-        app:border_width="4dp" />
+        android:layout_height="match_parent">
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:padding="5dp">
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/my_profile_pic"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.08"
-            android:gravity="center_horizontal"
-            android:paddingEnd="10dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
-            android:textColorHint="@color/black">
-
-            <EditText
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Name"
-                android:enabled="false"
-                android:inputType="textPersonName"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
-                android:textCursorDrawable="@color/black" />
-
-        </android.support.design.widget.TextInputLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:padding="5dp">
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="18dp"
-            android:gravity="center_horizontal"
-            android:paddingEnd="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:textColorHint="@color/black"
-            android:weightSum="1">
-
-            <EditText
-                android:id="@+id/college"
-                android:layout_width="match_parent"
-                android:layout_height="23dp"
-                android:hint="College"
-                android:enabled="false"
-                android:inputType="text"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
-                android:textCursorDrawable="@color/black" />
-
-        </android.support.design.widget.TextInputLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:padding="5dp">
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="18dp"
-            android:gravity="center_horizontal"
-            android:paddingEnd="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:textColorHint="@color/black">
-
-            <EditText
-                android:id="@+id/place"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Place"
-                android:enabled="false"
-                android:inputType="text"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
-                android:textCursorDrawable="@color/black" />
-        </android.support.design.widget.TextInputLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:padding="5dp">
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="18dp"
-            android:layout_weight="0.07"
-            android:gravity="center_horizontal"
-            android:paddingEnd="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:textColorHint="@color/black">
-
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:enabled="false"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
-                android:textCursorDrawable="@color/black" />
-
-        </android.support.design.widget.TextInputLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:padding="5dp">
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="18dp"
-            android:gravity="center_horizontal"
-            android:paddingEnd="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:textColorHint="@color/black">
-
-            <EditText
-                android:id="@+id/phoneNo"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:ems="10"
-                android:enabled="false"
-                android:hint="Phone No."
-                android:inputType="phone"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
-                android:textCursorDrawable="@color/black" />
-
-        </android.support.design.widget.TextInputLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:padding="5dp">
-
-            <Button
-                android:id="@+id/upload_file"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.3"
-                android:text="Download Resume"
-                android:onClick="downloadPDF"/>
-         </android.support.v7.widget.CardView>
-
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:padding="5dp">
-
-        <GridView
-            android:id="@+id/skillsGrid"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:horizontalSpacing="5dp"
-            android:numColumns="3"
-            android:verticalSpacing="10dp" />
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:padding="5dp">
-
-        <TextView
+        <ProgressBar
+            android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Projects" />
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
 
-          </android.support.v7.widget.CardView>
-</LinearLayout>
+        <ImageView
+            android:id="@+id/header_cover_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/navigation_header_image" />
+
+        <ImageView
+            android:id="@+id/add_pic"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_above="@+id/relativeLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="98dp"
+            android:background="@drawable/profile_circular_border_imageview"
+            android:elevation="5dp"
+            android:padding="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile" />
+
+        <RelativeLayout
+            android:id="@+id/profile_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header_cover_image"
+            android:background="#ebca0707"
+            android:elevation="4dp"
+            android:paddingBottom="24dp">
+
+            <TextView
+                android:id="@+id/user_profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="76dp"
+                android:text="Ayush Jain"
+                android:textColor="#fff"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/user_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_profile_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:text="Email"
+                android:textColor="#fff"
+                android:textSize="14dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/profile_layout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/user_institution"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:elevation="4dp"
+                    android:hint="Institution"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/user_skills"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:elevation="4dp"
+                    android:hint="Skills"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/user_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:elevation="4dp"
+                    android:hint="Type"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/user_place"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:elevation="4dp"
+                    android:hint="Place"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/user_currentyear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:elevation="4dp"
+                    android:hint="Passing Year"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/user_qualification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:elevation="4dp"
+                    android:hint="Qualification"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/user_experience"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:elevation="4dp"
+                    android:hint="Experience"
+                    android:textSize="16dp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

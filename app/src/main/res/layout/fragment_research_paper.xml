@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rel_Lyt_researchPaper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.smartindia.hackathon.biotechnology.ResearchPaper.View.ResearchPaperFrag">
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/data_show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
+
+</RelativeLayout>

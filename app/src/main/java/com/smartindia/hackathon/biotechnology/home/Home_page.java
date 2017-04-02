@@ -17,14 +17,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.smartindia.hackathon.biotechnology.InstituteFeedBackForm.View.Feedback_Fragment;
 import com.smartindia.hackathon.biotechnology.Internship.view.InternshipFragment;
 import com.smartindia.hackathon.biotechnology.R;
-import com.smartindia.hackathon.biotechnology.SurveyFilling.View.SurveyFragment;
 import com.smartindia.hackathon.biotechnology.applyInternship.View.GetInternshipFragment;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
-import com.smartindia.hackathon.biotechnology.productDesc.view.ProductFragment;
 import com.smartindia.hackathon.biotechnology.professor.view.ProfessorFragment;
+import com.smartindia.hackathon.biotechnology.profileView.View.Profile;
 import com.smartindia.hackathon.biotechnology.request.view.RequestFragment;
 
 
@@ -133,8 +131,8 @@ sharedPrefs=new SharedPrefs(this);
         }
          else if (id == R.id.nav_gallery) {
             sharedPrefs.setKeyTypeAnalogus("2");
-            setFragment(new ProfessorFragment(), "INCUBATORS");
-           // setFragment(new SurveyFragment(),"Survey");
+            //setFragment(new ProfessorFragment(), "INCUBATORS");
+            setFragment(new Profile(), "Survey");
 
         } else if (id == R.id.nav_slideshow) {
           //  setFragment(new ProductFragment(),"product");

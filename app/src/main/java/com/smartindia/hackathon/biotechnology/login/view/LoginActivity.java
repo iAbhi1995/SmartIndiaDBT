@@ -1,7 +1,6 @@
 package com.smartindia.hackathon.biotechnology.login.view;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -18,7 +17,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
@@ -140,7 +138,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             GoogleSignInAccount acct = result.getSignInAccount();
             name = acct.getDisplayName();
             email = acct.getEmail();
-            session.setKeyType("1");
+            session.setKeyType("0");
             id = acct.getId().toString();
             loginPresenter.requestLogin(name, email, id);
             updateUI(true);
@@ -189,7 +187,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onLoginVerified(LoginData loginData) {
         session.setAccessToken(loginData.getAccess_token());
         session.setLogin(true);
-        session.setKeyType("1");
+        session.setKeyType("0");
         session.setAccessToken(loginData.getAccess_token());
         Intent i = new Intent(this, Home_page.class);
         startActivity(i);
@@ -205,7 +203,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         session.setAccessToken(profLogInData.getAccess_token());
         session.setLogin(true);
         session.setAccessToken(profLogInData.getAccess_token());
-        session.setKeyType("0");
+        session.setKeyType("2");
         Intent i = new Intent(this, Home_page.class);
         startActivity(i);
         finish();

@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="play-services-instantapps-10.0.1">
     <CLASSES>
-      <root url="file://$USER_HOME$/.android/build-cache/d7ca10439b8407a2134277ca9164a79508ac93d4/output/res" />
-      <root url="jar://$USER_HOME$/.android/build-cache/d7ca10439b8407a2134277ca9164a79508ac93d4/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/1e1086b586b858b4335d0f60976f622cac555787/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/1e1086b586b858b4335d0f60976f622cac555787/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
