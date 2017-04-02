@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     Button btnSignOut;
     SharedPrefs session;
-    private Button signInButton;
+    private SignInButton signInButton;
     private GoogleApiClient mGoogleApiClient;
     private int RC_SIGN_IN = 001;
     private String name;
@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
-        signInButton = (Button) findViewById(R.id.sign_in_button);
+        signInButton = (SignInButton) findViewById(R.id.sign_in_button);
         signInButton.setOnClickListener(this);
         prfsrEmail = (EditText) findViewById(R.id.emailID);
         btnSignOut = (Button) findViewById(R.id.btn_sign_out);
@@ -107,6 +107,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void signIn() {
+        Log.d("abhi","In sign in");
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
@@ -127,8 +128,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        Log.d("abhi","In Activity Result");
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
+            Log.d("abhi","In Request code");
+
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             handleSignInResult(result);
         }
@@ -141,10 +145,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             name = acct.getDisplayName();
             email = acct.getEmail();
             session.setKeyType("1");
+
+            Log.d("abhi","handle sign in result");
             id = acct.getId().toString();
             loginPresenter.requestLogin(name, email, id);
             updateUI(true);
         } else {
+            Log.d("abhi","handle sign in result"+result.isSuccess());
             updateUI(false);
         }
     }
@@ -152,6 +159,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void updateUI(boolean b) {
         if (b) {
             session.setLogin(b);
+
+            Log.d("abhi","Updating Ui");
             signInButton.setEnabled(false);
             signInButton.setVisibility(View.INVISIBLE);
             btnSignOut.setEnabled(true);
@@ -190,6 +199,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         session.setAccessToken(loginData.getAccess_token());
         session.setLogin(true);
         session.setKeyType("1");
+        Log.d("Login","Accessing");
         session.setAccessToken(loginData.getAccess_token());
         Intent i = new Intent(this, Home_page.class);
         startActivity(i);

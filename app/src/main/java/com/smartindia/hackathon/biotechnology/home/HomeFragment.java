@@ -78,8 +78,6 @@ public class HomeFragment extends Fragment {
                 ((Home_page) getContext()).getSupportActionBar().hide();
             }
         });
-
-
         return view;
     }
 
