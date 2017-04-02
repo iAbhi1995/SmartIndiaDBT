@@ -1,62 +1,32 @@
 package com.smartindia.hackathon.biotechnology.request.model.data;
 
-/**
- * Created by aman on 27/3/17.
- */
-
 public class RequestDataDetails {
-    private String skillName;
-    private String companyName;
-    private String appliedOn;
-    private String appliedStatus;
-    private String comment;
+    private String topic;
+    private String name;
+    private String stipend;
+    private String duration;
 
-    public String getSkillName() {
-        return skillName;
+
+    public RequestDataDetails(String topic, String name, String stipend, String duration) {
+        this.topic = topic;
+        this.name = name;
+        this.stipend = stipend;
+        this.duration = duration;
     }
 
-    public void setSkillName(String skillName) {
-        this.skillName = skillName;
+    public String getTopic() {
+        return topic;
     }
 
-    public String getCompanyName() {
-        return companyName;
+    public String getName() {
+        return name;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public String getStipend() {
+        return stipend;
     }
 
-    public String getAppliedOn() {
-        return appliedOn;
-    }
-
-    public void setAppliedOn(String appliedOn) {
-        this.appliedOn = appliedOn;
-    }
-
-    public String getAppliedStatus() {
-        return appliedStatus;
-    }
-
-    public void setAppliedStatus(String appliedStatus) {
-        this.appliedStatus = appliedStatus;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-    public RequestDataDetails(String skillName, String companyName, String appliedOn, String appliedStatus, String comment) {
-
-        this.skillName = skillName;
-        this.companyName = companyName;
-        this.appliedOn = appliedOn;
-        this.appliedStatus = appliedStatus;
-        this.comment = comment;
+    public String getDuration() {
+        return duration;
     }
 }

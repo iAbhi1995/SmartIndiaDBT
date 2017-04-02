@@ -3,8 +3,6 @@ package com.smartindia.hackathon.biotechnology.request.model;
 import android.os.Handler;
 import android.util.Log;
 
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorCityData;
-import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
 import com.smartindia.hackathon.biotechnology.request.RequestCallBack;
 import com.smartindia.hackathon.biotechnology.request.model.data.RequestData;
 import com.smartindia.hackathon.biotechnology.request.model.data.RequestDataDetails;
@@ -39,7 +37,7 @@ public class MockRequestProvider implements RequestProvider{
         List<RequestDataDetails> requestDatas = new ArrayList<>();
 
         for (int i = 0; i < 5; i++) {
-            RequestDataDetails requestData = new RequestDataDetails("aman", "asd", "ad", "ddd", "ddddw");
+            RequestDataDetails requestData = new RequestDataDetails("IIT KANPUR", "AAD", "ad", "ddd");
             requestDatas.add(requestData);
         }
         RequestData requestDatass = new RequestData(true, "message", requestDatas);

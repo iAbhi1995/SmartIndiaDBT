@@ -14,25 +14,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.smartindia.hackathon.biotechnology.BiotechPark.Model.Data.BiotechParkData;
-import com.smartindia.hackathon.biotechnology.BiotechPark.Model.MockDataProviderBiotechPark;
+import com.smartindia.hackathon.biotechnology.BiotechPark.Model.RetrofitBiotechParkProvider;
 import com.smartindia.hackathon.biotechnology.BiotechPark.Presenter.BiotechParkPresenter;
 import com.smartindia.hackathon.biotechnology.BiotechPark.Presenter.BiotechParkPresenterImpl;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
 
-public class BiotechParkFragment extends Fragment implements BiotechParkInterface {
+public class BiotechParkFragment extends Fragment implements BiotechParkView {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     TextView incubator_name,incubator_thrustArea,incubator_state,incubator_city,incubator_address,incubator_website,incubator_person,incubator_contact;
     ProgressBar ProgressBar;
-
-    private String mParam1;
-    private String mParam2;
-
     ProgressBar progressBar = (ProgressBar)getView().findViewById(R.id.progressbar);
     Toolbar toolbar = (Toolbar)getView().findViewById(R.id.order_toolbar) ;
-
+    private String mParam1;
+    private String mParam2;
     private SharedPrefs sharedPrefs;
     private String token;
     private BiotechParkPresenter incubatorsPresenter;
@@ -90,7 +87,7 @@ public class BiotechParkFragment extends Fragment implements BiotechParkInterfac
         });
 
         linearLayoutManager = new LinearLayoutManager(getContext());
-        incubatorsPresenter = new BiotechParkPresenterImpl(this, new MockDataProviderBiotechPark());
+        incubatorsPresenter = new BiotechParkPresenterImpl(this, new RetrofitBiotechParkProvider());
         token = sharedPrefs.getAccessToken();
 
     }

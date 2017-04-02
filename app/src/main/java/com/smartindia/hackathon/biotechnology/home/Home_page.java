@@ -1,7 +1,6 @@
 package com.smartindia.hackathon.biotechnology.home;
 
 import android.content.DialogInterface;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -19,16 +18,15 @@ import android.widget.Toast;
 
 import com.smartindia.hackathon.biotechnology.Internship.view.InternshipFragment;
 import com.smartindia.hackathon.biotechnology.R;
+import com.smartindia.hackathon.biotechnology.SurveyFilling.View.SurveyFragment;
+import com.smartindia.hackathon.biotechnology.SurveyViewerInstitute.View.SurveyViewerFragment;
 import com.smartindia.hackathon.biotechnology.applyInternship.View.GetInternshipFragment;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
-import com.smartindia.hackathon.biotechnology.professor.view.ProfessorFragment;
-import com.smartindia.hackathon.biotechnology.profileView.View.Profile;
 import com.smartindia.hackathon.biotechnology.request.view.RequestFragment;
 
 
 public class Home_page extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener ,
-        HomeFragment.OnFragmentInteraction,GetInternshipFragment.OnFragmentInteraction{
+        implements NavigationView.OnNavigationItemSelectedListener {
 
 private SharedPrefs sharedPrefs;
 
@@ -125,17 +123,17 @@ private SharedPrefs sharedPrefs;
 
         if (id == R.id.aman) {
             sharedPrefs.setKeyTypeAnalogus("1");
-            setFragment(new ProfessorFragment(), "INSTURMENT");
+            setFragment(new GetInternshipFragment(), "Internship");
         }
          else if (id == R.id.nav_gallery) {
             sharedPrefs.setKeyTypeAnalogus("2");
             //setFragment(new ProfessorFragment(), "INCUBATORS");
-            setFragment(new Profile(), "Survey");
+            setFragment(new SurveyViewerFragment(), "Survey");
 
         } else if (id == R.id.nav_slideshow) {
           //  setFragment(new ProductFragment(),"product");
             sharedPrefs.setKeyTypeAnalogus("5");
-            setFragment(new ProfessorFragment(), "survey");
+            setFragment(new SurveyFragment(), "survey");
 
 
         } else if (id == R.id.nav_manage) {
@@ -172,16 +170,7 @@ private SharedPrefs sharedPrefs;
             //     getSupportActionBar().setTitle(title);
         }
     }
-    @Override
-    public void onHomeFragmentInteraction(Uri uri)
-    {
 
-    }
-
-    @Override
-    public void onGetInternshipFragmentInteraction(Uri uri) {
-
-    }
 }
 
 

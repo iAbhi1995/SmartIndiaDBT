@@ -43,12 +43,11 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.MyViewHo
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         final RequestDataDetails requestDataDetails=detailsList.get(position);
 
-        holder.skillName.setText(requestDataDetails.getSkillName());
+        holder.skillName.setText(requestDataDetails.getTopic());
 
-        holder.companyName.setText(requestDataDetails.getCompanyName());
-        holder.appliedOn.setText(requestDataDetails.getAppliedOn());
-        holder.appiedStatus.setText(requestDataDetails.getAppliedStatus());
-        holder.comment.setText(requestDataDetails.getComment());
+        holder.companyName.setText(requestDataDetails.getName());
+        holder.appliedOn.setText(requestDataDetails.getStipend());
+        holder.appiedStatus.setText(requestDataDetails.getDuration());
 
 
     }
@@ -66,7 +65,6 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.MyViewHo
         private TextView companyName ;
         private  TextView appliedOn;
         private TextView appiedStatus;
-        private TextView comment;
 
 
 
@@ -77,7 +75,6 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.MyViewHo
             companyName=(TextView)itemView.findViewById(R.id.textView);
             appiedStatus=(TextView)itemView.findViewById(R.id.internship_status);
             appliedOn=(TextView)itemView.findViewById(R.id.internship_applied);
-            comment=(TextView)itemView.findViewById(R.id.internship_comment);
 
         }
     }

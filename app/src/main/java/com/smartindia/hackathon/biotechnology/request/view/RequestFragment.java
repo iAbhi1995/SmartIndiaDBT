@@ -15,9 +15,7 @@ import android.widget.Toast;
 
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
-import com.smartindia.hackathon.biotechnology.home.Home_page;
 import com.smartindia.hackathon.biotechnology.request.model.MockRequestProvider;
-import com.smartindia.hackathon.biotechnology.request.model.RetrofitRequestProvider;
 import com.smartindia.hackathon.biotechnology.request.model.data.RequestDataDetails;
 import com.smartindia.hackathon.biotechnology.request.presenter.RequestPresenter;
 import com.smartindia.hackathon.biotechnology.request.presenter.RequestPresenterImpl;
@@ -37,17 +35,12 @@ public class RequestFragment extends Fragment implements  RequestView{
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    RecyclerView recyclerView;
+    Toolbar toolbar;
+    ProgressBar progressBar;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
-
-    RecyclerView recyclerView;
-    Toolbar toolbar;
-
-    ProgressBar progressBar;
-
     private RequestPresenter requestPresenter;
 
     private LinearLayoutManager linearLayoutManager;
@@ -107,7 +100,7 @@ requestPresenter=new RequestPresenterImpl(new MockRequestProvider(),this);
 
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(requestAdapter);
-        requestPresenter.requestAppStatus(access_token);
+        requestPresenter.requestAppStatus("2");
 
 //        ((Home_page)getActivity()).getSupportActionBar().hide();
 

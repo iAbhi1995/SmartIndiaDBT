@@ -8,9 +8,9 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface SurveyViewerApi {
-
     @GET(Urls.SURVEY_VIEWER_PROFESSOR)
     Call<ResultData> requestSurveyResult(@Query("access_token") String access_token);
 }
+
 
 

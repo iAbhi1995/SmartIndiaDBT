@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.applyInternship.Model.Data.ApplyInternData;
 import com.smartindia.hackathon.biotechnology.applyInternship.Model.Data.GetInternshipData;
-import com.smartindia.hackathon.biotechnology.applyInternship.Model.RetrofitApplyInternshipProvider;
+import com.smartindia.hackathon.biotechnology.applyInternship.Model.MockInternshipProvider;
 import com.smartindia.hackathon.biotechnology.applyInternship.Presenter.ApplyInternPresenter;
 import com.smartindia.hackathon.biotechnology.applyInternship.Presenter.ApplyInternPresenterImpl;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
@@ -29,8 +29,6 @@ GetInternshipFragment extends Fragment implements GetInternshipView {
             stipend, applyBy, whoCanApply, internshipDetails,
             internshipNumbers, perks;
     private ApplyInternPresenter applyInternPresenter;
-//    private static final String ARG_PARAM2 = "param2";
-    // TODO: Rename and change types of parameters
     private String internId;
 
 
@@ -73,8 +71,8 @@ GetInternshipFragment extends Fragment implements GetInternshipView {
         internshipNumbers = (TextView) v.findViewById(R.id.internship_numbers);
         perks = (TextView) v.findViewById(R.id.internship_perks);
         whoCanApply = (TextView) v.findViewById(R.id.internship_prerequisites);
-        applyInternPresenter=new ApplyInternPresenterImpl(new RetrofitApplyInternshipProvider(),this);
-//        applyInternPresenter=new ApplyInternPresenterImpl(new MockInternshipProvider(),this);
+//        applyInternPresenter=new ApplyInternPresenterImpl(new RetrofitApplyInternshipProvider(),this);
+        applyInternPresenter = new ApplyInternPresenterImpl(new MockInternshipProvider(), this);
         applyInternPresenter.getInternship(internId,session.getAccessToken());
         return v;
     }

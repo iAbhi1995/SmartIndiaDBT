@@ -16,7 +16,6 @@ import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.SurveyFilling.Model.Data.SurveyData;
 import com.smartindia.hackathon.biotechnology.SurveyFilling.Model.Data.SurveyResponse;
 import com.smartindia.hackathon.biotechnology.SurveyFilling.Model.MockSurveyProvider;
-import com.smartindia.hackathon.biotechnology.SurveyFilling.Model.RetrofitSurveyProvider;
 import com.smartindia.hackathon.biotechnology.SurveyFilling.Presenter.SurveyPresenter;
 import com.smartindia.hackathon.biotechnology.SurveyFilling.Presenter.SurveyPresenterProvider;
 
@@ -64,15 +63,13 @@ public class SurveyFragment extends Fragment implements SurveyView {
 //        ans2 = (EditText) v.findViewById(R.id.ans2);
 //        ans3 = (EditText) v.findViewById(R.id.ans3);
 //        ans4 = (EditText) v.findViewById(R.id.ans4);
-        surveyPresenter = new SurveyPresenterProvider(new RetrofitSurveyProvider(), this);
-//        surveyPresenter = new SurveyPresenterProvider(new MockSurveyProvider(), this);
+//        surveyPresenter = new SurveyPresenterProvider(new RetrofitSurveyProvider(), this);
+        surveyPresenter = new SurveyPresenterProvider(new MockSurveyProvider(), this);
 
 //        /
 
 //        id token and type of survey is sent by calling fragment using bundle of setting it in shared prefs
 //
-
-
         surveyPresenter.requestSurvey(id, type, access_token);
         return v;
     }

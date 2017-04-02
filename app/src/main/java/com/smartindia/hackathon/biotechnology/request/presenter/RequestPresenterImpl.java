@@ -5,9 +5,6 @@ import com.smartindia.hackathon.biotechnology.request.model.RequestProvider;
 import com.smartindia.hackathon.biotechnology.request.model.data.RequestData;
 import com.smartindia.hackathon.biotechnology.request.view.RequestView;
 
-/**
- * Created by aman on 27/3/17.
- */
 
 public class RequestPresenterImpl implements RequestPresenter {
 

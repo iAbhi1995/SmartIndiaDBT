@@ -12,26 +12,26 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity
 
+        <activity
             android:name=".login.view.LoginActivity"
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             android:theme="@style/AppTheme.NoActionBar" >
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+
         <activity
             android:name=".home.Home_page"
             android:label="@string/title_activity_home_page"
-
             android:theme="@style/AppTheme.NoActionBar">
 
-
         </activity>
+
         <activity
             android:name=".login.view.InstituteRegister"
             android:label="@string/title_activity_institute_register"
@@ -40,8 +40,7 @@
             android:name=".SurveyUpload.View.Survey_Upload"
             android:label="@string/title_activity_survey__upload"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".splashScreen.view.SplashScreenActivity">
 
         </activity>
@@ -52,13 +51,7 @@
                 android:screenOrientation="portrait"
                 android:theme="@style/AppTheme.NoActionBar">
 
-    <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-
-</activity>
+            </activity>
         </activity>
     </application>
 

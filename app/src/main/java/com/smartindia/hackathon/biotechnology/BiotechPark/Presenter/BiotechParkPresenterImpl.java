@@ -1,47 +1,43 @@
 package com.smartindia.hackathon.biotechnology.BiotechPark.Presenter;
 
-import com.smartindia.hackathon.biotechnology.BiotechPark.Model.Data.BiotechParkData;
+import com.smartindia.hackathon.biotechnology.BiotechPark.BiotechParkCallback;
 import com.smartindia.hackathon.biotechnology.BiotechPark.Model.BiotechParkProvider;
-import com.smartindia.hackathon.biotechnology.BiotechPark.View.BiotechParkInterface;
-import com.smartindia.hackathon.biotechnology.BiotechPark.View.OnBiotechParkReceived;
-
-/**
- * Created by ayush on 28-03-2017.
- */
+import com.smartindia.hackathon.biotechnology.BiotechPark.Model.Data.BiotechParkData;
+import com.smartindia.hackathon.biotechnology.BiotechPark.View.BiotechParkView;
 
 public class BiotechParkPresenterImpl implements BiotechParkPresenter{
-    private BiotechParkInterface biotechParkInterface;
+    private BiotechParkView biotechParkView;
     private BiotechParkProvider biotechParkProvider;
 
-    public BiotechParkPresenterImpl(BiotechParkInterface biotechParkInterface,BiotechParkProvider biotechParkProvider) {
-        this.biotechParkInterface=biotechParkInterface;
+    public BiotechParkPresenterImpl(BiotechParkView biotechParkView, BiotechParkProvider biotechParkProvider) {
+        this.biotechParkView = biotechParkView;
         this.biotechParkProvider=biotechParkProvider;
     }
 
     @Override
     public void getBiotechPark(String type, String id) {
 
-        biotechParkInterface.showProgressBar(true);
-        biotechParkProvider.getBiotechPark(type,id, new OnBiotechParkReceived() {
+        biotechParkView.showProgressBar(true);
+        biotechParkProvider.getBiotechPark(type, id, new BiotechParkCallback() {
             @Override
             public void onSuccess(BiotechParkData biotechParkData) {
                 if(biotechParkData.isSuccess())
                 {
-                    biotechParkInterface.showProgressBar(false);
-                    biotechParkInterface.OnDataReceived(biotechParkData);
+                    biotechParkView.showProgressBar(false);
+                    biotechParkView.OnDataReceived(biotechParkData);
                 }
                 else
                 {
-                    biotechParkInterface.showProgressBar(false);
-                    biotechParkInterface.showMessage(biotechParkData.getMessage());
+                    biotechParkView.showProgressBar(false);
+                    biotechParkView.showMessage(biotechParkData.getMessage());
                 }
 
             }
 
             @Override
             public void onFailure() {
-                biotechParkInterface.showProgressBar(false);
-                biotechParkInterface.showMessage("No Internet Connection");
+                biotechParkView.showProgressBar(false);
+                biotechParkView.showMessage("No Internet Connection");
 
             }
         });

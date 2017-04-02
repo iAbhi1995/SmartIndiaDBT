@@ -3,8 +3,8 @@ package com.smartindia.hackathon.biotechnology.BiotechPark.Model;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.smartindia.hackathon.biotechnology.BiotechPark.API.BiotechParkApi;
+import com.smartindia.hackathon.biotechnology.BiotechPark.BiotechParkCallback;
 import com.smartindia.hackathon.biotechnology.BiotechPark.Model.Data.BiotechParkData;
-import com.smartindia.hackathon.biotechnology.BiotechPark.View.OnBiotechParkReceived;
 import com.smartindia.hackathon.biotechnology.helper.Urls;
 
 import java.util.concurrent.TimeUnit;
@@ -17,9 +17,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by ayush on 28-03-2017.
- */
+
 
 public class RetrofitBiotechParkProvider implements BiotechParkProvider{
     private BiotechParkApi biotechParkApi;
@@ -44,17 +42,17 @@ public class RetrofitBiotechParkProvider implements BiotechParkProvider{
     }
 
     @Override
-    public void getBiotechPark(String type,String id, final OnBiotechParkReceived onBiotechParkReceived) {
+    public void getBiotechPark(String type, String id, final BiotechParkCallback biotechParkCallback) {
         Call<BiotechParkData> call=biotechParkApi.getBiotechPark(type,id);
         call.enqueue(new Callback<BiotechParkData>() {
             @Override
             public void onResponse(Call<BiotechParkData> call, Response<BiotechParkData> response) {
-                onBiotechParkReceived.onSuccess(response.body());
+                biotechParkCallback.onSuccess(response.body());
             }
 
             @Override
             public void onFailure(Call<BiotechParkData> call, Throwable t) {
-                onBiotechParkReceived.onFailure();
+                biotechParkCallback.onFailure();
                 t.printStackTrace();
             }
         });

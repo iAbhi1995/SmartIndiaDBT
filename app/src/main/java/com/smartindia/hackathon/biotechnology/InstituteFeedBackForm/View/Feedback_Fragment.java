@@ -15,7 +15,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.smartindia.hackathon.biotechnology.InstituteFeedBackForm.Model.Data.FeedbackQues;
-import com.smartindia.hackathon.biotechnology.InstituteFeedBackForm.Model.RetrofitFeedbackProvider;
+import com.smartindia.hackathon.biotechnology.InstituteFeedBackForm.Model.MockFeedbackProvider;
 import com.smartindia.hackathon.biotechnology.InstituteFeedBackForm.Presenter.FeedbackPresenter;
 import com.smartindia.hackathon.biotechnology.InstituteFeedBackForm.Presenter.FeedbackPresenterImpl;
 import com.smartindia.hackathon.biotechnology.R;
@@ -88,9 +88,9 @@ public class Feedback_Fragment extends Fragment implements FeedbackView {
         ans3Grp = (RadioGroup) v.findViewById(R.id.ans3_grp);
         ans4Grp = (RadioGroup) v.findViewById(R.id.ans4_grp);
         comments = (EditText) v.findViewById(R.id.comment);
-        presenter = new FeedbackPresenterImpl(new RetrofitFeedbackProvider(), this);
+//        presenter = new FeedbackPresenterImpl(new RetrofitFeedbackProvider(), this);
 
-//        presenter = new FeedbackPresenterImpl(new MockFeedbackProvider(), this);
+        presenter = new FeedbackPresenterImpl(new MockFeedbackProvider(), this);
         presenter.requestFeedbackQues();
 
         submitButton.setOnClickListener(new View.OnClickListener() {

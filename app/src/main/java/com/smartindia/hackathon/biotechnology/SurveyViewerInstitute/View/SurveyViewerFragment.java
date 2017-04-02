@@ -14,7 +14,7 @@ import android.widget.ProgressBar;
 
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.SurveyViewerInstitute.Model.Data.ResultData;
-import com.smartindia.hackathon.biotechnology.SurveyViewerInstitute.Model.RetrofitSurveyProvider;
+import com.smartindia.hackathon.biotechnology.SurveyViewerInstitute.Model.MockSurveyProvider;
 import com.smartindia.hackathon.biotechnology.SurveyViewerInstitute.Presenter.SurveyViewerPresenter;
 import com.smartindia.hackathon.biotechnology.SurveyViewerInstitute.Presenter.SurveyViewerPresenterImpl;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
@@ -55,8 +55,8 @@ public class SurveyViewerFragment extends Fragment implements SurveyView {
         progressBar = (ProgressBar) v.findViewById(R.id.progressBar);
 
 
-//       presenter=new SurveyViewerPresenterImpl(this,new MockSurveyProvider());
-        presenter = new SurveyViewerPresenterImpl(this, new RetrofitSurveyProvider());
+        presenter = new SurveyViewerPresenterImpl(this, new MockSurveyProvider());
+//        presenter = new SurveyViewerPresenterImpl(this, new RetrofitSurveyProvider());
         presenter.requestSurveyResult(shared_prefs.getAccessToken());
 
 
