@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
 import com.smartindia.hackathon.biotechnology.home.Home_page;
+import com.smartindia.hackathon.biotechnology.login.view.LoginActivity;
 import com.smartindia.hackathon.biotechnology.welcome.model.MockWelcomeProvider;
 import com.smartindia.hackathon.biotechnology.welcome.model.data.PageDetails;
 import com.smartindia.hackathon.biotechnology.welcome.presenter.WelcomePresenter;
@@ -38,7 +39,8 @@ public class Welcome extends AppCompatActivity implements WelcomeView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         sharedPrefs=new SharedPrefs(this);
-        if(sharedPrefs.isLoggedIn()==false)            //ye ek change kiya hu phela kadam se
+
+                    //ye ek change kiya hu phela kadam se
        //6     setHome();
 
         progressBar = (ProgressBar)findViewById(R.id.first_progressBar);
@@ -140,7 +142,9 @@ public class Welcome extends AppCompatActivity implements WelcomeView {
     }
 
     public void setHome() {
-        Intent in=new Intent(Welcome.this, Home_page.class);
+        SharedPrefs sharedPrefs=new SharedPrefs(this);
+        sharedPrefs.setKeyFirstLogin(Boolean.FALSE);
+        Intent in=new Intent(Welcome.this, LoginActivity.class);
         startActivity(in);
         finish();
     }

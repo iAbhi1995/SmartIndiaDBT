@@ -27,15 +27,7 @@
         <activity
             android:name=".home.Home_page"
             android:label="@string/title_activity_home_page"
-
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-
         </activity>
         <activity
             android:name=".login.view.InstituteRegister"
@@ -48,29 +40,18 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".splashScreen.view.SplashScreenActivity">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-<activity android:name=".welcome.view.Welcome">
-
+        <activity android:name=".welcome.view.Welcome"/>
         <activity
             android:name=".MyProfile.view.MyProfileUpload"
             android:label="@string/title_activity_my_profile_upload"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
 
-    <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        <category android:name="android.intent.category.LAUNCHER" />
-    </intent-filter>
-
-
-
-</activity>
         </activity>
     </application>
 
