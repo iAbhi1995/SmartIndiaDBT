@@ -32,21 +32,14 @@ public class MockWelcomeProvider implements WelcomeProvider {
                     ("1","INTERESTED IN BIOTECNOLOGY?","1");
 
             welcomeDetailsList.add(welcomeDetails);
-            welcomeDetails = new PageDetails
-                ("2","WANT TO KNOW MORE!","0");
-            welcomeDetailsList.add(welcomeDetails);
 
         welcomeDetails = new PageDetails
                 ("2","HAVING PROBLEM IN ACCESSING R&D FACILITIES?","0");
         welcomeDetailsList.add(welcomeDetails);
 
         welcomeDetails = new PageDetails
-                ("2","COME ON \n THEN USE THIS APP ","0");
+                ("3","COME ON \n WELCOME TO DBT PORTAL","0");
         welcomeDetailsList.add(welcomeDetails);
-
-
-
-
         WelcomeData welcomeData = new WelcomeData(true,"Success",welcomeDetailsList);
 
         return welcomeData;

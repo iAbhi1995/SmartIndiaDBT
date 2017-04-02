@@ -125,7 +125,7 @@ public class Welcome extends AppCompatActivity implements WelcomeView {
     }
 
     private void addBottomDots(int currentPage) {
-        dots = new TextView[4];
+        dots = new TextView[3];
         int[] colorsActive = getResources().getIntArray(R.array.array_dot_active);
         int[] colorsInactive = getResources().getIntArray(R.array.array_dot_inactive);
         dotsLayout.removeAllViews();

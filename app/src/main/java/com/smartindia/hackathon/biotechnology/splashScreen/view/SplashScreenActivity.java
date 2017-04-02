@@ -82,7 +82,7 @@ public class SplashScreenActivity extends Activity implements SplashScreenView {
     @Override
     public void success() {
         if(sharedPrefs.getKeyFirstLogin()) {
-            Intent welcome = new Intent(SplashScreenActivity.this, LoginActivity.class);
+            Intent welcome = new Intent(SplashScreenActivity.this, Welcome.class);
             startActivity(welcome);
             finish();
         }

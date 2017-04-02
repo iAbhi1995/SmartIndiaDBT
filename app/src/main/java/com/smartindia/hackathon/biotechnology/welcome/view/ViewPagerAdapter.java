@@ -47,7 +47,7 @@ public class ViewPagerAdapter extends PagerAdapter {
         YoYo.with(Techniques.ZoomInLeft)
                 .duration(1500)
                 .playOn(question);
-        if(position==3)
+        if(position==2)
             forward_button.setVisibility(View.VISIBLE);
         else
             forward_button.setVisibility(View.INVISIBLE);

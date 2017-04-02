@@ -35,7 +35,7 @@ public class SharedPrefs {
     }
 
     public Boolean getKeyFirstLogin() {
-        return pref.getBoolean(KEY_FIRST_LOGIN,true);
+        return pref.getBoolean(KEY_FIRST_LOGIN,Boolean.TRUE);
     }
     public void setKeyFirstLogin(Boolean login)
     {

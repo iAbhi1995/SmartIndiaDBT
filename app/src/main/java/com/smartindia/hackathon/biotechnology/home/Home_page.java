@@ -34,7 +34,6 @@ public class Home_page extends AppCompatActivity
 
 private SharedPrefs sharedPrefs;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +48,7 @@ private SharedPrefs sharedPrefs;
         setContentView(R.layout.activity_home_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-sharedPrefs=new SharedPrefs(this);
+        sharedPrefs=new SharedPrefs(this);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -61,7 +60,7 @@ sharedPrefs=new SharedPrefs(this);
 
 
         navigationView.setNavigationItemSelectedListener(this);
-        setFragment(new HomeFragment(),"home");
+        addFragment(new HomeFragment(),"home");
 
     }
 
@@ -102,7 +101,6 @@ sharedPrefs=new SharedPrefs(this);
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home_page, menu);
-
         return true;
     }
 
@@ -155,6 +153,17 @@ sharedPrefs=new SharedPrefs(this);
         return true;
     }
 
+    public void addFragment(Fragment fragment, String title) {
+        if (fragment != null) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.home_layout, fragment);
+            fragmentTransaction.commit();
+            getSupportActionBar().setTitle(title);
+        }
+
+    }
+
     public void setFragment(Fragment fragment, String title) {
         if (fragment != null) {
             FragmentManager fragmentManager = getSupportFragmentManager();
@@ -162,7 +171,7 @@ sharedPrefs=new SharedPrefs(this);
             fragmentTransaction.replace(R.id.home_layout, fragment);
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
-            getSupportActionBar().setTitle(title);
+            //     getSupportActionBar().setTitle(title);
         }
     }
     @Override
