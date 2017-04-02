@@ -111,6 +111,7 @@ public class InternshipFragment extends Fragment implements InternshipView{
 
 
         linearLayoutManager= new LinearLayoutManager(getContext());
+        recyclerView = (RecyclerView)getView().findViewById(R.id.recycler_filter);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(internshipRecyclerAdapter);
 

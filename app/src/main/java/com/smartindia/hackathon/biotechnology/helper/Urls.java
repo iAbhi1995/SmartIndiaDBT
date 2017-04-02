@@ -9,6 +9,7 @@ public class Urls {
     public static final String REQUEST_PROFESSOR= "filter/";
     public static final String POSTING_RESUME_PDF=" test_url";
     public static final String OTP = "otp";
+    public static final String REQUEST_RESEARCH_PAPER = "";
     public static final String GET_SKILLS = "Skills";
     public static final String REQUEST_BIOTECH_PARKS = "biotechpark";
     public static final String GETTING_SURVEY = "getting_survey";

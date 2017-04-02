@@ -19,7 +19,8 @@ import android.widget.Toast;
 
 import com.smartindia.hackathon.biotechnology.InstituteFeedBackForm.View.Feedback_Fragment;
 import com.smartindia.hackathon.biotechnology.Internship.view.InternshipFragment;
-import com.smartindia.hackathon.biotechnology.R;
+import com.smartindia.hackathon.biotechnology.*;
+import com.smartindia.hackathon.biotechnology.ResearchPaper.View.ResearchPaperFrag;
 import com.smartindia.hackathon.biotechnology.SurveyFilling.View.SurveyFragment;
 import com.smartindia.hackathon.biotechnology.applyInternship.View.GetInternshipFragment;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
@@ -127,23 +128,23 @@ private SharedPrefs sharedPrefs;
 
         if (id == R.id.aman) {
             sharedPrefs.setKeyTypeAnalogus("1");
-            setFragment(new ProfessorFragment(), "INSTURMENT");
+            setFragment(new ResearchPaperFrag(), "Research Paper");
         }
          else if (id == R.id.nav_gallery) {
             sharedPrefs.setKeyTypeAnalogus("2");
-            setFragment(new ProfessorFragment(), "INCUBATORS");
+            setFragment(new ResearchPaperFrag(), "INCUBATORS");
            // setFragment(new SurveyFragment(),"Survey");
 
         } else if (id == R.id.nav_slideshow) {
           //  setFragment(new ProductFragment(),"product");
             sharedPrefs.setKeyTypeAnalogus("5");
-            setFragment(new ProfessorFragment(), "survey");
+            setFragment(new ResearchPaperFrag(), "survey");
 
 
         } else if (id == R.id.nav_manage) {
-        setFragment(new InternshipFragment(),"intern");
+        setFragment(new ResearchPaperFrag(),"intern");
         } else if (id == R.id.nav_share) {
-            setFragment(new RequestFragment(),"response");
+            setFragment(new ResearchPaperFrag(),"response");
         } else if (id == R.id.nav_send) {
 
         }

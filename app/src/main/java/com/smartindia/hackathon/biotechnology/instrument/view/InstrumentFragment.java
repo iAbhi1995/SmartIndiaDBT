@@ -35,24 +35,7 @@ public class InstrumentFragment extends Fragment implements InstrumentView {
     private ProgressBar progressBar;
     private TextView  name,available,details,application,latitude,longitude,image,id;
     private SharedPrefs sharedPrefs;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // TODO: Rename and change types of parameters
+   // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
