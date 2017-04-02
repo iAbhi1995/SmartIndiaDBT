@@ -45,12 +45,12 @@ public class RetrofitProfileProvider implements MyProfileProvider{
     public void requestUpload(String access_toke,String keyTyp,String file_imag, String file_pd, String user_institutio, String user_skill, String user_plac, String user_currentyea, String user_qualificatio, String user_experienc, final MyProfileCallback myProfileCallback)
     {
         File file = new File(file_imag);
-        File file_pdf = new File(file_pd);
+        //File file_pdf = new File(file_pd);
 
-        final RequestBody requestBodypdf = RequestBody.create(MediaType.parse("application/pdf"), file_pdf);
+        //final RequestBody requestBodypdf = RequestBody.create(MediaType.parse("application/pdf"), file_pdf);
         RequestBody requestBodyimg = RequestBody.create(MediaType.parse("image/*"), file);
         MultipartBody.Part fileToUploadimg = MultipartBody.Part.createFormData("file", file.getName(), requestBodyimg);
-        MultipartBody.Part fileToUploadpdf = MultipartBody.Part.createFormData("file_pdf", file_pdf.getName(), requestBodypdf);
+        //MultipartBody.Part fileToUploadpdf = MultipartBody.Part.createFormData("file_pdf", file_pdf.getName(), requestBodypdf);
         RequestBody access_token = RequestBody.create(MediaType.parse("text/plain"), access_toke);
         RequestBody keyType = RequestBody.create(MediaType.parse("text/plain"), keyTyp);
         RequestBody user_institution = RequestBody.create(MediaType.parse("text/plain"), user_institutio);

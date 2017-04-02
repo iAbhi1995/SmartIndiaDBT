@@ -226,9 +226,9 @@ public class MyProfileUpload extends AppCompatActivity  implements MyProfileView
         }
         else
         {
-            String pdf_path = FilePath.getPath(getApplicationContext(),file_pdf);
+            //String pdf_path = FilePath.getPath(getApplicationContext(),file_pdf);
             String image_path = FilePath.getPath(getApplicationContext(),file_image);
-            myProfilePresenter.requestUpload(sharedPrefs.getAccessToken(),sharedPrefs.getKeyType(),image_path,pdf_path,user_institution,user_skills,user_place,user_currentyear,user_qualification,user_experience);
+            myProfilePresenter.requestUpload(sharedPrefs.getAccessToken(),sharedPrefs.getKeyType(),image_path,"",user_institution,user_skills,user_place,user_currentyear,user_qualification,user_experience);
 
         }
         }
