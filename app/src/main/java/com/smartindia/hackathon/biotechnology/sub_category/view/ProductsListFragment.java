@@ -43,6 +43,7 @@ public class ProductsListFragment extends Fragment implements ProductListView{
     private static final String QUERRY = "querry";
     // TODO: Rename and change types of parameters
     private int subCategoryId;
+
     private String querry="$";
     private ProductsRecyclerAdapter productsRecyclerAdapter;
 

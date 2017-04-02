@@ -154,7 +154,6 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
             holder.linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     ProductFragment fragment = ProductFragment.newInstance((facilityItemDataList.get(position).getId()));
                     ((Home_page) context).setFragment(fragment, facilityItemDataList.get(position).getName());
                 }
