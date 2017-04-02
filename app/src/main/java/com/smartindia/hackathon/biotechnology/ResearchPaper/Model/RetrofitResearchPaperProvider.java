@@ -19,7 +19,8 @@ public class RetrofitResearchPaperProvider implements ResearchPaperProvider {
     private final Retrofit retrofit;
     private ResearchPaperApi researchPaperApi;
 
-    public RetrofitResearchPaperProvider() {
+    public RetrofitResearchPaperProvider()
+    {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
@@ -38,8 +39,8 @@ public class RetrofitResearchPaperProvider implements ResearchPaperProvider {
 
     @Override
     public void requestResearchPaper(String access_token, String id, final ResearchPaperCallback paperCallback) {
-        researchPaperApi = retrofit.create(ResearchPaperApi.class);
-        Call<ResearchPaperData> call = researchPaperApi.requestResearch(access_token, id);
+        researchPaperApi=retrofit.create(ResearchPaperApi.class);
+        Call<ResearchPaperData> call=researchPaperApi.requestResearch(access_token,id);
         call.enqueue(new Callback<ResearchPaperData>() {
             @Override
             public void onResponse(Call<ResearchPaperData> call, Response<ResearchPaperData> response) {

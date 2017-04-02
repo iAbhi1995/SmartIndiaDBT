@@ -22,15 +22,18 @@ public class ResearchPresenterImpl implements ResearchPresenter {
         paperProvider.requestResearchPaper(access_token, id, new ResearchPaperCallback() {
             @Override
             public void onSuccess(ResearchPaperData body) {
-                if (body.isSuccess()) {
+                if(body.isSuccess())
+                {
                     researchPaperView.showProgressBar(false);
+                    researchPaperView.showResearchPaper(body);
 
-                } else {
+                }
+                else
+                {
                     researchPaperView.showProgressBar(false);
                     researchPaperView.showMessage(body.getMessage());
                 }
             }
-
             @Override
             public void onFailure() {
                 researchPaperView.showProgressBar(false);

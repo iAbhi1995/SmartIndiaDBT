@@ -18,6 +18,7 @@ import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.image_loader.GlideImageLoader;
 import com.smartindia.hackathon.biotechnology.helper.image_loader.ImageLoader;
 import com.smartindia.hackathon.biotechnology.home.Home_page;
+import com.smartindia.hackathon.biotechnology.instrument.view.InstrumentFragment;
 import com.smartindia.hackathon.biotechnology.productDesc.view.ProductFragment;
 import com.smartindia.hackathon.biotechnology.professor.model.data.FacilityItemData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.InstitutionItemData;
@@ -40,7 +41,6 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
     private List<ResearchItemData> researchItemDataList = new ArrayList<>();
     private List<SurveyItemData> surveyItemDataList = new ArrayList<>();
     private List<FacilityItemData> facilityItemDataList = new ArrayList<>();
-
     private Context context;
     private String type2="1";
     private ProfessorView professorView;
@@ -80,7 +80,6 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
         View view = layoutInflater.inflate(R.layout.common_item, parent, false);
         if (type2.equals("6"))
             view = layoutInflater.inflate(R.layout.common_item, parent, false);
-
         else if ((type2.equals("2")) || (type2.equals("3")) || (type2.equals("4")))
             view = layoutInflater.inflate(R.layout.biotech_park_item, parent, false);
         else if (type2.equals("5"))
@@ -106,13 +105,13 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
             holder.four.setText(professorItemData.getFour());
             imageLoader.loadImage(professorItemData.getImage(), holder.image, holder.progressBar);
 
-            holder.linearLayout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ProductFragment fragment = ProductFragment.newInstance((professorItemDataList.get(position).getId()));
-                    ((Home_page) context).setFragment(fragment, professorItemDataList.get(position).getOne());
-                }
-            });
+//            holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    ProductFragment fragment = ProductFragment.newInstance((professorItemDataList.get(position).getId()));
+//                    ((Home_page) context).setFragment(fragment, professorItemDataList.get(position).getOne());
+//                }
+//            });
 
         } else if ((type2.equals("2")) || (type2.equals("3")) || (type2.equals("4"))) {
             final InstitutionItemData institutionItemData = institutionItemDataList.get(position);
@@ -121,28 +120,28 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
             holder.two.setText(institutionItemData.getPlace());
             holder.three.setText(institutionItemData.getEmail());
             imageLoader.loadImage(institutionItemData.getImage(), holder.image, holder.progressBar);//thik karnanhai
-            holder.linearLayout.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-
-                    ProductFragment fragment = ProductFragment.newInstance((institutionItemDataList.get(position).getId()));
-                    ((Home_page) context).setFragment(fragment, institutionItemDataList.get(position).getName());//doubt
-                }
-            });
+//            holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+//
+//                @Override
+//                public void onClick(View v) {
+//
+//                    ProductFragment fragment = ProductFragment.newInstance((institutionItemDataList.get(position).getId()));
+//                    ((Home_page) context).setFragment(fragment, institutionItemDataList.get(position).getName());//doubt
+//                }
+//            });
         } else if (type2.equals("5")) {
             final SurveyItemData surveyItemData = surveyItemDataList.get(position);
             holder.one.setText(surveyItemData.getTitle());
-            holder.two.setText(surveyItemData.getTopic());
-            holder.three.setText(surveyItemData.getDesc());
-            holder.linearLayout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    ProductFragment fragment = ProductFragment.newInstance((surveyItemDataList.get(position).getId()));
-                    ((Home_page) context).setFragment(fragment, surveyItemDataList.get(position).getTitle());
-                }
-            });
+            holder.q1.setText(surveyItemData.getQ1());
+            holder.q2.setText(surveyItemData.getQ2());
+//            holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//
+//                    ProductFragment fragment = ProductFragment.newInstance((surveyItemDataList.get(position).getId()));
+//                    ((Home_page) context).setFragment(fragment, surveyItemDataList.get(position).getTitle());
+//                }
+//            });
         } else if (type2.equals("1")) {
 
             final FacilityItemData facilityItemData = facilityItemDataList.get(position);
@@ -154,8 +153,7 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
             holder.linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                    ProductFragment fragment = ProductFragment.newInstance((facilityItemDataList.get(position).getId()));
+                    InstrumentFragment fragment = InstrumentFragment.newInstance((facilityItemDataList.get(position).getId()));
                     ((Home_page) context).setFragment(fragment, facilityItemDataList.get(position).getName());
                 }
             });
@@ -170,13 +168,13 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
             holder.five.setText(researchItemData.getLocation());
             holder.six.setText(researchItemData.getStartDate());
             holder.seven.setText(researchItemData.getApplyBy());
-            holder.button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-
-                }
-            });
+//            holder.button.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//
+//
+//                }
+//            });
 
 
         }
@@ -213,7 +211,7 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView one;
+        private TextView one,q1,q2;
         private TextView two;
         private TextView three;
         private TextView four;
@@ -226,7 +224,6 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
 
         public MyViewHolder(View itemView) {
             super(itemView);
-
             if (type2.equals("6")) {
                 one = (TextView) itemView.findViewById(R.id.name);
                 two = (TextView) itemView.findViewById(R.id.location);
@@ -261,17 +258,16 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
             } else if (type2.equals("1")) {
                 one = (TextView) itemView.findViewById(R.id.instrument_name);
                 two = (TextView) itemView.findViewById(R.id.instrument_city);
-                three = (TextView) itemView.findViewById(R.id.instrument_institute);
-                four = (TextView) itemView.findViewById(R.id.instrument_features);
-
+                three = (TextView) itemView.findViewById(R.id.instrument_features);
+                four = (TextView) itemView.findViewById(R.id.instrument_institute);
                 image = (ImageView) itemView.findViewById(R.id.institute_image);
                 progressBar = (ProgressBar) itemView.findViewById(R.id.progress_bar5);
                 linearLayout = (LinearLayout) itemView.findViewById(R.id.layout10);
             }
             else if (type2.equals("5")) {
                 one = (TextView) itemView.findViewById(R.id.survey_title2);
-                two = (TextView) itemView.findViewById(R.id.survey_field2);
-                three = (TextView) itemView.findViewById(R.id.survey_description2);
+                q2 = (TextView) itemView.findViewById(R.id.survey_q2);
+                q1 = (TextView) itemView.findViewById(R.id.survey_q1);
                 linearLayout=(LinearLayout) itemView.findViewById(R.id.layout2);
             }
 

@@ -1,36 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/aman"
+            android:id="@+id/myprofile"
             android:icon="@drawable/ic_menu_camera"
-            android:title="INSTRUMENT" />
+            android:title="My Profile" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/incubator"
             android:icon="@drawable/ic_menu_gallery"
             android:title="INCUBATOR" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/equipment"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="SURVEY" />
+            android:title="RESEARCH FACILITY" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/biotechparks"
             android:icon="@drawable/ic_menu_manage"
-            android:title="RESEARCH" />
-    </group>
+            android:title="BIOTECH PARKS" />
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="PROFLE" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="MY APPLICATION" />
-        </menu>
-    </item>
+        <item
+            android:id="@+id/givesurvey"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="GIVE SURVEY" />
+        <item
+            android:id="@+id/institution"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="INSTITUTION" />
+        <item
+            android:id="@+id/professor"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="PROFESSOR" />
+        <item
+            android:id="@+id/student"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="STUDENT" />
+        <item
+            android:id="@+id/takesurvey"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="TAKE SURVEY" />
+        <item
+            android:id="@+id/setinternship"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="SET INTERNSHIP" />
+    </group>
 
 </menu>

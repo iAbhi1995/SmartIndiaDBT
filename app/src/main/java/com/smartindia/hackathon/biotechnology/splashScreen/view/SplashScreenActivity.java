@@ -88,21 +88,17 @@ public class SplashScreenActivity extends Activity implements SplashScreenView {
         }
         else if(sharedPrefs.isLoggedIn()){
             Log.d("Res", "" + sharedPrefs.isLoggedIn());
-                     Intent home = new Intent(SplashScreenActivity.this, Home_page.class);
+                     Intent home = new Intent(SplashScreenActivity.this, Welcome.class);
                        startActivity(home);
                       finish();
         }
         else
         {
             Log.d("Res", "" + sharedPrefs.isLoggedIn());
-            Intent welcome = new Intent(SplashScreenActivity.this, LoginActivity.class);
+            Intent welcome = new Intent(SplashScreenActivity.this, Welcome.class);
             startActivity(welcome);
             finish();
         }
-
-
-
-
     }
 
 
