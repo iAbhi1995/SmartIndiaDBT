@@ -1,4 +1,4 @@
-package com.smartindia.hackathon.biotechnology.BiotechPark.View;
+package com.smartindia.hackathon.biotechnology.BiotechParkProduct.View;
 
 import android.content.Context;
 import android.net.Uri;
@@ -13,18 +13,18 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.smartindia.hackathon.biotechnology.BiotechPark.Model.Data.BiotechParkData;
-import com.smartindia.hackathon.biotechnology.BiotechPark.Model.MockDataProviderBiotechPark;
-import com.smartindia.hackathon.biotechnology.BiotechPark.Presenter.BiotechParkPresenter;
-import com.smartindia.hackathon.biotechnology.BiotechPark.Presenter.BiotechParkPresenterImpl;
+import com.smartindia.hackathon.biotechnology.BiotechParkProduct.model.data.BiotechParkData;
+import com.smartindia.hackathon.biotechnology.BiotechParkProduct.model.MockDataProviderBiotechPark;
+import com.smartindia.hackathon.biotechnology.BiotechParkProduct.Presenter.BiotechParkPresenter;
+import com.smartindia.hackathon.biotechnology.BiotechParkProduct.Presenter.BiotechParkPresenterImpl;
 import com.smartindia.hackathon.biotechnology.R;
 import com.smartindia.hackathon.biotechnology.helper.SharedPrefs;
 
-public class BiotechParkFragment extends Fragment implements BiotechParkInterface {
+public class BiotechParkFragment extends Fragment implements BiotechParkView {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    TextView incubator_name,incubator_thrustArea,incubator_state,incubator_city,incubator_address,incubator_website,incubator_person,incubator_contact;
+    TextView biotechParkDescription,biotechParkWebsite,biotechParkCity,biotechParkName;
     ProgressBar ProgressBar;
 
     private String mParam1;
@@ -35,7 +35,7 @@ public class BiotechParkFragment extends Fragment implements BiotechParkInterfac
 
     private SharedPrefs sharedPrefs;
     private String token;
-    private BiotechParkPresenter incubatorsPresenter;
+    private BiotechParkPresenter biotechParkPresenter;
     private LinearLayoutManager linearLayoutManager;
 
     private OnFragmentInteractionListener mListener;
@@ -65,17 +65,13 @@ public class BiotechParkFragment extends Fragment implements BiotechParkInterfac
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_incubators, container, false);
         initialize();
-
-        incubator_name=(TextView)getView().findViewById(R.id.incubator_name);
-        incubator_thrustArea=(TextView)getView().findViewById(R.id.incubator_thrustArea);
-        incubator_state=(TextView)getView().findViewById(R.id.incubator_state);
-        incubator_city=(TextView)getView().findViewById(R.id.incubator_city);
-        incubator_address=(TextView)getView().findViewById(R.id.incubator_address);
-        incubator_website=(TextView)getView().findViewById(R.id.incubator_website);
-        incubator_person=(TextView)getView().findViewById(R.id.incubator_person);
-        incubator_contact=(TextView)getView().findViewById(R.id.incubator_contact);
+        sharedPrefs = new SharedPrefs(getActivity());
+        biotechParkName = (TextView)getView().findViewById((R.id.biotech_park_name)) ;
+        biotechParkDescription=(TextView)getView().findViewById(R.id.incubator_name);
+        biotechParkWebsite=(TextView)getView().findViewById(R.id.incubator_thrustArea);
+        biotechParkCity=(TextView)getView().findViewById(R.id.incubator_state);
         ProgressBar=(ProgressBar)getView().findViewById(R.id.progressbar);
-        incubatorsPresenter.getBiotechPark("","");
+        biotechParkPresenter.getBiotechPark("00","1",mParam1);
 
 
         return view;
@@ -90,7 +86,7 @@ public class BiotechParkFragment extends Fragment implements BiotechParkInterfac
         });
 
         linearLayoutManager = new LinearLayoutManager(getContext());
-        incubatorsPresenter = new BiotechParkPresenterImpl(this, new MockDataProviderBiotechPark());
+        biotechParkPresenter = new BiotechParkPresenterImpl(this, new MockDataProviderBiotechPark());
         token = sharedPrefs.getAccessToken();
 
     }
@@ -133,17 +129,11 @@ public class BiotechParkFragment extends Fragment implements BiotechParkInterfac
 
     @Override
     public void OnDataReceived(BiotechParkData incubatorData) {
-//        BiotechParkDetails incubatorDetails = incubatorData.getBiotechParkDetails();
-//        incubator_name.setText(incubatorDetails.getBiotechPark_name());
-//        incubator_thrustArea.setText(incubatorDetails.getBiotechPark_thrustArea());
-//        incubator_state.setText(incubatorDetails.getBiotechPark_state());
-//        incubator_city.setText(incubatorDetails.getBiotechPark_city());
-//        incubator_address.setText(incubatorDetails.getBiotechPark_address());
-//        incubator_website.setText(incubatorDetails.getBiotechPark_website());
-//        incubator_person.setText(incubatorDetails.getBiotechPark_person());
-//        incubator_contact.setText(incubatorDetails.getBiotechPark_contact());
-    }
 
+          biotechParkName.setText(incubatorData.getName());
+        biotechParkCity.setText(incubatorData.getCity());
+        biotechParkWebsite.setText(incubatorData.getWebsite());
+        biotechParkDescription.setText(incubatorData.getDescription());}
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);

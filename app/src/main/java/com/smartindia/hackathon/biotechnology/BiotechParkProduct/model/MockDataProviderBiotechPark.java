@@ -1,8 +1,7 @@
-package com.smartindia.hackathon.biotechnology.BiotechPark.Model;
+package com.smartindia.hackathon.biotechnology.BiotechParkProduct.model;
 
-import com.smartindia.hackathon.biotechnology.BiotechPark.Model.Data.BiotechParkData;
-import com.smartindia.hackathon.biotechnology.BiotechPark.Model.Data.BiotechParkDetails;
-import com.smartindia.hackathon.biotechnology.BiotechPark.View.OnBiotechParkReceived;
+import com.smartindia.hackathon.biotechnology.BiotechParkProduct.model.data.BiotechParkData;
+import com.smartindia.hackathon.biotechnology.BiotechParkProduct.View.OnBiotechParkReceived;
 
 /**
  * Created by ayush on 28-03-2017.

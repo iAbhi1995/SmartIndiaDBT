@@ -1,10 +1,10 @@
-package com.smartindia.hackathon.biotechnology.BiotechPark.Model;
+package com.smartindia.hackathon.biotechnology.BiotechParkProduct.model;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.smartindia.hackathon.biotechnology.BiotechPark.API.BiotechParkApi;
-import com.smartindia.hackathon.biotechnology.BiotechPark.Model.Data.BiotechParkData;
-import com.smartindia.hackathon.biotechnology.BiotechPark.View.OnBiotechParkReceived;
+import com.smartindia.hackathon.biotechnology.BiotechParkProduct.api.BiotechParkApi;
+import com.smartindia.hackathon.biotechnology.BiotechParkProduct.model.data.BiotechParkData;
+import com.smartindia.hackathon.biotechnology.BiotechParkProduct.View.OnBiotechParkReceived;
 import com.smartindia.hackathon.biotechnology.helper.Urls;
 
 import java.util.concurrent.TimeUnit;
@@ -44,8 +44,8 @@ public class RetrofitBiotechParkProvider implements BiotechParkProvider{
     }
 
     @Override
-    public void getBiotechPark(String type,String id, final OnBiotechParkReceived onBiotechParkReceived) {
-        Call<BiotechParkData> call=biotechParkApi.getBiotechPark(type,id);
+    public void getBiotechPark(String token,String type,String id, final OnBiotechParkReceived onBiotechParkReceived) {
+        Call<BiotechParkData> call=biotechParkApi.getBiotechPark(token,type,id);
         call.enqueue(new Callback<BiotechParkData>() {
             @Override
             public void onResponse(Call<BiotechParkData> call, Response<BiotechParkData> response) {
