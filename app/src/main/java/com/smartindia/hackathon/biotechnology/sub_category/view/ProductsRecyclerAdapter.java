@@ -175,9 +175,9 @@ public class ProductsRecyclerAdapter extends RecyclerView.Adapter<ProductsRecycl
             else if(subcategoryId==4 || subcategoryId==5)
             {
                 linearLayout=(LinearLayout)itemView.findViewById(R.id.layout2);
-                field=(TextView)itemView.findViewById(R.id.survey_field2);
+                field=(TextView)itemView.findViewById(R.id.survey_q2);
                 title=(TextView)itemView.findViewById(R.id.survey_title2);
-                description=(TextView)itemView.findViewById(R.id.survey_description2);
+                description=(TextView)itemView.findViewById(R.id.survey_q1);
             }
             else if(subcategoryId==6 || subcategoryId==7)
             {

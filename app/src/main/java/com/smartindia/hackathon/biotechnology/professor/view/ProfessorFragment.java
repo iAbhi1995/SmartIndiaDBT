@@ -117,7 +117,6 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
         View view=inflater.inflate(R.layout.fragment_internship, container, false);
 
         sharedPrefs = new SharedPrefs(getContext());
-       // professorPresenter=new ProfessorPresenterImpl(new MockProfessorProvider(),this);
         professorPresenter=new ProfessorPresenterImpl(new RetrofitProfessorProvider(),this);
         professorAdapter = new ProfessorAdapter(getContext(),this);
         recyclerView=(RecyclerView)view.findViewById(R.id.recycler_filter);
@@ -183,9 +182,10 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
                 new ArrayList<ProfessorCityData>(cityData.getCity_list());
         ArrayAdapter<String> adapter;
         int n= professorCityDataList.size();
-         String city_id_ar[]=new String[n];
         final String city_name_ar[]=new String[n];
         int i=0;
+        city_name_ar[0]="select city";
+        i++;
         while(i < n)
         {
             professorCityData= professorCityDataList.get(i);
@@ -203,6 +203,8 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int t, long l) {
                 city_name=city_name_ar[t].toString();
+                if(city_name.equals("select_city"))
+                    city_name="zz";
                 professorPresenter.requestProfessor(access_token,type1,city_name,topic_name);
             }
 
@@ -224,6 +226,8 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
         int n= professorTopicDataList.size();
         final String topic_name_ar[]=new String[n];
         int i=0;
+        topic_name_ar[0]="select topic";
+        i++;
         while(i < n)
         {
             professorTopicData= professorTopicDataList.get(i);
@@ -243,8 +247,9 @@ public class ProfessorFragment extends Fragment implements ProfessorView {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int t, long l) {
                 topic_name=topic_name_ar[t].toString();
+                if(topic_name.equals("select topic"))
+                    topic_name="zz";
                 professorPresenter.requestProfessor(access_token,type1,city_name,topic_name);
-
             }
 
             @Override

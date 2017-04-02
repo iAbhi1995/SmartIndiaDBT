@@ -137,7 +137,7 @@ private SharedPrefs sharedPrefs;
         } else if (id == R.id.nav_slideshow) {
           //  setFragment(new ProductFragment(),"product");
             sharedPrefs.setKeyTypeAnalogus("5");
-            setFragment(new ProfessorFragment(), "survey");
+            setFragment(new ProfessorFragment(),"Survey");
 
 
         } else if (id == R.id.nav_manage) {
