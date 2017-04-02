@@ -10,6 +10,7 @@ public interface ProfessorPresenter {
 
 
     void requestProfessor(String token, String type,String city,String topic);
+    void getCities(String type);
 
 
 

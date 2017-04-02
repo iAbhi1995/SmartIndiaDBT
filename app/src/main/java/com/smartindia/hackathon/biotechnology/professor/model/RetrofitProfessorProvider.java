@@ -1,12 +1,19 @@
 package com.smartindia.hackathon.biotechnology.professor.model;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.smartindia.hackathon.biotechnology.helper.Urls;
+import com.smartindia.hackathon.biotechnology.professor.CityCallBack;
 import com.smartindia.hackathon.biotechnology.professor.ProfessorCallBack;
+import com.smartindia.hackathon.biotechnology.professor.api.CityApi;
 import com.smartindia.hackathon.biotechnology.professor.api.ProfessorApi;
 import com.smartindia.hackathon.biotechnology.professor.model.ProfessorProvider;
+import com.smartindia.hackathon.biotechnology.professor.model.data.CityData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
+
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -24,6 +31,7 @@ public class RetrofitProfessorProvider implements ProfessorProvider {
 
     public ProfessorApi professorApi;
 
+    public CityApi cityApi;
     public RetrofitProfessorProvider() {
 
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
@@ -41,6 +49,7 @@ public class RetrofitProfessorProvider implements ProfessorProvider {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
+        cityApi=retrofit.create(CityApi.class);
         professorApi = retrofit.create(ProfessorApi.class);
 
     }
@@ -62,10 +71,27 @@ public class RetrofitProfessorProvider implements ProfessorProvider {
                 professorCallBack.onFailure();
                 t.printStackTrace();
 
-
             }
         });
 
 
+    }
+
+    @Override
+    public void requestCity(String type, final CityCallBack cityCallBack) {
+        Log.d("iket","provider");
+        Call<CityData> call=cityApi.getCity(type);
+        call.enqueue(new Callback<CityData>() {
+            @Override
+            public void onResponse(Call<CityData> call, Response<CityData> response) {
+                Log.d("iket","provider success");
+                cityCallBack.onSuccess(response.body());
+            }
+            @Override
+            public void onFailure(Call<CityData> call, Throwable t) {
+                Log.d("iket","p fail");
+                t.printStackTrace();
+            }
+        });
     }
 }

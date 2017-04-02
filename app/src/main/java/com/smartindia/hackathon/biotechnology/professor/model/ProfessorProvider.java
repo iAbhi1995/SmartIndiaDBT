@@ -1,5 +1,6 @@
 package com.smartindia.hackathon.biotechnology.professor.model;
 
+import com.smartindia.hackathon.biotechnology.professor.CityCallBack;
 import com.smartindia.hackathon.biotechnology.professor.ProfessorCallBack;
 
 /**
@@ -8,12 +9,7 @@ import com.smartindia.hackathon.biotechnology.professor.ProfessorCallBack;
 
 public interface ProfessorProvider {
 
-
-
         void requestProfessor(String token, String type,String city,String topic, ProfessorCallBack professorCallBack);
-
-
-
-
+        void requestCity(String type, CityCallBack cityCallBack);
 
 }

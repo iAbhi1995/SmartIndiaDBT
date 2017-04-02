@@ -2,9 +2,11 @@ package com.smartindia.hackathon.biotechnology.professor.presenter;
 
 import android.util.Log;
 
+import com.smartindia.hackathon.biotechnology.professor.CityCallBack;
 import com.smartindia.hackathon.biotechnology.professor.ProfessorCallBack;
 import com.smartindia.hackathon.biotechnology.professor.model.ProfessorProvider;
 
+import com.smartindia.hackathon.biotechnology.professor.model.data.CityData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
 import com.smartindia.hackathon.biotechnology.professor.view.ProfessorView;
 
@@ -52,5 +54,35 @@ public class ProfessorPresenterImpl implements ProfessorPresenter {
             }
         });
 
+    }
+
+    @Override
+    public void getCities(String type) {
+        professorView.showProgressBar(true);
+        Log.d("iket","presenter");
+        professorProvider.requestCity(type, new CityCallBack() {
+            @Override
+            public void onSuccess(CityData cityData) {
+
+
+                if(cityData.getSuccess()) {
+                    Log.d("iket","success");
+                    professorView.showProgressBar(false);
+                    professorView.setData(cityData);
+                }
+                else {
+                    Log.d("iket","fail");
+                    professorView.showProgressBar(false);
+                    professorView.showError(cityData.getMessage());
+                }
+            }
+
+            @Override
+            public void onFailure() {
+                Log.d("iket","no internet");
+                professorView.showProgressBar(false);
+                professorView.showError("No internet access");
+            }
+        });
     }
 }
