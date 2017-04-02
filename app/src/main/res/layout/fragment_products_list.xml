@@ -9,12 +9,11 @@ tools:context="com.smartindia.hackathon.biotechnology.sub_category.view.Products
 
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-
-    >
+    android:layout_height="wrap_content">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/productRecycler"
+        android:padding="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
          />
