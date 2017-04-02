@@ -1,6 +1,7 @@
 package com.smartindia.hackathon.biotechnology.professor.view;
 
 import com.smartindia.hackathon.biotechnology.Internship.model.data.InternshipData;
+import com.smartindia.hackathon.biotechnology.professor.model.data.CityData;
 import com.smartindia.hackathon.biotechnology.professor.model.data.ProfessorData;
 
 /**
@@ -14,13 +15,14 @@ public interface ProfessorView
 
     //List-Spinners
 
-    void showSpinnerCity(ProfessorData professorData);
+    void showSpinnerCity(CityData professorData);
 
-    void showSpinnerTopic(ProfessorData professorData);
+    void showSpinnerTopic(CityData professorData);
    // void check(ProfessorData professorData,String s);
     void check(ProfessorData professorData);
 
     void showProgressBar(boolean show);
+    void setData(CityData cityData);
 
 
 

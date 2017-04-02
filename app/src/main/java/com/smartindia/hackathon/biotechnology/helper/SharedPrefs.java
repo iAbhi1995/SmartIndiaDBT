@@ -16,6 +16,7 @@ public class SharedPrefs {
     private static final String KEY_ACCESS_TOKEN = "access_token";
     private static final String KEY_IS_LOGGEDIN = "isLoggedIn";
     private static final String KEY_TYPE_ANALOGUS= "typeAnalogus";
+    private static final String KEY_FIRST_LOGIN="firstLogin";
 
     private static String TAG = "Shared Preference";
 
@@ -33,6 +34,14 @@ public class SharedPrefs {
         editor = pref.edit();
     }
 
+    public Boolean getKeyFirstLogin() {
+        return pref.getBoolean(KEY_FIRST_LOGIN,Boolean.TRUE);
+    }
+    public void setKeyFirstLogin(Boolean login)
+    {
+        editor.putBoolean(KEY_FIRST_LOGIN,login);
+        editor.commit();
+    }
 
     public String getAccessToken() {
         return pref.getString(KEY_ACCESS_TOKEN,"00");

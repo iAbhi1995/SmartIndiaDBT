@@ -61,8 +61,6 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.MyVi
         this.type2 = type;
         if (type2.equals("6"))
             professorItemDataList = itemData.getProfessorItemDataList();
-
-
         else if ((type.equals("2")) || (type.equals("3")) || (type.equals("4"))) {
             institutionItemDataList = itemData.getInstitutionItemDataList();
         } else if (type2.equals("5")) {

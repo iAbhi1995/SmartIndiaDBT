@@ -69,17 +69,15 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        ((Home_page) getContext()).getSupportActionBar().show();
         searchLayout = (RelativeLayout) view.findViewById(R.id.search_layout);
         searchLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((Home_page) getContext()).setFragment(new SubCategoryFragment(), "Search");
                 ((Home_page) getContext()).getSupportActionBar().hide();
-
             }
         });
-
-
         return view;
     }
 
