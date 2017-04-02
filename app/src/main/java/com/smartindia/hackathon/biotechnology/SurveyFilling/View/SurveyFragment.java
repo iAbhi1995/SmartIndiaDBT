@@ -25,7 +25,7 @@ public class SurveyFragment extends Fragment implements SurveyView {
     TextView title, description, ques1, ques2, ques3, ques4;
     String ans1, ans2, ans3, ans4;
     ProgressBar progressBar;
-    String id="dsdfdsf", type="1", access_token="sfs";
+    String id="1", type="1", access_token="sfs";
     private SurveyPresenter surveyPresenter;
     private Button submitButton;
     private RadioGroup ans1Grp,ans2Grp,ans3Grp,ans4Grp;
@@ -73,7 +73,7 @@ public class SurveyFragment extends Fragment implements SurveyView {
 //
 
 
-        surveyPresenter.requestSurvey(id, type, access_token);
+//        surveyPresenter.requestSurvey(id, type, access_token);
         return v;
     }
 
