@@ -140,7 +140,8 @@ public class ProductsListFragment extends Fragment implements ProductListView{
 
     @Override
     public void showMessage(String message) {
-        Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+        if(message!=null&&getActivity()!=null)
+        Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
     }
 
     @Override

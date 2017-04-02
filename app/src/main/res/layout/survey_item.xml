@@ -9,11 +9,14 @@
         android:layout_width="match_parent"
         android:background="#332dff2a"
         app:cardCornerRadius="20dp"
+        android:layout_margin="8dp"
+        android:padding="8dp"
         android:layout_height="wrap_content">
         <LinearLayout
             android:background="#5562c2eb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="8dp"
             android:orientation="vertical"
             android:id="@+id/layout2">
 
@@ -21,15 +24,27 @@
             <TextView
                 android:id="@+id/survey_title2"
                 android:layout_width="match_parent"
+                android:padding="5dp"
+                android:text="Title"
+                android:textSize="20dp"
+                android:textColor="#000000"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="wrap_content"
+                android:padding="5dp"
+                android:textSize="20dp"
+                android:text="Field"
+                android:textColor="#000000"
                 android:layout_height="wrap_content"
                 android:id="@+id/survey_field2"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="wrap_content"
+                android:padding="5dp"
+                android:textSize="20dp"
+                android:text="Description"
+                android:textColor="#000000"
                 android:layout_height="wrap_content"
                 android:id="@+id/survey_description2"/>
         </LinearLayout>

@@ -41,6 +41,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -237,6 +238,17 @@
                         android:layout_height="wrap_content"
                         android:padding="2dp"
                         android:text="All" />
+                    <Button
+                        android:id="@+id/button4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_below="@+id/scrollView2"
+                        android:layout_centerHorizontal="true"
+                        android:onClick="ApplyInternship"
+                        android:layout_gravity="center"
+                        android:text="Apply" />
+
 
                 </LinearLayout>
             </LinearLayout>
@@ -244,16 +256,4 @@
 
         </android.support.v7.widget.CardView>
     </ScrollView>
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@+id/scrollView2"
-        android:layout_centerHorizontal="true"
-        android:onClick="ApplyInternship"
-        android:text="Apply" />
-
-
 </RelativeLayout>
